@@ -1,0 +1,155 @@
+%p
+- h1 = 'Brook Green Supply provides Electricity and Gas to UK businesses'
+- mobile_h1 = 'Energy for UK businesses'
+- h2 = 'Whether you are a small, medium or large commercial and industrial business, we will provide you with an energy product that meets your needs'
+= bgs_header(h1, mobile_h1, h2)
+
+.row.cover
+  .content-text.text-center
+    #sectors_banner
+      .inner
+        .item
+          = link_to slug_to_url('large-business') do
+            .sector
+              %center
+                .carousel-fw-img.sparks
+                  %h3 Corporate &amp; Industrial
+                  %p
+                    - snippet = cms_snippet_content('hp-sectors-p-sme')
+                    - if !snippet.blank?
+                      = snippet
+                    - else
+                      Bespoke contracts for larger consumers of electricity and gas.
+                  .more
+                    Read about our products
+        &nbsp;
+        .item
+          = link_to slug_to_url('consultants') do
+            .sector
+              %center
+                .carousel-fw-img.apples
+                  %h3 Consultants
+                  %p
+                    - snippet = cms_snippet_content('hp-sectors-p-consultants')
+                    - if !snippet.blank?
+                      = snippet
+                    - else
+                      Our trading desk offers access to a full range of energy products.
+                  .more
+                    Read about how we can help
+
+.spacer
+
+= link_to 'quotes/new' do
+  .full-width-cta.bg-blue-purple
+    .hidden-xs.scalable-text
+      - snippet = cms_snippet_content('hp-get-quote-desktop')
+      - if !snippet.blank?
+        = snippet
+      - else
+        Are you a small business? Click here to get a quote in 3 minutes.
+    .visible-xs-block.scalable-text
+      - snippet = cms_snippet_content('hp-get-quote-mobile')
+      - if !snippet.blank?
+        = snippet
+      - else
+        Small business? Click here to get a quote in 2 minutes.
+
+.spacer
+
+.text-block
+  .container-fluid
+    .row.text-center
+      .col-xs-12
+        %h2 Why Brook Green Supply?
+    .row.text-center
+      .col-xs-8.col-xs-offset-2
+        .sub-h2
+          We provide the business energy market with the best service whilst maintaining its ability to supply electricity and gas at highly competitive prices.
+    &nbsp;
+    .row.text-center
+      .col-md-3.col-md-offset-1.no-padding-left-right
+        = image_tag asset_path('icons/partnerships.svg'), id: 'partnerships-icon'
+        %h3 Partnerships
+        %p.center_80
+          Across our business, we work with best-in-class third parties to ensure a high level of service throughout your journey.
+      .col-md-4.no-padding-left-right
+        = image_tag asset_path('icons/industry-expertise.svg'), id: 'industry-expertise-icon'
+        %h3 Industry Expertise
+        %p.center_80
+          The Brook Green Supply team is comprised of experienced individuals stemming across operations, marketing and trading.
+      .col-md-3.no-padding-left-right
+        = image_tag asset_path('icons/business-support.svg'), id: 'business-support-icon'
+        %h3 Business&nbsp;Support
+        %p.center_80
+          Our UK based team aim to provide customers with immediate solutions to their energy supply.
+
+.spacer
+
+#easy_to_switch_container.full-width-cta.bg-switch
+  .container-fluid
+    .row.text-center
+      #easy_to_switch.text-center.flex-container.col-lg-8.col-lg-offset-2
+        #easy_to_switch_icon
+          = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
+        #easy_to_switch_text
+          %h2
+            It's easy to switch.
+            .sub-h2
+              Move your electricity and gas
+              to Brook Green Supply today.
+          %p
+            - snippet = cms_snippet_content('hp-switch-text')
+            - if !snippet.blank?
+              = snippet
+            - else
+              Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions. Our team of energy specialists will work with you to ensure that we meet your gas and electricity supply needs at the best price.
+          %p
+            %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get&nbsp;Started
+
+.spacer
+
+.full-width-cta.bg-updates.hidden-on-narrow-mobiles
+  .container-fluid
+    .row.text-center
+      .col-xs-12.content-text.text-center.carousel-col
+        - most_recent_updates = Comfy::Cms::Page.for_category('Market Update').sort_by(&:created_at).reverse[0..2]
+        #updates_carousel.carousel.slide{data: {interval: 4000, ride: 'carousel'}}
+          .carousel-inner
+            .item.active
+              = link_to slug_to_url(most_recent_updates.first.slug) do
+                .update
+                  %h3{style: 'color: black;'}= most_recent_updates.first.label
+                  %p{style: 'color: black;'}
+                    = cms_block_content(:preview, most_recent_updates.first)
+                  .more
+                    %a.more-info
+                      Read more
+            .item
+              = link_to slug_to_url(most_recent_updates.second.slug) do
+                .update
+                  %h3{style: 'color: black;'}= most_recent_updates.second.label
+                  %p{style: 'color: black;'}
+                    = cms_block_content(:preview, most_recent_updates.second)
+                  .more
+                    %a.more-info
+                      Read more
+            .item
+              = link_to slug_to_url(most_recent_updates.third.slug) do
+                .update
+                  %h3{style: 'color: black;'}= most_recent_updates.third.label
+                  %p{style: 'color: black;'}
+                    = cms_block_render(:preview, most_recent_updates.third)
+                  .more
+                    %a.more-info
+                      Read more
+          %a.left.carousel-control{href: '#updates_carousel', role: 'button', data: {slide: 'prev'}}
+            %span.glyphicon.glyphicon-chevron-left
+            %span.sr-only Previous
+          %a.right.carousel-control{href: '#updates_carousel', data: {slide: 'next'}}
+            %span.glyphicon.glyphicon-chevron-right
+            %span.sr-only Next
+
+.spacer
+
+.full-width-cta.bg-cinema

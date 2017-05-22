@@ -1,0 +1,37 @@
+h1 {
+  @extend .font-emphasis, .font-size-h1;
+}
+
+h2 {
+  @extend .font-emphasis, .font-size-h2;
+}
+
+h3 {
+  @extend .font-emphasis, .font-size-h3;
+}
+
+h4 {
+  @extend .font-emphasis, .font-size-h4;
+}
+
+.h1heroheader {
+  font-size: 2.56em;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.h3heroheader {
+  color: #fff;
+  line-height: 1.5;
+}
+
+.summary {
+  @extend .font-emphasis, .font-size-large;
+  color: #312783;
+  line-height: 1.5;
+}
+
+.emergency {
+  color: #D83553;
+  line-height: 1.5;
+}

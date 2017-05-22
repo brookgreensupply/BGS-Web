@@ -1,0 +1,41 @@
+%p
+- h1 = 'Small Business Quote'
+- mobile_h1 = 'Small Business Quote'
+- h2 = ''
+= bgs_header(h1, mobile_h1, h2)
+
+.container-fluid
+  .row
+    .col-xs-12
+      %center
+        %h4 Relevant products:
+        %div
+          Reference:
+          = @quote.id + 10000
+        %div
+          Date:
+          = @quote.created_at
+    .col-xs-12
+      %center
+        - if @quote.product_type == 'electricity'
+          - @products.each do |product|
+            = render 'electricity_product', product: product, usage: @quote.annual_usage
+        - elsif @quote.product_type == 'gas'
+          - @products.each do |product|
+            = render 'gas_product', product: product, usage: @quote.annual_usage
+  .row
+    &nbsp;
+  .row
+    .col-xs-12
+      %center
+        %div
+          Prices quoted do not include any taxes or fees.
+  .row
+    &nbsp;
+
+%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=AM_CHTML"}
+
+&nbsp;
+
+- contact_snippet = cms_snippet_content('contact-sales')
+!= contact_snippet

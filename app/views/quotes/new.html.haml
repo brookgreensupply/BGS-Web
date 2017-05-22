@@ -1,0 +1,90 @@
+%p
+- h1 = 'Small business? Get a quote in 3 minutes'
+- mobile_h1 = 'Small Business Quote'
+- h2 = ''
+= bgs_header(h1, mobile_h1, h2)
+
+- if @addresses_hash
+  :javascript
+    window.addresses = #{raw one_line_addresses_from_junifer_hash(@addresses_hash).to_json};
+    window.mpans = #{raw mpans_from_junifer_hash(@addresses_hash).to_json};
+    window.mprns = #{raw mprns_from_junifer_hash(@addresses_hash).to_json};
+
+#cma-container.container-fluid
+  .row.cover
+    .cma-inner.col-md-8.col-md-offset-2
+      - if @quote.postcode.nil? || @quote.postcode.empty?
+        = form_for @quote, url: new_quote_path, method: :get do |f|
+          .cma-block
+            %center
+              .field-container
+                = f.text_field :postcode, class: 'postcode-box', style: 'width: 190px; margin-bottom: 20px;', placeholder: 'Postcode'
+                &nbsp;&nbsp;
+                .buttons{style: 'display: inline; white-space: nowrap;'}>
+                  = submit_tag 'Electricity', class: 'btn btn-primary btn-sm btn-elec'
+                  &nbsp;or&nbsp;
+                  = submit_tag 'Gas', class: 'btn btn-primary btn-sm btn-gas'
+      - else
+        = form_for @quote do |f|
+          .cma-block
+            %center
+              .field-container
+                = f.text_field :postcode, disabled: true, class: 'postcode-box', style: 'width: 190px; margin-bottom: 20px;', placeholder: 'Postcode'
+                = f.hidden_field :postcode
+                &nbsp;&nbsp;
+                .buttons{style: 'display: inline; white-space: nowrap; margin-bottom: 20px;'}>
+                  - if @quote.product_type == 'electricity'
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed"}
+                      Electricity
+                    &nbsp;or&nbsp;
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed btn-disabled"}
+                      Gas
+                  - else
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed btn-disabled"}
+                      Electricity
+                    &nbsp;or&nbsp;
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed"}
+                      Gas
+                  = f.hidden_field :product_type
+          .cma-block
+            .label-container
+              = f.label :address, class: 'with-colon'
+            .field-container
+              - addresses = one_line_addresses_from_junifer_hash(@addresses_hash)
+              - addresses.push 'My business address does not appear'
+              = f.select :address, addresses, { prompt: 'Select address...'}, { style: 'width: 100%; max-width: 100%;' }
+          - if @quote.product_type == 'electricity'
+            .cma-block.show-on-select-address.hidden
+              .label-container
+                = f.label :mpan, class: 'with-colon'
+              .field-container
+                = f.hidden_field :mpan
+                #quote_mpan_box
+                  = render 'mpan_box'
+          - if @quote.product_type == 'gas'
+            .cma-block.show-on-select-address.hidden
+              .label-container
+                = f.label :mprn, class: 'with-colon'
+              .field-container
+                = f.text_field :mprn
+          .cma-block.show-on-select-address.hidden
+            .label-container
+              = label_tag :usage, 'Usage', class: 'with-colon'
+            .field-container
+              %span{style: 'white-space: nowrap;'}
+                = f.text_field :usage, style: 'width: 100px; height: 29px;'
+                %input{type: 'checkbox', name: 'cost', data: {toggle: 'toggle', size: 'small', on: '£', off: 'KWh', onstyle: 'default', offstyle: 'default', width: '70'}}
+              %span{style: 'white-space: nowrap;'}
+                &nbsp;per&nbsp;
+                = f.select :usage_or_cost_period, Quote.usage_or_cost_periods.keys.map {|p| [p.titleize, p]}, {}, { style: 'width: 70px; max-width: 70px;' }
+
+          .cma-block.show-on-select-address.hidden
+            .label-container
+              &nbsp;
+            .field-container
+              = submit_tag 'See Prices', class: 'btn btn-primary btn-lg'
+
+&nbsp;
+
+- contact_snippet = cms_snippet_content('contact-sales')
+!= contact_snippet

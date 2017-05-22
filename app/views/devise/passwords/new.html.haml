@@ -1,0 +1,20 @@
+.container
+  .authform
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f|
+      .row
+        .col-xs-12
+          &nbsp;
+          %br
+          &nbsp;
+          %br
+          &nbsp;
+          %br
+          &nbsp;
+        .col-xs-8.col-xs-offset-2.col-md-4.col-md-offset-4
+          %h3 Forgot your password?
+          %p We'll send password reset instructions.
+          .form-group
+            = f.label :email
+            = f.email_field :email, :autofocus => true, class: 'form-control'
+          = devise_error_messages!
+          = f.submit 'Reset Password', :class => 'button right'

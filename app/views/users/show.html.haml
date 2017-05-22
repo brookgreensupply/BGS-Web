@@ -1,0 +1,12 @@
+%h2 User
+%p
+  Email:
+  = @user.email if @user.email
+  %br/
+  %br/
+
+.div
+  - if current_user.admin?
+    %a{href: '/users'} Back
+  - else
+    %a{href: '/admin'} Back

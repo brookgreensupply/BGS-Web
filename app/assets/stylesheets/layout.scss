@@ -1,0 +1,273 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1px;
+  @extend .font-primary, .font-size-normal;
+  line-height: 1.5;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 900;
+}
+
+#alerts {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0px;
+}
+
+
+#main {
+  margin-top: 0px;
+  padding-bottom: 20px;
+  // background: #a7a7a7;
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: 0px;
+  }
+  .center {
+    // background: white;
+    // box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.28);
+    // @media (min-width: 1601px) { max-width: 1480px; }
+  }
+}
+
+#footer {
+  margin-top: $fixed-navbar-margin-mobile;
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: $fixed-navbar-margin;
+  }
+}
+
+.full-width { width: 100%; }
+
+.cover {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.no-padding-left-right {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.text-block {
+  padding: 0px 20px 50px 20px;
+}
+
+.narrower {
+  width: 92%;
+}
+
+.full-width-image-block {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.authform {
+  min-height: 400px;
+}
+
+#error_explanation .errors_header {
+  color: red;
+}
+
+p.center_80 {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.full-width-cta {
+  text-align: center;
+  @extend .font-size-h4;
+}
+
+.full-width-cta a {
+  color: white;
+}
+
+#easy_to_switch_container {
+  padding: 20px 0px 20px 0px;
+}
+
+#easy_to_switch {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  @media (min-width: $screen-md-min) {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+
+#easy_to_switch_text {
+  width: 100%;
+  flex-basis: auto;
+  text-align: center;
+  padding: 0px 15px 0px 15px;
+  p {
+    padding-top: 20px;
+  }
+  h2 {
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    .sub-h2 {
+      font-weight: normal;
+      font-size: 0.95em;
+      @extend .font-primary;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    flex-basis: 60%;
+    text-align: left;
+  }
+}
+
+.sector-flex {
+  height: 450px;
+  padding: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  @media (min-width: 1600px) {
+    height: 640px;
+  }
+}
+
+.contact-us {
+  padding: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: left;
+  align-content: space-between;
+  p, h1, h2, h3, h4 { text-align: left; }
+}
+
+img#partnerships-icon { height: 140px; }
+img#industry-expertise-icon { height: 140px; }
+img#business-support-icon { height: 140px; }
+
+.hidden-on-narrow-mobiles {
+  @media (max-width: 370px) {
+    display: none;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.cover-below-sm {
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.cover-below-md {
+  @media (max-width: $screen-sm-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.cover-below-lg {
+  @media (max-width: $screen-md-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+li.market_update {
+  padding: 20px 40px 20px 40px;
+  margin: 0px 20px 20px 5px;
+  border-radius: 20px;
+  background: image-url('cta-bg-updates.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sidebox {
+  width: 280px;
+  min-height: 320px;
+  float: right;
+  margin: 30px;
+  padding: 20px;
+  background: image-url('cta-bg-switch.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  p { padding: 10px; }
+  h4 { padding: 10px; }
+}
+
+.careers-box {
+  min-height: 320px;
+  padding: 20px;
+  background: image-url('cta-bg-switch.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  p { padding: 10px; }
+  h4 { padding: 10px; }
+  ul {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}
+
+.sideicon {
+  width: 280px;
+  min-height: 320px;
+  float: right;
+  margin: 30px;
+  padding: 20px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.spacer { min-height: 20px; }
+.spacer:after { content: '' }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.test {
+  background: $bgtestcolor !important;
+}
