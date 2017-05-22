@@ -1,0 +1,30 @@
+%p
+- h1 = 'Not a small business?'
+- mobile_h1 = 'Not a small business?'
+- h2 = 'You should still get in touch.'
+= bgs_header(h1, mobile_h1, h2)
+
+.container-fluid
+  .row
+    .col-md-6.col-md-offset-3
+      %center
+        - content = cms_snippet_content('quote-no-products')
+        - content = "We couldn't find any appropriate products." if content.blank?
+        != content
+  .row 
+    &nbsp;
+  .row.text-center
+    .col-md-6.col-md-offset-3
+      = link_to 'Get the best electricity price', slug_to_url('request-an-electricity-quote'), class: 'btn btn-primary btn-sm btn-elec'
+  .row
+    &nbsp;
+  .row.text-center
+    .col-md-6.col-md-offset-3
+      = link_to 'Get the best gas price', slug_to_url('request-an-gas-quote'), class: 'btn btn-primary btn-sm btn-gas'
+  .row
+    &nbsp;
+
+&nbsp;
+
+- contact_snippet = cms_snippet_content('contact-sales')
+!= contact_snippet

@@ -1,0 +1,151 @@
+#top-nav {
+  padding-top: 0px;
+  min-height: 70px;
+  margin: 0px;
+  background: white;
+  @media (min-width: $grid-float-breakpoint) {
+    min-height: 70px;
+  }
+}
+
+#top-nav a.navbar-brand {
+  padding: 0px;
+}
+
+#top-logo {
+  width: 140px;
+  padding-top: 14px;
+  padding-left: 15px;
+  @media (max-width: $hamburger-under-logo-breakpoint) {
+    padding-left: 0px;
+    padding-top: 8px;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: 200px;
+    padding-top: 14px;
+    padding-left: 35px;
+  }
+}
+
+#top-nav .full-width-until-navbar-border {
+  margin-top: -14px;
+  @media (max-width: $navbar-border-breakpoint) {
+    padding: 0px;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: 75%;
+    margin-left: 8.333333333%;
+  }
+}
+
+#top-nav ul {
+  @extend .font-emphasis;
+  list-style: none; text-align: justify;
+  margin-top: 42px;
+  padding-top: 20px;
+  padding-right: 24px;
+  margin-bottom: -4px;
+  margin-left: -2vw;
+  @media (max-width: ($grid-float-breakpoint - 1)) {
+    padding-left: 47px;
+    margin-top: 0px;
+  }
+  @media (min-width: $navbar-border-breakpoint) {
+    border: none;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+  }
+  @media (min-width: ($navbar-border-breakpoint + 150)) {
+    padding-right: 40px;
+  }
+}
+
+#top-nav ul:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+#top-nav ul li {
+  float: none;
+  display: block;
+  padding: 10px 2px;
+  text-transform: uppercase;
+  @extend .font-size-navbar;
+  @media (min-width: $grid-float-breakpoint) {
+    display: inline-block;
+  }
+}
+
+#top-nav ul li a, #top-nav ul li a:link {
+  color: #333333;
+  text-decoration: none;
+}
+
+#top-nav ul li a:visited {
+  text-decoration: none;
+}
+
+#top-nav ul li a:hover, #top-nav ul li a:focus {
+  color: black;
+  text-decoration: none;
+}
+
+#top-nav .navbar-links {
+  padding: 0px;
+  overflow: hidden;
+  margin-top: 18px;
+  @media (min-width: $hamburger-under-logo-breakpoint) {
+    margin-top: 18px;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: 46px;
+  }
+}
+
+#hamburger {
+  min-width: 100px;
+  margin-top: 31px;
+  a {
+    @extend .font-size-navbar;
+    padding: 0px;
+    color: black;
+  }
+  @media (max-width: 515px) {
+    margin-left: -26px;
+  }
+  @media (min-width: $hamburger-under-logo-breakpoint) {
+    margin-top: 31px;
+  }
+  @media (min-width: 700px) and (max-width: ($grid-float-breakpoint - 1)) {
+    padding-left: 4vw;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    display: none;
+  }
+}
+
+#hamburger .navbar-toggle {
+  margin: 0px;
+  padding: 0px;
+}
+
+#hamburger .glyphicon-menu-hamburger {
+  font-size: 18px;
+}
+
+#hamburger .search {
+  font-size: 18px;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+
+#top-nav ul li.search {
+  padding-top: 0px;
+  @extend .font-size-navbar;
+  @media (max-width: $grid-float-breakpoint) {
+    display: none;
+  }
+}
+

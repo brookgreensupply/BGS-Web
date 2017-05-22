@@ -1,0 +1,39 @@
+- yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * product['rate1'].to_f
+- calculation = "365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*#{product['rate'].to_f}"
+- cost = product['duration'] * yearly_cost_pence / 100.0
+- calculation = "`#{product['duration']}*(#{calculation})//100`".gsub(/\*/,'xx')
+
+.cma-result
+  .title
+    - duration = product['duration']
+    - duration_text = "#{duration} #{duration == 1 ? ' year' : ' years'}"
+    = "#{duration_text} Gas #{product['matrix_id']}"
+    - product_id = product['matrix_id'].to_s.gsub(/\s/,'_')
+    %a{onclick: "$('#calc_#{product_id}').toggle();", style: 'float: right; color: white; transform: rotate(-45deg); cursor: pointer;'}
+      &#9906;
+  .details.container-fluid
+    .row
+      .total-cost.field.col-sm-4
+        Total Cost
+        .amount= number_to_currency(cost)
+      .field.col-sm-4
+        Unit Rate
+        .value
+          = product['rate'] + " p/kWh"
+    .row
+      .field.col-sm-4
+        Standing Charge
+        .value
+          = (product['standing_charge_rate'].to_f * 100.0).round.to_s + " p/day"
+      .field.col-sm-4
+        Product Code
+        .value
+          = product['matrix_id']
+      .field.col-sm-4
+        Payment Type
+        .value
+          Monthly Direct Debit
+  .calculation{id: "calc_#{product_id}", style: 'display: none; color: grey;'}
+    %span{style: 'color: black;'} Cost Calculation:
+    = calculation
+

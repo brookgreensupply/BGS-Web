@@ -1,0 +1,11 @@
+- pages = Comfy::Cms::Page.for_category("FAQ-#{param_1}").published
+%ul.no-mark
+  - pages.each do |page|
+    %li
+      %h4= page.label
+      - preview_block = page.blocks.select {|b| b.identifier == 'preview'}.first
+      - if preview_block
+        %div
+          != preview_block.content
+      %a.link{href: page.url}
+        Read more

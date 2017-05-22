@@ -1,0 +1,206 @@
+$carousel-item-width-desktop: 600px
+$carousel-item-width-tablet: 400px
+$carousel-item-width-mobile: 240px
+
+.carousel-col
+  min-height: 200px
+
+#sectors_carousel, #updates_carousel
+  height: 640px
+  background-repeat: no-repeat
+  background-size: cover
+  @media (min-width: 470px)
+    height: 580px
+  @media (min-width: 700px)
+    height: 550px
+  .carousel-inner .item .sector, .carousel-inner .item .update
+    max-height: 600px
+    max-width: ($carousel-item-width-mobile + 100)
+    float: none
+    margin: 0 auto
+    padding: 20px
+    padding-top: 90px
+    padding-bottom: 120px
+    @media (min-width: 470px)
+      max-width: ($carousel-item-width-tablet + 100)
+    @media (min-width: 700px)
+      max-width: ($carousel-item-width-desktop + 100)
+    &> h3
+      color: $dark-blue
+      padding-bottom: 20px
+    &> center .box
+      width: $carousel-item-width-mobile
+      padding: 10px
+      color: $light-blue
+      border-color: #888 #888 #888 #aaa
+      border-style: solid
+      border-width: 1px
+      border-radius: 0px 0px 20px 20px
+      border-top-style: none
+      @media (min-width: 470px)
+        width: $carousel-item-width-tablet
+      @media (min-width: 700px)
+        width: $carousel-item-width-desktop
+    &> center .box p
+      @extend .font-size-normal
+      color: black !important
+      line-height: 1.5
+    &> center .box .more
+      width: ($carousel-item-width-mobile - 50)
+      @media (min-width: 470px)
+        width: ($carousel-item-width-tablet - 100)
+      @media (min-width: 700px)
+        width: ($carousel-item-width-desktop - 100)
+  &> ol.carousel-indicators li
+    width: 24px
+    height: 24px
+    margin: 10px
+    border-radius: 20px
+    background-color: grey
+  &> ol.carousel-indicators li.active
+    width: 24px
+    height: 24px
+    margin: 10px
+    border-radius: 20px
+    background-color: $orange
+
+#updates_carousel
+  margin-top: -20px
+  padding-top: 30px
+  height: 600px
+  @media (min-width: 470px)
+    height: 480px
+  @media (min-width: 700px)
+    height: 350px
+  .carousel-inner .item .update
+    min-height: 340px
+    padding-top: 0px
+    padding-bottom: 0px
+    h3
+      font-size: 28px
+      @media (min-width: 2000px)
+        font-size: 32px
+    p
+      padding: 20px
+      font-size: 16px
+      @media (min-width: 2000px)
+        font-size: 20px
+    .more
+      font-size: 18px
+      @media (min-width: 2000px)
+        font-size: 22px
+
+a.carousel-control
+  background-position: center center
+
+a.carousel-control.left
+  color: grey
+  background-image: image-url("carousel-prev.png")!important
+  background-repeat: no-repeat
+  background-size: 60px
+
+a.carousel-control.right
+  color: grey
+  background-image: image-url("carousel-next.png")!important
+  background-repeat: no-repeat
+  background-size: 60px
+
+#updates_carousel .carousel-control
+  color: $light-blue
+
+#updates_carousel .more
+  color: $light-blue
+
+#sectors_carousel
+  height: auto
+
+#sectors_carousel .carousel-inner .item .sector, #sectors_banner .inner .item .sector
+  margin-top: 1vw
+  max-width: 100%
+  width: 100%
+  padding: 0px 0px 0px 0px
+  color: white
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
+  center .carousel-fw-img h3
+    margin-top: 0px
+  center .carousel-fw-img p
+    font-weight: bold
+    padding-left: 3%
+    padding-right: 3%
+    max-width: 550px
+  center .carousel-fw-img .more
+    @extend .font-emphasis
+    color: $orange
+    font-size: 1.1em
+
+.carousel-img
+  padding: 20px
+  min-height: 150px
+  width: $carousel-item-width-mobile
+  background-image: image-url("fw-images/bakery.jpg") !important
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  border-radius: 20px 20px 0px 0px
+  @media (min-width: 470px)
+    width: $carousel-item-width-tablet
+  @media (min-width: 700px)
+    width: $carousel-item-width-desktop
+
+.carousel-fw-img
+  padding: 15px 0px 0px 0px
+  min-height: 170px
+  width: 100%
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/bakery.jpg') center / cover no-repeat
+  @media (min-width: 470px)
+    padding: 4vw 0px 2vw 0px
+    min-height: 28vw
+  @media (min-width: 700px)
+    padding: 4vw 0px 2vw 0px
+    min-height: 22vw
+  @media (min-width: 1058px)
+    min-height: 16vw
+
+.carousel-img.sparks
+  background-image: image-url("fw-images/sparks.jpg") !important
+
+.carousel-fw-img.sparks
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/sparks.jpg') center / cover no-repeat !important
+
+.carousel-img.bakery
+  background-image: image-url("fw-images/bakery.jpg") !important
+
+.carousel-fw-img.bakery
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/bakery.jpg') center / cover no-repeat !important
+
+.carousel-img.apples,
+  background-image: image-url("fw-images/apples.jpg") !important
+
+.carousel-fw-img.apples
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/apples.jpg') center / cover no-repeat !important
+
+#sectors_banner .inner
+  @media (min-width: 700px)
+    display: flex
+    flex: 1
+
+#sectors_banner .inner .item
+  @media (min-width: 700px)
+    width: 50vw
+
+#sectors_banner .inner .item .sector
+  color: white
+  margin-top: 0px !important
+
+#sectors_banner .inner .item .sector center .carousel-fw-img
+  @media (max-width: 700px)
+    padding-top: 36px
+  @media (min-width: 470px)
+    padding: 5vw 0px 2vw 0px
+    min-height: 28vw
+  @media (min-width: 700px)
+    padding: 5vw 0px 2vw 0px
+    min-height: 22vw
+  @media (min-width: 1058px)
+    height: 15vw
+

@@ -43,13 +43,11 @@ Documentation and Support
 -------------------------
 
 See the BGS-Web
-[wiki] (https://github.com/brookgreensupply/BGS-Web/wiki)
-.
+[wiki](https://github.com/brookgreensupply/BGS-Web/wiki).
 
 Issues
 -------------
 
 Log/discuss issues
-[here] (https://github.com/brookgreensupply/BGS-Web/issues)
-.
+[here](https://github.com/brookgreensupply/BGS-Web/issues).
 

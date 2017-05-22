@@ -1,0 +1,84 @@
+#bottom-nav
+  .container-fluid
+    .row
+      %center
+        .narrower
+          .col-sm-5.col-lg-3.col-lg-push-3
+            .footer-links
+              .links-header Business support
+              %ul.no-mark
+                %li
+                  = link_to 'How to switch supplier', slug_to_url('switching-to-brook-green-supply')
+                %li
+                  = link_to 'How to read your energy invoice', slug_to_url('understanding-your-gas-electricity-invoice')
+                %li
+                  = link_to 'Understanding energy costs', slug_to_url('understanding-your-energy-costs')
+                %li
+                  = link_to 'Moving premises', slug_to_url('moving-premises')
+                %li
+                  = link_to 'Making a complaint', slug_to_url('making-a-complaint')
+                %li
+                  = link_to 'Gas emergency', slug_to_url('gas-emergency')
+          .col-sm-5.col-sm-offset-2.col-lg-3.col-lg-offset-0.col-lg-push-3
+            .footer-links
+              .links-header FAQ &amp; Forms
+              %ul.no-mark
+                %li
+                  = link_to 'Forms and guides to download', slug_to_url('forms-guides')
+                %li
+                  = link_to 'Energy FAQs', slug_to_url('faq')
+                %li
+                  = link_to 'Electricity & gas glossary', slug_to_url('glossary')
+                - file = Comfy::Cms::File.find_by_file_file_name 'BGS_Terms-and-Conditions.pdf'
+                %li
+                  - if file
+                    = link_to 'Terms & conditions', "https://#{file.file.url}"
+                  - else
+                    = link_to 'Terms & conditions', "#"
+                %li
+                  = link_to 'Deemed rates', slug_to_url('deemed-rates')
+                %li &nbsp;
+          .col-sm-5.col-lg-3.col-lg-pull-6
+            .footer-links.products
+              .links-header Products
+              %ul.no-mark
+                %li
+                  = link_to 'Large Business Products', slug_to_url('large-business')
+                %li
+                  = link_to 'Additional commercial energy products', slug_to_url('additional-commercial-energy-products')
+          .col-sm-5.col-sm-offset-2.col-lg-3.col-lg-offset-0
+            .footer-links
+              .links-header About
+              %ul.no-mark
+                %li
+                  = link_to 'Our origins', slug_to_url('about')
+                %li
+                  = link_to 'Careers', slug_to_url('bgs-careers')
+                %li
+                  = link_to 'Contact us', slug_to_url('contact')
+
+#bottom-text
+  .container-fluid.cover
+    .row
+      %center
+        .full-until-sm-then-fixed-width
+          .col-sm-3.col-sm-offset-2
+            .centered-until-sm-then-left-align-text
+              = image_tag asset_path('bgs-logo.png'), id: 'bottom-logo'
+          .col-sm-6
+            .copyright.centered-until-sm-then-left-align-text
+              ©&nbsp;2018&nbsp;Brook&nbsp;Green&nbsp;Supply&nbsp;-&nbsp;All&nbsp;Rights&nbsp;Reserved.
+              %br/
+              Company&nbsp;Number&nbsp;09910619
+              %br/
+              80&nbsp;Hammersmith&nbsp;Road,&nbsp;London&nbsp;W14&nbsp;8UD,&nbsp;UK
+              %br/
+              = link_to slug_to_url('site-matters') do
+                Site matters
+              &nbsp;|&nbsp;
+              = link_to slug_to_url('privacy') do
+                Privacy
+              &nbsp;|&nbsp;
+              = link_to slug_to_url('contact') do
+                Contact
+

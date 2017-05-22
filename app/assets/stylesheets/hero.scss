@@ -1,0 +1,81 @@
+.hero-top {
+  margin-top: 12px;
+  padding: 60px 10px 120px 10px;
+  color: white;
+  @media (max-width: $screen-xs-max) {
+    margin-top: 12px;
+    padding: 2px 10px 120px 10px;
+  }
+  @media (min-width: 1400px) {
+    margin-top: 22px;
+  }
+  @media (min-width: 1400px) {
+    padding: 60px 10px 13vw 10px;
+  }
+}
+
+.hero-top .header-text {
+  center {
+    h1, h2, h3, h4 {
+      max-width: 2400px;
+      font-size: 1.8em;
+      @media (max-width: $screen-sm-min) { font-size: 1.2em; }
+      @media (min-width: 1920px) { font-size: 1.8em; }
+    }
+  }
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-left: -15px;
+  width: 100vw;
+  @media (min-width: 1400px) {
+    padding-top: 40px;
+  }
+}
+
+.hero-main {
+  padding: 0px;
+  margin: 0px;
+  margin-top: -62px;
+}
+
+.hero-main .header-text {
+  padding: 0px 20px 20px 20px;
+  margin-top: 0px;
+  @media (min-width: 700px) { margin-top: 0px; }
+}
+
+.hero-main .hero-p {
+  @extend .font-size-normal;
+  padding: 40px 20px 0px 20px;
+  line-height: 1.5;
+}
+
+.hero-home {
+  background: image-url('hero-bg-blade.svg');
+  background-repeat: no-repeat;
+  background-position: 0px 69px;
+  background-size: 100% 70%;
+  @media (max-width: 700px) {
+    background: image-url('hero-bg-blade-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: 0px 69px;
+    background-size: 100% 60%;
+  }
+}
+
+.hero-electricity {
+  background: image-url('hero-bg-blade-electric.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-gas {
+  background: image-url('hero-bg-blade-gas.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

@@ -1,0 +1,50 @@
+- if product['profile_class'] == 4
+  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * (product['rate1'].to_f + product['rate2'].to_f)/2.0
+  - calculation = "365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*(#{product['rate1'].to_f}+#{product['rate2'].to_f})/2"
+- else
+  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * product['rate1'].to_f
+  - calculation = "365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*#{product['rate1'].to_f}"
+- cost = product['duration'] * yearly_cost_pence / 100.0
+- calculation = "`#{product['duration']}*(#{calculation})//100`".gsub(/\*/,'xx')
+
+.cma-result
+  .title
+    = product['rate1_name']
+    - product_id = product['rate1_name'].gsub(/\s/,'_')
+    %a{onclick: "$('#calc_#{product_id}').toggle();", style: 'float: right; color: white; transform: rotate(-45deg); cursor: pointer;'}
+      &#9906;
+  .details.container-fluid
+    .row
+      .total-cost.field.col-sm-4
+        - duration = product['duration']
+        Total Cost
+        .amount= number_to_currency(cost)
+      .field.col-sm-4
+        - if product['profile_class'] == 4
+          Rate (Day)
+        - else
+          Unit Rate
+        .value
+          = product['rate1'] + " p/kWh"
+      - if product['profile_class'] == 4
+        .field.col-sm-4
+          Rate (Night)
+          .value
+            = product['rate2'] + " p/kWh"
+    .row
+      .field.col-sm-4
+        Standing Charge
+        .value
+          = (product['standing_charge_rate'].to_f * 100.0).round.to_s + " p/day"
+      .field.col-sm-4
+        Product Code
+        .value
+          = product['matrix_id']
+      .field.col-sm-4
+        Payment Type
+        .value
+          Monthly Direct Debit
+  .calculation{id: "calc_#{product_id}", style: 'display: none; color: grey;'}
+    %span{style: 'color: black;'} Cost Calculation:
+    = calculation
+

@@ -1,0 +1,112 @@
+#cma-container {
+  background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) ), image-url('fw-images/icecream.jpg') top / cover no-repeat !important ;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.cma-inner {
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7) ) top / cover no-repeat !important ;
+}
+
+.cma-block { margin: auto; }
+
+.cma-block input {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.toggle.btn-sm {
+  margin-top: -2px;
+  min-height: 31px;
+}
+
+.field-container .btn:hover {
+  opacity: 1;
+  background-color: $light-blue;
+}
+
+.btn-elec {
+  background-color: $orange;
+  border-color: $orange;
+}
+
+.btn-gas {
+  background-color: $purple;
+  border-color: $purple;
+}
+
+.btn-pressed {
+  opacity: 0.7;
+}
+
+.btn-disabled {
+  border-color: grey !important;
+  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px) !important;
+}
+
+.label-container {
+  display: inline-block;
+  padding: 10px 20px 0px 10px;
+  width: 100px;
+}
+
+.with-colon:after { content: ":"; }
+
+.field-container {
+  display: inline-block;
+  padding: 20px 10px 20px 30px;
+}
+
+.postcode-box { width: 100px; }
+.product-type { width: 100px; }
+
+.cma-result {
+  border: solid 1px grey;
+  padding: 0px;
+  margin: 20px;
+  max-width: 600px;
+}
+
+.cma-result .title {
+  width: 100%;
+  padding: 10px;
+  @extend .font-emphasis;
+  font-weight: bold;
+  color: white;
+  background: $orange;
+  text-align: left;
+}
+
+.cma-result .details {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+
+  .row {
+    padding: 0px 15px 0px 15px;
+
+    .total-cost {
+      .amount {
+        font-weight: bold;
+        @extend .font-emphasis;
+        color: green;
+      }
+    }
+
+    .field {
+      margin-bottom: 10px;
+      @extend .font-primary;
+      .value {
+        font-weight: bold;
+        @extend .font-emphasis, .font-size-small;
+      }
+    }
+  }
+}
+
+.cma-result .calculation {
+  padding: 0px 20px 10px 0px;
+  text-align: right;
+  @extend .font-size-small;
+}
+

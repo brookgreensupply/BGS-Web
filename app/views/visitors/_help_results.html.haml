@@ -1,0 +1,25 @@
+- if !@results.empty?
+  :javascript
+    $('#help_search_container').show();
+
+  #search_summary.col-xs-12.text-center
+    .size-h4
+
+  - @results.each do |result|
+    .col-xs-12.text-center
+      %a.search_result{href: "#{result.path}"}
+        = result.title
+
+- else
+  :javascript
+    $('#help_search_container').show();
+
+  #search_summary.col-xs-12.text-center
+    .size-h4
+      - if @keywords && !@keywords.empty?
+        No pages found. Please try again.
+      - else
+        e.g. "gas", "moving premises"
+  %br/
+  %br/
+  %br/

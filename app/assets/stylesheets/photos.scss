@@ -1,0 +1,68 @@
+.sector-photo {
+  max-width: 356px;
+  border-radius: 40px;
+}
+
+h3.before-caption {
+  padding: 10px 10px 0px 10px;
+}
+
+.photo-with-caption {
+  display: inline-block;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.photo-with-caption .caption {
+  opacity: 0;
+}
+
+.photo-with-caption:hover .caption {
+  opacity: 1;
+}
+
+.photo-with-caption img {
+  z-index: 4;
+}
+
+.photo-with-caption .caption {
+  position: absolute;
+  left: 356px;
+  transition:all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.photo-with-caption .blur {
+  background-color: rgba(0,0,0,0.8);
+  z-index: 5;
+  position: absolute;
+  left: -356px;
+  top: -153px;
+  width: 100%;
+  height: 153px;
+}
+
+.photo-with-caption .caption-text {
+  z-index: 10;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  left: -356px;
+  top: -153px;
+  width: 100%;
+  height: 153px;
+  padding: 24px 20px;
+  @extend .font-size-large;
+  line-height: 1.5;
+}
+
+.photo-with-caption a {
+  color: white;
+}
+
+.photo-with-caption .caption-text p {
+  padding-bottom: 10px;
+}

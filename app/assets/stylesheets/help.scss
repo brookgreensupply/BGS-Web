@@ -1,0 +1,43 @@
+#search_box {
+  max-width: 50%;
+  margin: auto;
+}
+
+#search_box.input-group input {
+  border-right: none;
+  border-radius: 0px;
+  @extend .font-size-large;
+  box-shadow: none !important;
+  line-height: 1;
+}
+
+#search_box span.input-group-addon {
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: none;
+  margin: none;
+  background: image-url('magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-right: 2em;
+  border-radius: 0px;
+}
+
+#search_box.input-group {
+  z-index: none;
+  margin: none;
+  padding-top: 2em;
+}
+
+#search_results {
+  min-height: 320px;
+  padding-bottom: 100px;
+}
+
+.search_result {
+  margin: auto;
+  max-width: 1024px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+

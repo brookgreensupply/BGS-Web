@@ -1,0 +1,8 @@
+%td= product.profile_class
+%td= product.distribution_area
+%td= "#{product.duration} #{product.duration == 1 ? 'year' : 'years'}"
+%td= product.rate1_name
+%td= "#{product.standing_charge_rate} p/day"
+%td= "#{product.rate1} p/kWh"
+%td= "#{product.rate2} p/kWh" if product.rate2
+%td= product.matrix_id

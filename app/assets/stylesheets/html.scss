@@ -1,0 +1,32 @@
+p {
+  @extend .font-size-normal;
+  line-height: 1.5;
+}
+
+dt {
+  @extend .font-emphasis, .font-size-large;
+  color: #312783;
+  line-height: 1.5;
+}
+
+dd {
+  @extend .font-primary, .font-size-normal;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+ul > li:before {
+  content: "-";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul.no-mark > li:before {
+  content: "";
+}

@@ -1,0 +1,17 @@
+- updates = Comfy::Cms::Page.for_category("Market Update").published
+- sorted = updates.sort_by(&:created_at).reverse
+.col-md-8.col-md-offset-2
+  %ul.no-mark
+    - sorted.each do |update|
+      %li.market_update
+        %h4= update.label
+        - preview_block = update.blocks.select {|b| b.identifier == 'preview'}.first
+        - if preview_block
+          %div
+            != preview_block.content
+        %div
+          %br
+          %a{href: update.url, class: 'more-info'}
+            Read more
+        %hr
+
