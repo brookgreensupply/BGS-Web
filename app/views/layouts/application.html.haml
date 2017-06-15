@@ -14,22 +14,24 @@
     = csrf_meta_tags
 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+    #top-nav.navbar{:role => "navigation"}
       .container
         .navbar-header
-          %button.navbar-toggle{:type => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse"}
-            %span.sr-only Toggle Navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#"} Project Name
-        .navbar-collapse.collapse
-          %form.navbar-form.navbar-right{:role => "form"}
-            .form-group
-              %input.form-control{:type => "text", :placeholder => "Your Email"}
-            .form-group
-              %input.form-control{:type => "password", :placeholder => "Your Password"}
-            %button.btn.btn-success{:type => "submit"} Log in
+          = link_to root_path, class: 'navbar-brand' do
+            = image_tag asset_path('bgs-logo.png'), id: 'top-logo'
+        #hamburger
+          %a.navbar-toggle{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
+            %span.glyphicon.glyphicon-menu-hamburger
+          %br
+        .navbar-links.navbar-collapse.collapse
+          .navbar-right
+            %ul
+              %li Get a quote
+              %li Products
+              %li Why us
+              %li Support
+              %li About
+              %li Contact
     .alerts
       .container
         = render 'layouts/messages'
