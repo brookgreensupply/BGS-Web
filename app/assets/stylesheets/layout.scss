@@ -1,5 +1,4 @@
 main {
-  padding-top: 10px;
   padding-bottom: 20px;
 }
 
@@ -10,6 +9,19 @@ main {
 .cover {
   width: 100%;
   padding: 0px;
+}
+
+.nudge-up {
+  margin-top: -5px;
+}
+
+.full-width-image-block {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  img {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .test {
