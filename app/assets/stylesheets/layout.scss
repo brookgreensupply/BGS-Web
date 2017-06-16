@@ -7,6 +7,11 @@ main {
   width: 100%;
 }
 
+.cover {
+  width: 100%;
+  padding: 0px;
+}
+
 .test {
-  background: $bgtestcolor;
+  background: $bgtestcolor !important;
 }
