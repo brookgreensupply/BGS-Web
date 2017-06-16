@@ -1,4 +1,8 @@
-main {
+body {
+  width: 100%;
+}
+
+#main {
   padding-bottom: 20px;
 }
 
@@ -11,8 +15,12 @@ main {
   padding: 0px;
 }
 
-.nudge-up {
-  margin-top: -5px;
+.text-block {
+  padding: 0px 20px 50px 20px;
+}
+
+.narrower {
+  width: 92%;
 }
 
 .full-width-image-block {
