@@ -1,0 +1,39 @@
+.container-fluid
+  %h3 Welcome
+  %p
+    = link_to 'Users:', users_path
+    = User.count
+    registered
+
+.hero
+  .container-fluid
+    %h1 Hello, world!
+    %p This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+    %p
+      %a.btn.btn-primary.btn-lg{:role => "button"} Learn more &raquo;
+
+.container-fluid
+  .row.text-center
+    .col-xs-12
+      %h2 Why Brook Green Supply?
+  .row.text-center
+    .col-xs-8.col-xs-offset-2
+      .sub-h2
+        We provide the business energy market with the best service whilst maintaining its ability
+        to supply electricity and gas at highly competitive prices.
+
+  / Example row of columns
+  .row
+    .col-md-4
+      %h2 Heading
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
+    .col-md-4
+      %h2 Heading
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
+    .col-md-4
+      %h2 Heading
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
+

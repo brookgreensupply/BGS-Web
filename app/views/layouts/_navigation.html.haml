@@ -1,0 +1,22 @@
+#top-nav.navbar{:role => "navigation"}
+  .container-fluid
+    .row
+      .col-xs-2
+        .navbar-header
+          = link_to root_path, class: 'navbar-brand' do
+            = image_tag asset_path('bgs-logo.png'), id: 'top-logo'
+      .col-xs-2.col-xs-offset-8
+        #hamburger
+          %a.navbar-toggle{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
+            %span.glyphicon.glyphicon-menu-hamburger
+          %br
+      .col-xs-12.col-lg-9.col-lg-offset-1
+        .navbar-links.navbar-collapse.collapse
+          .full-width
+            %ul
+              %li Get a quote
+              %li Products
+              %li Why us
+              %li Support
+              %li About
+              %li Contact

@@ -14,56 +14,18 @@
     = csrf_meta_tags
 
   %body
-    #top-nav.navbar{:role => "navigation"}
-      .container
-        .navbar-header
-          = link_to root_path, class: 'navbar-brand' do
-            = image_tag asset_path('bgs-logo.png'), id: 'top-logo'
-        #hamburger
-          %a.navbar-toggle{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
-            %span.glyphicon.glyphicon-menu-hamburger
-          %br
-        .navbar-links.navbar-collapse.collapse
-          .navbar-right
-            %ul
-              %li Get a quote
-              %li Products
-              %li Why us
-              %li Support
-              %li About
-              %li Contact
+    = render 'layouts/navigation'
     .alerts
-      .container
+      .container-fluid
         = render 'layouts/messages'
     %main{:role => 'main'}
-      .container
+      .container-fluid
         = yield
-    .hero
-      .container
-        %h1 Hello, world!
-        %p This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+    %footer
+      .container-fluid
+        %hr/
         %p
-          %a.btn.btn-primary.btn-lg{:role => "button"} Learn more &raquo;
-
-    .container
-      / Example row of columns
-      .row
-        .col-md-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
-        .col-md-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
-        .col-md-4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          %p.btn.btn-default{:href => "#", :role => "button"} View Details &raquo;
-      %hr/
-      %footer
-      %p
-        &copy; Company 2014
+          &copy; Company 2014
 
     / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
     / WARNING: Respond.js doesn't work if you view the page using file://

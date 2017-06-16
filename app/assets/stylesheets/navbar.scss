@@ -15,42 +15,56 @@
 
 #top-nav ul {
   list-style: none;
+  text-align: justify;
   padding-left: 14px;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  @media (min-width: $grid-float-breakpoint) {
+  margin-top: 68px;
+  padding-top: 20px;
+  @media (max-width: $grid-float-breakpoint) {
+    margin-top: 0px;
+  }
+  @media (min-width: $navbar-border-breakpoint) {
+    margin-top: 0px;
+    padding-top: 0px;
     border: none;
   }
 }
 
 #top-nav ul:after {
-  clear: both;
-  display: block;
-  content: "";
+  content: '';
+  display: inline-block;
+  width: 100%;
 }
 
 #top-nav ul li {
   float: none;
+  display: block;
   padding: 10px;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 1.5em;
   @media (min-width: $grid-float-breakpoint) {
-    float: left;
+    display: inline-block;
   }
 }
 
 #top-nav .navbar-links {
-  margin-top: 100px;
+  @media (min-width: 430px) {
+    margin-top: 100px;
+  }
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 48px;
   }
 }
 
 #hamburger {
+  margin-top: 120px;
   a {
-    font-size: 22px;
+    font-size: 1.5em;
     padding: 0px;
     color: black;
+  }
+  @media (min-width: 430px) {
+    margin-top: 48px;
   }
   @media (min-width: $grid-float-breakpoint) {
     display: none;
