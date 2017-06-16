@@ -11,6 +11,9 @@
 
 #top-logo {
   width: 320px;
+  @media (min-width: $grid-float-breakpoint) {
+    padding-left: 20px;
+  }
 }
 
 #top-nav ul {
