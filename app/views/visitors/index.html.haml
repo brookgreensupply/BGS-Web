@@ -1,5 +1,5 @@
 .hero
-  .hero-top.full-width
+  .hero-top.hero-home.full-width
     .header-text.text-center
       %h2 We bring the business customer closer to the market ensuring competitive pricing and transparency
   .hero-main
@@ -11,7 +11,7 @@
           = image_tag asset_path('bgs-icon-electricity.png'), id: 'electricity-icon'
           %h3 Business Electricity
           %p Electricity supply with a range of billing options for single and multi-site businesses.
-          %p.btn.btn-default{:href => "#", :role => "button"} More Info
+          %a.btn.btn-default{:href => page_path('electricity'), :role => "button"} More Info
         .col-sm-4
           = image_tag asset_path('bgs-icon-gas.png'), id: 'gas-icon'
           %h3 Business Gas

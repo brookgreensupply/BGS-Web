@@ -1,10 +1,6 @@
 .hero-top {
   padding: 20px 10px 300px 10px;
   color: white;
-  background: image-url('hero-bg-blade1.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .hero-top .header-text {
@@ -15,4 +11,24 @@
   padding: 0px;
   margin: 0px;
   margin-top: -65px;
+}
+
+.hero-main .hero-p {
+  padding: 40px 20px 0px 20px;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.hero-home {
+  background: image-url('hero-bg-blade1.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-electricity {
+  background: image-url('hero-bg-electric.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
