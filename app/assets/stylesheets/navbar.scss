@@ -12,6 +12,9 @@
 #top-logo {
   width: 320px;
   padding-left: 15px;
+  @media (max-width: $hamburger-under-logo-breakpoint) {
+    padding-left: 0px;
+  }
   @media (min-width: $grid-float-breakpoint) {
     padding-left: 35px;
   }
@@ -64,7 +67,7 @@
 #top-nav .navbar-links {
   padding: 0px;
   overflow: hidden;
-  @media (min-width: 430px) {
+  @media (min-width: $hamburger-under-logo-breakpoint) {
     margin-top: 68px;
   }
   @media (min-width: $grid-float-breakpoint) {
@@ -79,7 +82,7 @@
     padding: 0px;
     color: black;
   }
-  @media (min-width: 430px) {
+  @media (min-width: $hamburger-under-logo-breakpoint) {
     margin-top: 48px;
   }
   @media (min-width: $grid-float-breakpoint) {
