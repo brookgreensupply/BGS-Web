@@ -1,0 +1,22 @@
+.cma-block {
+  width: 75%;
+  margin: auto;
+}
+
+.label-container {
+  display: inline-block;
+  padding: 10px 20px 10px 10px;
+  width: 100px;
+}
+
+.with-colon:after { content: ":"; }
+
+.field-container {
+  display: inline-block;
+  border-left: solid 1px;
+  padding: 20px 10px 20px 30px;
+}
+
+.postcode-box {
+  width: 100px;
+}

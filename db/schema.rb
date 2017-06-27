@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615115408) do
+ActiveRecord::Schema.define(version: 20170627100511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,20 @@ ActiveRecord::Schema.define(version: 20170615115408) do
     t.datetime "updated_at"
     t.index ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
     t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.string   "postcode"
+    t.text     "address"
+    t.string   "mpan"
+    t.string   "mprn"
+    t.integer  "usage"
+    t.integer  "cost"
+    t.integer  "usage_or_cost_period"
+    t.json     "presented_products"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["postcode"], name: "index_quotes_on_postcode", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

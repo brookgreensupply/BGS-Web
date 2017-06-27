@@ -1,0 +1,27 @@
+.container-fluid
+  .row
+    - if @quote.postcode.nil? || @quote.postcode.empty?
+      = form_for @quote, url: new_quote_path, method: :get do |f|
+        .col-xs-12
+          .cma-block
+            .label-container
+              = f.label :postcode, class: 'with-colon'
+            .field-container
+              = text_field_tag :postcode, nil, class: 'postcode-box'
+              = submit_tag('Search')
+    - else
+      = form_for @quote do |f|
+        .col-xs-12
+          .cma-block
+            .label-container
+              = f.label :postcode, class: 'with-colon'
+            .field-container
+              = f.text_field :postcode, disabled: true, class: 'postcode-box'
+              = link_to 'reset', new_quote_path, class: 'clear'
+        .col-xs-12
+          .cma-block
+            .label-container
+              = f.label :address, class: 'with-colon'
+            .field-container
+              = f.text_field :address
+
