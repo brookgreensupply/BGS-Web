@@ -1,0 +1,2 @@
+class ElectricityProduct < ApplicationRecord
+end

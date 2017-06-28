@@ -1,0 +1,2 @@
+class GasProduct < ApplicationRecord
+end

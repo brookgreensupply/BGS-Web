@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627100511) do
+ActiveRecord::Schema.define(version: 20170628095524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,61 @@ ActiveRecord::Schema.define(version: 20170627100511) do
     t.datetime "updated_at"
     t.index ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
     t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
+  end
+
+  create_table "electricity_products", id: false, force: :cascade do |t|
+    t.integer  "matrix_id"
+    t.integer  "profile_class"
+    t.integer  "duration"
+    t.string   "distribution_area"
+    t.string   "rate1_name"
+    t.decimal  "rate1",                precision: 8, scale: 4
+    t.string   "rate2_name"
+    t.decimal  "rate2",                precision: 8, scale: 4
+    t.decimal  "standing_charge_rate", precision: 8, scale: 4
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.index ["distribution_area"], name: "index_electricity_products_on_distribution_area", using: :btree
+    t.index ["matrix_id"], name: "index_electricity_products_on_matrix_id", unique: true, using: :btree
+    t.index ["profile_class"], name: "index_electricity_products_on_profile_class", using: :btree
+  end
+
+  create_table "electricity_products_upload", id: false, force: :cascade do |t|
+    t.integer  "matrix_id",                                    null: false
+    t.integer  "profile_class",                                null: false
+    t.integer  "duration",                                     null: false
+    t.string   "distribution_area",                            null: false
+    t.string   "rate1_name",                                   null: false
+    t.decimal  "rate1",                precision: 8, scale: 4, null: false
+    t.string   "rate2_name",                                   null: false
+    t.decimal  "rate2",                precision: 8, scale: 4, null: false
+    t.decimal  "standing_charge_rate", precision: 8, scale: 4, null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "gas_products", id: false, force: :cascade do |t|
+    t.integer  "matrix_id"
+    t.integer  "duration"
+    t.string   "distribution_area"
+    t.string   "rate_name"
+    t.decimal  "rate",                 precision: 8, scale: 4
+    t.decimal  "standing_charge_rate", precision: 8, scale: 4
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.index ["distribution_area"], name: "index_gas_products_on_distribution_area", using: :btree
+    t.index ["matrix_id"], name: "index_gas_products_on_matrix_id", unique: true, using: :btree
+  end
+
+  create_table "gas_products_upload", id: false, force: :cascade do |t|
+    t.integer  "matrix_id",                                    null: false
+    t.integer  "duration",                                     null: false
+    t.string   "distribution_area",                            null: false
+    t.string   "rate_name",                                    null: false
+    t.decimal  "rate",                 precision: 8, scale: 4, null: false
+    t.decimal  "standing_charge_rate", precision: 8, scale: 4, null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "quotes", force: :cascade do |t|
