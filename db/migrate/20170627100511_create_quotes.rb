@@ -2,6 +2,7 @@ class CreateQuotes < ActiveRecord::Migration[5.0]
   def change
     create_table :quotes do |t|
       t.string   :postcode
+      t.string   :product_type
       t.text     :address
       t.string   :mpan
       t.string   :mprn

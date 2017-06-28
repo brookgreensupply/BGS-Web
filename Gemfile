@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
+gem 'dotenv-rails', groups: [:development]
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -42,3 +43,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 gem 'comfortable_mexican_sofa'
+gem 'rest-client'

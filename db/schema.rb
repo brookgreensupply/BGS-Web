@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20170627100511) do
 
   create_table "quotes", force: :cascade do |t|
     t.string   "postcode"
+    t.string   "product_type"
     t.text     "address"
     t.string   "mpan"
     t.string   "mprn"

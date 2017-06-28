@@ -1,3 +1,9 @@
+- if @addresses_hash
+  :javascript
+    window.addresses = #{raw one_line_addresses_from_junifer_hash(@addresses_hash).to_json};
+    window.mpans = #{raw mpans_from_junifer_hash(@addresses_hash).to_json};
+    window.mprns = #{raw mprns_from_junifer_hash(@addresses_hash).to_json};
+
 .container-fluid
   .row
     - if @quote.postcode.nil? || @quote.postcode.empty?
@@ -7,8 +13,11 @@
             .label-container
               = f.label :postcode, class: 'with-colon'
             .field-container
-              = text_field_tag :postcode, nil, class: 'postcode-box'
-              = submit_tag('Search')
+              = f.text_field :postcode, class: 'postcode-box'
+              &nbsp;&nbsp;search for&nbsp;
+              = submit_tag('Electricity')
+              &nbsp;or&nbsp;
+              = submit_tag('Gas')
     - else
       = form_for @quote do |f|
         .col-xs-12
@@ -17,11 +26,47 @@
               = f.label :postcode, class: 'with-colon'
             .field-container
               = f.text_field :postcode, disabled: true, class: 'postcode-box'
-              = link_to 'reset', new_quote_path, class: 'clear'
+              = f.hidden_field :postcode
+              &nbsp;for&nbsp;
+              = f.text_field :product_type, disabled: true, class: 'product-type'
+              = f.hidden_field :product_type
+              &nbsp;or&nbsp;<a href="#{new_quote_path}" class: "start_over">start&nbsp;over</a>
         .col-xs-12
           .cma-block
             .label-container
               = f.label :address, class: 'with-colon'
             .field-container
-              = f.text_field :address
+              - addresses = one_line_addresses_from_junifer_hash(@addresses_hash)
+              - addresses.push 'My business address does not appear'
+              = f.select :address, addresses, prompt: 'Select address...'
+        - if @quote.product_type == 'electricity'
+          .col-xs-12.show-on-select-address.hidden
+            .cma-block
+              .label-container
+                = f.label :mpan, class: 'with-colon'
+              .field-container
+                = f.text_field :mpan
+        - if @quote.product_type == 'gas'
+          .col-xs-12.show-on-select-address.hidden
+            .cma-block
+              .label-container
+                = f.label :mprn, class: 'with-colon'
+              .field-container
+                = f.text_field :mprn
+        .col-xs-12.show-on-select-address.hidden
+          .cma-block
+            .label-container
+              = label_tag :usage, 'Usage', class: 'with-colon'
+            .field-container
+              = f.text_field :usage
+              &nbsp;in&nbsp;
+              %input{type: 'checkbox', name: 'cost', data: {toggle: 'toggle', size: 'small', on: '£', off: 'KWh', onstyle: 'default', offstyle: 'default', width: '70'}, checked: true}
+              &nbsp;per&nbsp;
+              = f.select :usage_or_cost_period, Quote.usage_or_cost_periods.keys.map {|p| [p.titleize, p]}
+        .col-xs-12.show-on-select-address.hidden
+          .cma-block
+            .label-container
+              &nbsp;
+            .field-container
+              = submit_tag 'See Prices', class: 'btn btn-primary btn-lg'
 
