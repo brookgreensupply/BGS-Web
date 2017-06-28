@@ -65,6 +65,20 @@
   }
 }
 
+#top-nav ul li a, #top-nav ul li a:link {
+  color: #333333;
+  text-decoration: none;
+}
+
+#top-nav ul li a:visited {
+  text-decoration: none;
+}
+
+#top-nav ul li a:hover, #top-nav ul li a:focus {
+  color: black;
+  text-decoration: none;
+}
+
 #top-nav .navbar-links {
   padding: 0px;
   overflow: hidden;
