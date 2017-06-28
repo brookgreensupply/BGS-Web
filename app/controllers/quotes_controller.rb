@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
     @quote.product_type = 'gas' if params[:commit] == 'Gas'
     @quote.product_type = params[:product_type] if !@quote.product_type && params[:product_type]
     # FIXME: get addresses from Junifer
-    @addresses_hash = { 'results' => [{'mprn' => '8815177407', 'meteringPointAddressLine1' => 'derpy derp1'}] }
+    @addresses_hash = {}
   end
 
   def create
