@@ -3,7 +3,7 @@ adapter = Flipper::Adapters::ActiveRecord.new
 FF = Flipper.new(adapter)
 
 begin
-  allowed = [:email, :cma]
+  allowed = [:quotes]
   Flipper::Adapters::ActiveRecord::Feature.all.each do |f|
     if !allowed.include?(f.key.to_sym)
       puts "Disabling and deleting unknown feature :#{f.key}..."
