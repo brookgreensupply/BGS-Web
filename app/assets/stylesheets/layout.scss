@@ -34,6 +34,14 @@ body {
   }
 }
 
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
 .test {
   background: $bgtestcolor !important;
 }

@@ -5,16 +5,19 @@
         = image_tag asset_path('bgs-logo.png'), id: 'top-logo'
   .col-xs-2.col-xs-offset-8
     #hamburger
-      %a.navbar-toggle{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
-        %span.glyphicon.glyphicon-menu-hamburger
+      .table-row
+        %span.glyphicon.glyphicon-search.search.table-cell
+        %a.navbar-toggle.table-cell{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
+          %span.glyphicon.glyphicon-menu-hamburger
       %br
   .col-xs-12.col-lg-9.col-lg-offset-1.full-width-until-navbar-border
     .navbar-links.navbar-collapse.collapse
       %ul
         %li Sector
         %li Products
-        %li Brokers
         %li Support
         %li Market Updates
         %li About
         %li Contact
+        %li.search
+          %span.glyphicon.glyphicon-search
