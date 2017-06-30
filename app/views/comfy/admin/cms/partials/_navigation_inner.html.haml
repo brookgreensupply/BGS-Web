@@ -1,8 +1,12 @@
 %li &nbsp;
 - if current_user.admin?
   %li= link_to 'Users admin', users_path
-  %li= link_to 'Sidekiq queues', '/sidekiq'
 - else
   %li= link_to current_user.email, user_path(current_user)
-%li= active_link_to 'Features admin', admin_features_admin_path
+%li= link_to 'Web Quotes', '/quotes'
 %li= active_link_to 'Log out', destroy_user_session_path, method: :delete
+%li &nbsp;
+- if current_user.admin?
+  %li= link_to 'Prices upload', '/prices'
+  %li= link_to 'Sidekiq queues', '/sidekiq'
+  %li= active_link_to 'Features admin', admin_features_admin_path
