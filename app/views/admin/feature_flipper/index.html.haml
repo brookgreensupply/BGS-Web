@@ -1,0 +1,23 @@
+.page-header
+  %h2= 'Features Admin'
+
+%p
+  Here you can enable/disable features without affecting the rest of the web site.
+  %br/
+  %br/
+
+%table.table.table-striped.table-hover.table-bordered
+  %tr
+    %th Feature
+    %th{style: 'text-align: right;'} Toggle
+  - @features.each_with_index do |feature, idx|
+    %tr
+      %td{style: 'vertical-align: middle;'}= feature
+      %td{style: 'text-align: right; vertical-align: middle;'}
+        = form_tag admin_feature_flip_path(feature: feature), method: :put, remote: true, id: "toggle#{idx}" do
+          - image_for_toggle = FF[feature.to_sym].enabled? ? 'flip-on.png' : 'flip-off.png'
+          %input{type: 'image', src: asset_path(image_for_toggle), border: 0, alt: 'Submit', style: 'height: 32px; outline: none;'}
+          :javascript
+            $("form#toggle#{idx}").on('ajax:success', function(e, data, status, xhr) {
+              $("form#toggle#{idx} input[type=image]").attr('src', data.image);
+            });
