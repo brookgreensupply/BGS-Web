@@ -42,6 +42,14 @@ body {
   display: table-cell;
 }
 
+.authform {
+  min-height: 400px;
+}
+
+#error_explanation .errors_header {
+  color: red;
+}
+
 .test {
   background: $bgtestcolor !important;
 }

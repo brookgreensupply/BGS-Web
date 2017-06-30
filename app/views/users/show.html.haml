@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-xs-4.col-xs-offset-4
+      %h3 User
+      %p
+        Email:
+        = @user.email if @user.email
+      .div{style: 'text-align: right'}
+        - if current_user.admin?
+          %a{href: '/users'} Back
+        - else
+          %a{href: '/admin'} Back

@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '3bff9705368f7f2343e8a61fd8379ef1e1e3b2541672c4661045592396d1aca3be769b57da6fbff364a6c78936fac9147e24c82cb1de5b41e3f1209fd2a1ae23'
+  # config.secret_key = '8b119705368f7f2343e8b82e44851111f0e3b200067204661045592396d1aca3be769b57d88fb9f355a6c78936fac9147e24c82cb1005b41e334209fd2a1ae23'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -109,7 +109,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c72fd9ebff2976afdbece7ae4d41bfbf951dc6a901f5d92e57c8554edc195eb189a89d48dc239e556b0eb1cd6b9ec9505c1e96d26054d1b82b100371c67098fe'
+  config.pepper = 'a72fd9ebff29763fdbe37e118251bfbf9578212501f5d92e57c8588edcff5eb189a89148d1239e156b1eb58d6b9fc9505c1e96f26054f1b825200311c6709838'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -213,30 +213,30 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 30.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-  # config.lock_strategy = :failed_attempts
+  config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
-  # config.unlock_keys = [:email]
+  config.unlock_keys = [:email]
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
-  # config.unlock_strategy = :both
+  config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  # config.maximum_attempts = 20
+  config.maximum_attempts = 5
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  # config.unlock_in = 1.hour
+  config.unlock_in = 1.hour
 
   # Warn on the last attempt before the account is locked.
   # config.last_attempt_warning = true
