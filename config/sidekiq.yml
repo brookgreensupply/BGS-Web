@@ -1,0 +1,3 @@
+:schedule:
+  SchedulerPing:
+    every: '15m'

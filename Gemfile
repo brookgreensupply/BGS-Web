@@ -46,3 +46,5 @@ end
 gem 'comfortable_mexican_sofa'
 gem 'rest-client'
 gem 'flipper-active_record'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
