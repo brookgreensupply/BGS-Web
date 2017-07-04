@@ -50,6 +50,18 @@ body {
   color: red;
 }
 
+.full-width-cta {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.full-width-cta a {
+  color: white;
+}
+
+.spacer { min-height: 50px; }
+.spacer:after { content: '' }
+
 .test {
   background: $bgtestcolor !important;
 }

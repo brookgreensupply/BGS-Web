@@ -6,22 +6,33 @@
     .container-fluid
       .row.text-center
         .col-xs-12
-          %h2 What are you looking for?
-        .col-sm-4
-          = image_tag asset_path('bgs-icon-electricity.png'), id: 'electricity-icon'
-          %h3 Business Electricity
-          %p Electricity supply with a range of billing options for single and multi-site businesses.
-          %a.btn.btn-default{:href => page_path('electricity'), :role => "button"} More Info
-        .col-sm-4
-          = image_tag asset_path('bgs-icon-gas.png'), id: 'gas-icon'
-          %h3 Business Gas
-          %p Gas supply to businesses of all sizes incorporating specific needs and demand profiles.
-          %p.btn.btn-default{:href => "#", :role => "button"} More Info
-        .col-sm-4
-          = image_tag asset_path('bgs-icon-other.png'), id: 'other-icon'
-          %h3 Other Energy Products
-          %p Our trading desk can help you with bespoke tariffs and other energy related products.
-          %p.btn.btn-default{:href => "#", :role => "button"} More Info
+          .header-text
+            %h2 What are your business needs?
+        .col-sm-6
+          %h3.before-caption Small business
+          %a{href: '#'}
+            .photo-with-caption.sector-photo
+              = image_tag asset_path('stock/173900235.jpg'), id: 'small-business-photo', class: 'sector-photo'
+              .caption
+                .blur.sector-photo
+                .caption-text
+                  %p Some text to do with small businesses goes here.
+                  %a.more-info{href: '#'} Find Out More
+        .col-sm-6
+          %h3.before-caption Corporate &amp; Industrial
+          %a{href: '#'}
+            .photo-with-caption.sector-photo
+              = image_tag asset_path('stock/507851977.jpg'), id: 'corporate-industrial-photo', class: 'sector-photo'
+              .caption
+                .blur.sector-photo
+                .caption-text
+                  %p Some text to for the Corporate &amp; Industrial sector.
+                  %a.more-info{href: '#'} Find Out More
+        .col-xs-12.spacer
+
+.full-width-cta.bg-blue-purple
+  %a{href: '#'}
+    Are you a small business? Click here to get a quote in 2 minutes &gt;
 
 .full-width-image-block
   = image_tag asset_path('stock/538359264.jpg')
