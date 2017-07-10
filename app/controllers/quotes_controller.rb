@@ -7,8 +7,14 @@ class QuotesController < ApplicationController
     @quote.product_type = 'electricity' if params[:commit] == 'Electricity'
     @quote.product_type = 'gas' if params[:commit] == 'Gas'
     @quote.product_type = params[:product_type] if !@quote.product_type && params[:product_type]
-    # FIXME: get addresses from Junifer
-    @addresses_hash = {}
+    if @quote.postcode
+      @addresses_hash = @quote.product_type == 'gas' ? mprn_lookup(@quote.postcode) : mpan_lookup(@quote.postcode)
+      @addresses_hash = {} unless @addresses_hash
+      if !valid_postcode(@quote.postcode)
+        flash[:alert] = 'Invalid postcode'
+        redirect_to action: 'new'
+      end
+    end
   end
 
   def create
