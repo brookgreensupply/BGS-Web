@@ -1,8 +1,12 @@
 $('#quote_address').on 'change', ->
   address = $('#quote_address').val()
   index = window.addresses.indexOf(address)
-  $('#quote_mpan').val(window.mpans[index]) if index >= 0
-  $('#quote_mprn').val(window.mprns[index]) if index >= 0
+  if index >= 0
+    $('#quote_mpan').val(window.mpans[index])
+    $('#quote_mprn').val(window.mprns[index])
+  else
+    $('#quote_mpan').val('')
+    $('#quote_mprn').val('')
   $('.show-on-select-address').removeClass('hidden')
   if index >= 0
     window.current_mpan = new MpanModel('#quote_mpan_box', window.mpans[index])
@@ -12,4 +16,4 @@ $('#quote_address').on 'change', ->
     window.current_mpan.render()
 
 $('form#new_quote').on 'submit', (e) ->
-  $('input#quote_mpan').val(current_mpan.get())
+  $('input#quote_mpan').val(window.current_mpan.get()) if window.current_mpan
