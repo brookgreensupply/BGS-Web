@@ -59,7 +59,10 @@ module QuotesHelper
     results = hash['results'] if hash
     if results
       results.map do |result|
-        result['mpan']
+        result['profileClassId'].to_s.rjust(2, '0') + \
+        result['meterTimeswitchCode'].to_s.rjust(3, '0') + \
+        result['lineLossFactorClassId'].to_s.rjust(3, '0') + \
+        result['mpanCore'].to_s.rjust(13, '0')
       end
     else
       []

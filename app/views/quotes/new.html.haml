@@ -45,7 +45,9 @@
               .label-container
                 = f.label :mpan, class: 'with-colon'
               .field-container
-                = f.text_field :mpan
+                = f.hidden_field :mpan
+                #quote_mpan_box
+                  = render 'mpan_box'
         - if @quote.product_type == 'gas'
           .col-xs-12.show-on-select-address.hidden
             .cma-block

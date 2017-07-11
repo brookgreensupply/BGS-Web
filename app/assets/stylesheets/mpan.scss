@@ -1,0 +1,34 @@
+.mpan-container { display: inline-block; padding: 0px; margin: 0px; font-size: 21px; font-family: sans-serif; }
+.mpan-table { display: table; width: 300px; }
+.mpan-row-group { display: table-row-group; }
+.mpan-row { display: table-row; text-align: center; }
+.mpan-cell { display: table-cell; text-align: center; vertical-align: middle; }
+.mpan-stretch { display: inline-block; width: 260px; text-align: center; }
+.inline { display: inline-block; padding: 0px 8px; }
+
+.mpan-box {
+  border-radius: 7px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.mpan-top-row { margin: 0px; padding: 7px 8px 6px 8px; }
+.mpan-bottom-row { margin: 0px; padding: 8px 8px 8px 8px; }
+
+.big-s { font-size: 2.4em; padding: 8px; }
+.mpan-pc { padding-right: 20px; }
+.mpan-mtc { width: 100px; }
+.mpan-llfc { padding-left: 20px; }
+.mpan-uid { width: 136px; }
+
+.border-left { border-left: 1px solid black; }
+.border-right { border-right: 1px solid black; }
+.border-bottom { border-bottom: 1px solid black; }
+
+input.mpan {
+  font-size: 0.95em;
+  border-style: none;
+  border-bottom: 1px dashed black;
+  text-align: center;
+}
