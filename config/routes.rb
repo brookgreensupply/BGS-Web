@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'features', to: "feature_flipper#index", as: :features_admin
     put 'features/:feature/flip', to: "feature_flipper#flip", as: :feature_flip
+    resources :products
   end
 
   comfy_route :cms_admin, :path => '/admin'

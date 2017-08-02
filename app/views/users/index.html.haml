@@ -1,0 +1,12 @@
+.page-header
+  %h2 Users
+
+%table.table.table-hover.table-bordered
+  - @users.each_with_index do |user, idx|
+    %tr
+      = render user
+
+%h2 Add new
+%p
+  %a{href: '/users/invitation/new'} Invite new user
+

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Comfy::Admin::Cms::BaseController
   include Pundit
   before_action :authenticate_user!
   after_action :verify_authorized
