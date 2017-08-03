@@ -5,7 +5,7 @@ class UsersController < Comfy::Admin::Cms::BaseController
 
   def index
     @users = User.all
-    authorize(User)
+    authorize User
   end
 
   def show
