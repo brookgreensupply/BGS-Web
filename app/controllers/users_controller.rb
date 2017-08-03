@@ -1,11 +1,10 @@
 class UsersController < Comfy::Admin::Cms::BaseController
   include Pundit
   before_action :authenticate_user!
-  after_action :verify_authorized
+  after_action :verify_authorized, except: :index
 
   def index
     @users = User.all
-    authorize User
   end
 
   def show
