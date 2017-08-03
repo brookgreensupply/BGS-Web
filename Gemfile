@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.3.3'
 gem 'dotenv-rails', groups: [:development]
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
@@ -26,7 +27,9 @@ gem 'high_voltage'
 gem 'pg'
 gem 'pundit'
 gem 'slim-rails'
+gem 'bcrypt', '~> 3.1.11'
 group :development do
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem 'better_errors'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
