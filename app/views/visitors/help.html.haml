@@ -1,0 +1,27 @@
+.row
+  #help_search_container.row.content-area
+    .col-xs-12.text-center
+      %br
+      %h2
+        Search for a topic
+      = form_tag('/help/search', method: 'POST', id: 'help_search', remote: true) do
+        #search_box.input-group
+          - if @keywords
+            %input#search-for-a-topic.form-control{name: 'keywords', placeholder: "Enter keywords", type: "text", value: @keywords}/
+          - else
+            %input#search-for-a-topic.form-control{name: 'keywords', placeholder: "Enter keywords", type: "text"}/
+          %span#search_button.input-group-addon
+
+%br/
+%br/
+
+#search_results.row.content-area
+  .col-xs-12.text-center
+    .size-h4
+      e.g. "gas", "moving premises"
+  %br/
+  %br/
+
+$('#help_search').submit(function(event) { $('#search_results .size-h4').html('Searching...'); });
+$('#search_button').click(function(event) { $('form#help_search').submit(); });
+

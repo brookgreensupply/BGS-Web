@@ -6,7 +6,8 @@
   .col-xs-2.col-xs-offset-8
     #hamburger
       .table-row
-        %span.glyphicon.glyphicon-search.search.table-cell
+        %a{href: help_path}
+          %span.glyphicon.glyphicon-search.search.table-cell
         %a.navbar-toggle.table-cell{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
           %span.glyphicon.glyphicon-menu-hamburger
       %br
@@ -26,4 +27,5 @@
         %li
           = link_to 'Contact', slug_to_url('contact')
         %li.search
-          %span.glyphicon.glyphicon-search
+          %a{href: help_path}
+            %span.glyphicon.glyphicon-search
