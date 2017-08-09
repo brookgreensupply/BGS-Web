@@ -13,11 +13,17 @@
   .col-xs-12.col-lg-9.col-lg-offset-1.full-width-until-navbar-border
     .navbar-links.navbar-collapse.collapse
       %ul
-        %li Sector
-        %li Products
-        %li Support
-        %li Market Updates
-        %li About
-        %li Contact
+        %li
+          = link_to 'Sector', slug_to_url('sector')
+        %li
+          = link_to 'Products', slug_to_url('products')
+        %li
+          = link_to 'Support', slug_to_url('support')
+        %li
+          = link_to 'Market Updates', slug_to_url('market-updates')
+        %li
+          = link_to 'About', slug_to_url('about')
+        %li
+          = link_to 'Contact', slug_to_url('contact')
         %li.search
           %span.glyphicon.glyphicon-search

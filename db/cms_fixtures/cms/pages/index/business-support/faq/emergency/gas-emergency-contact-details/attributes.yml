@@ -1,0 +1,9 @@
+---
+label: Gas Emergency contact details
+layout: basic
+parent: emergency
+target_page: 
+categories:
+- L4 Pages
+is_published: true
+position: 2

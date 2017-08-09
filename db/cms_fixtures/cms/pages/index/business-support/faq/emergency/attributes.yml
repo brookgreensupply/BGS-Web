@@ -1,0 +1,9 @@
+---
+label: Emergency
+layout: basic
+parent: faq
+target_page: 
+categories:
+- L3 Pages
+is_published: true
+position: 4

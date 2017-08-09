@@ -7,36 +7,53 @@
             .footer-links
               .links-header Business support
               %ul
-                %li How to switch supplier
-                %li How to read your energy invoice
-                %li Understanding energy costs
-                %li Moving premises
-                %li Making a complaint
-                %li Gas emergency
+                %li
+                  = link_to 'How to switch supplier', slug_to_url('how-to-switch')
+                %li
+                  = link_to 'How to read your energy invoice', slug_to_url('your-energy-invoice')
+                %li
+                  = link_to 'Understanding energy costs', slug_to_url('understanding-costs')
+                %li
+                  = link_to 'Moving premises', slug_to_url('moving-premises')
+                %li
+                  = link_to 'Making a complaint', slug_to_url('making-a-complaint')
+                %li
+                  = link_to 'Gas emergency', slug_to_url('gas-emergency')
           .col-sm-5.col-sm-offset-2.col-lg-3.col-lg-offset-0.col-lg-push-3
             .footer-links
               .links-header FAQ &amp; Forms
               %ul
-                %li Forms and guides to download
-                %li Energy FAQs
-                %li Electricity &amp; gas glossary
-                %li Terms &amp; conditions
-                %li Deemed rates
+                %li
+                  = link_to 'Forms and guides to download', slug_to_url('downloads')
+                %li
+                  = link_to 'Energy FAQs', slug_to_url('faq')
+                %li
+                  = link_to 'Electricity & gas glossary', slug_to_url('glossary')
+                %li
+                  = link_to 'Terms & conditions', slug_to_url('terms-and-conditions')
+                %li
+                  = link_to 'Deemed rates', slug_to_url('deemed-rates')
                 %li &nbsp;
           .col-sm-5.col-lg-3.col-lg-pull-6
             .footer-links.products
               .links-header Products
               %ul
-                %li Business Electricity Supply
-                %li Business Gas Supply
-                %li Additional commercial energy products
+                %li
+                  = link_to 'Business Electricity Supply', slug_to_url('electricity')
+                %li
+                  = link_to 'Business Gas Supply', slug_to_url('gas')
+                %li
+                  = link_to 'Additional commercial energy products', slug_to_url('other-products')
           .col-sm-5.col-sm-offset-2.col-lg-3.col-lg-offset-0
             .footer-links
               .links-header About
               %ul
-                %li Our origins
-                %li Brook Green Supply careers
-                %li Contact us
+                %li
+                  = link_to 'Our origins', slug_to_url('about')
+                %li
+                  = link_to 'Brook Green Supply careers', slug_to_url('careers')
+                %li
+                  = link_to 'Contact us', slug_to_url('contact')
 
 #bottom-text
   .container-fluid.cover
@@ -54,12 +71,12 @@
               %br/
               80 Hammersmith Road, London W14 8UD, UK
               %br/
-              = link_to '#' do
+              = link_to slug_to_url('site-matters') do
                 Brook Green Supply site matters
               &nbsp;|&nbsp;
-              = link_to '#' do
+              = link_to slug_to_url('privacy') do
                 Privacy
               &nbsp;|&nbsp;
-              = link_to '#' do
+              = link_to slug_to_url('contact') do
                 Contact
 

@@ -10,24 +10,24 @@
             %h2 What are your business needs?
         .col-sm-6.no-padding-left-right
           %h3.before-caption Small business
-          %a{href: '#'}
+          = link_to slug_to_url('small-business-electricity-supply') do
             .photo-with-caption.sector-photo
               = image_tag asset_path('stock/173900235.jpg'), id: 'small-business-photo', class: 'sector-photo'
               .caption
                 .blur.sector-photo
                 .caption-text
                   %p Some text to do with small businesses goes here.
-                  %a.more-info{href: '#'} Find Out More
+                  %a.more-info{href: slug_to_url('small-business-electricity-supply')} Find Out More
         .col-sm-6.no-padding-left-right
           %h3.before-caption Corporate &amp; Industrial
-          %a{href: '#'}
+          = link_to slug_to_url('large-business') do
             .photo-with-caption.sector-photo
               = image_tag asset_path('stock/507851977.jpg'), id: 'corporate-industrial-photo', class: 'sector-photo'
               .caption
                 .blur.sector-photo
                 .caption-text
                   %p Some text to for the Corporate &amp; Industrial sector.
-                  %a.more-info{href: '#'} Find Out More
+                  %a.more-info{href: slug_to_url('large-business')} Find Out More
         .col-xs-12.spacer
 
 .full-width-cta.bg-blue-purple
