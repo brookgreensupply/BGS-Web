@@ -25,15 +25,23 @@
 }
 
 .hero-home {
-  background: image-url('hero-bg-blade1.svg');
+  background: image-url('hero-bg-blade.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .hero-electricity {
-  background: image-url('hero-bg-electric.svg');
+  background: image-url('hero-bg-blade-electric.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.hero-gas {
+  background: image-url('hero-bg-blade-gas.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
