@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   end
 
   comfy_route :cms_admin, :path => '/admin'
-  comfy_route :cms, :path => '/cms', :sitemap => false
+  comfy_route :cms, :path => '/cms', :sitemap => true
 end
