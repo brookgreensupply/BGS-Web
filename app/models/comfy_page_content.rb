@@ -5,7 +5,7 @@ class ComfyPageContent < ActiveRecord::Base
   self.table_name = 'comfy_cms_blocks'
 
   default_scope {
-    searchable = ['content', 'meta_description', 'main_banner']
+    searchable = ['content', 'meta_description', 'preview']
     where(blockable_type: 'Comfy::Cms::Page').where('identifier IN (?)', searchable).joins \
       'INNER JOIN comfy_cms_pages p ON blockable_id = p.id AND is_published'
   }
@@ -14,7 +14,7 @@ class ComfyPageContent < ActiveRecord::Base
 
   def self.search(string)
     results = advanced_search(string)
-    tagged = results.map(&:page).reject { |p| Comfy::Cms::Categorization.where(categorized_id: p.id).empty? }
+    tagged = results.map(&:page).reject { |p| p.categories.map(&:label).include? 'Not Searchable' }
     slugs = tagged.map { |p| p.slug }.uniq
     most_recent_pages = slugs.map { |s|
       Comfy::Cms::Page.where('is_published').where(slug: s).order('created_at DESC').first

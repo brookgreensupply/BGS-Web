@@ -6,9 +6,11 @@
   <body>
     <h1><%= @type.camelcase %> quote request</h1>
     <p>
+      <table>
       <% @hash.keys.each do |key| %>
         <tr> <td><%= key %>: </td><td><%= @hash[key] %></td> </tr>
       <% end %>
+      </table>
     </p>
   </body>
 </html>
