@@ -7,7 +7,7 @@
     <h1><%= @type.camelcase %> quote request</h1>
     <p>
       <% @hash.keys.each do |key| %>
-        <tr> <td><%= key %></td><td><%= @hash[key] %></td> </tr>
+        <tr> <td><%= key %>: </td><td><%= @hash[key] %></td> </tr>
       <% end %>
     </p>
   </body>
