@@ -1,5 +1,6 @@
 class LeadsMailer < ActionMailer::Base
   default to: ::EmailsForLeads
+  default from: "admin@#{Rails.application.secrets.domain_name}"
 
   def email(type, hash)
     @type = type
