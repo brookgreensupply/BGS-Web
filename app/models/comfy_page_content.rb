@@ -29,7 +29,7 @@ class ComfyPageContent < ActiveRecord::Base
   end
 
   def self.searchable_columns
-    ['content']
+    ['content', 'meta_description']
   end
 
   def title
