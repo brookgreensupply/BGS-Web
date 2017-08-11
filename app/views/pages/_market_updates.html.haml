@@ -1,6 +1,7 @@
 - updates = Comfy::Cms::Page.for_category("Market Update").published
+- sorted = updates.sort_by(&:created_at).reverse
 %ul
-  - updates.each do |update|
+  - sorted.each do |update|
     %li
       %h4= update.label
       - preview_block = update.blocks.select {|b| b.identifier == 'preview'}.first
