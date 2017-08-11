@@ -5,6 +5,6 @@ class LeadsMailer < ActionMailer::Base
   def email(type, hash)
     @type = type
     @hash = hash
-    mail(subject: "new website request for #{type} quote")
+    mail(subject: "[#{Rails.application.secrets.domain_name}] #{type} quote request")
   end
 end
