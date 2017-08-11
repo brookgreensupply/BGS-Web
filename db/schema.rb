@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630033622) do
+ActiveRecord::Schema.define(version: 20170811131500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,24 +174,38 @@ ActiveRecord::Schema.define(version: 20170630033622) do
 
   create_table "gas_products", id: false, force: :cascade do |t|
     t.integer  "matrix_id"
+    t.string   "end_user_category"
+    t.string   "distribution_zone"
+    t.string   "exit_zone"
+    t.integer  "lower_limit_aq"
+    t.integer  "upper_limit_aq"
+    t.integer  "estimated_aq"
+    t.string   "broker"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "duration"
-    t.string   "distribution_area"
-    t.string   "rate_name"
     t.decimal  "rate",                 precision: 8, scale: 4
     t.decimal  "standing_charge_rate", precision: 8, scale: 4
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
-    t.index ["distribution_area"], name: "index_gas_products_on_distribution_area", using: :btree
+    t.index ["distribution_zone"], name: "index_gas_products_on_distribution_zone", using: :btree
     t.index ["matrix_id"], name: "index_gas_products_on_matrix_id", unique: true, using: :btree
   end
 
   create_table "gas_products_upload", id: false, force: :cascade do |t|
-    t.integer  "matrix_id",                                    null: false
-    t.integer  "duration",                                     null: false
-    t.string   "distribution_area",                            null: false
-    t.string   "rate_name",                                    null: false
-    t.decimal  "rate",                 precision: 8, scale: 4, null: false
-    t.decimal  "standing_charge_rate", precision: 8, scale: 4, null: false
+    t.integer  "matrix_id"
+    t.string   "end_user_category"
+    t.string   "distribution_zone"
+    t.string   "exit_zone"
+    t.integer  "lower_limit_aq"
+    t.integer  "upper_limit_aq"
+    t.integer  "estimated_aq"
+    t.string   "broker"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "duration"
+    t.decimal  "rate",                 precision: 8, scale: 4
+    t.decimal  "standing_charge_rate", precision: 8, scale: 4
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
