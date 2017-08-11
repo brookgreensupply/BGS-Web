@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "/help", to: "visitors#help"
   post "/help/search", to: "visitors#help_search", as: 'help_search'
 
+  post "/email/leads/electricity", to: "leads#electricity"
+  post "/email/leads/gas", to: "leads#gas"
+
   resources :quotes
 
   authenticate :user, lambda { |u| u.admin? } do

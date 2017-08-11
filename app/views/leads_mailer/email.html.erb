@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @type.camelcase %> quote request</h1>
+    <p>
+      <% @hash.keys.each do |key| %>
+        <tr> <td><%= key %></td><td><%= @hash[key] %></td> </tr>
+      <% end %>
+    </p>
+  </body>
+</html>
