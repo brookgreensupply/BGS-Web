@@ -4,7 +4,8 @@
     %li
       %h4= page.label
       - preview_block = page.blocks.select {|b| b.identifier == 'preview'}.first
-      %div
-        != preview_block.content
+      - if preview_block
+        %div
+          != preview_block.content
       %a{href: page.url}
         Read more
