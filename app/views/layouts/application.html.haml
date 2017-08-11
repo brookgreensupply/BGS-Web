@@ -6,10 +6,9 @@
     %meta{"name" => "viewport", :content => "width=device-width, initial-scale=1.0"}/
     %title
       = content_for?(:title) ? yield(:title) : 'Brook Green Supply'
-    / %meta{"name" => "description", "content" => ""}/
-    / %meta{"name" => "author", "content" => ""}/
-    / %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
-    %meta{"name" => "description", "content" => "#{content_for?(:description) ? yield(:description) : 'Brook Green Supply'}"}
+    - meta_description = cms_block_content(:meta_description)
+    - meta_description = 'Brook Green Supply' if meta_description.blank?
+    %meta{"name" => "description", "content" => meta_description}
     = stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
 
