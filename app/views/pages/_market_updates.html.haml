@@ -1,6 +1,6 @@
 - updates = Comfy::Cms::Page.for_category("Market Update").published
 %ul
-  - updates.each do |page|
+  - updates.each do |update|
     %li
       %h4= update.label
       - preview_block = update.blocks.select {|b| b.identifier == 'preview'}.first
