@@ -1,4 +1,4 @@
-- pages = Comfy::Cms::Page.for_category("FAQ-#{param_1}")
+- pages = Comfy::Cms::Page.for_category("FAQ-#{param_1}").published
 %ul
   - pages.each do |page|
     %li

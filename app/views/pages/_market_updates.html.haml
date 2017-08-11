@@ -1,0 +1,13 @@
+- updates = Comfy::Cms::Page.for_category("Market Update").published
+%ul
+  - updates.each do |page|
+    %li
+      %h4= update.label
+      - preview_block = update.blocks.select {|b| b.identifier == 'preview'}.first
+      - if preview_block
+        %div
+          != preview_block.content
+      %a{href: update.url}
+        Read more
+      %hr
+
