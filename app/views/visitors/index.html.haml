@@ -8,7 +8,7 @@
         .col-xs-12
           .header-text
             %h2 What are your business needs?
-        .col-sm-6.no-padding-left-right
+        .col-sm-4.col-sm-offset-2.no-padding-left-right
           %h3.before-caption Small business
           = link_to slug_to_url('small-business-electricity-supply') do
             .photo-with-caption.sector-photo
@@ -18,7 +18,7 @@
                 .caption-text
                   %p Some text to do with small businesses goes here.
                   %a.more-info{href: slug_to_url('small-business-electricity-supply')} Find Out More
-        .col-sm-6.no-padding-left-right
+        .col-sm-4.no-padding-left-right
           %h3.before-caption Corporate &amp; Industrial
           = link_to slug_to_url('large-business') do
             .photo-with-caption.sector-photo
@@ -35,7 +35,7 @@
     Are you a small business? Click here to get a quote in 2 minutes &gt;
 
 .full-width-image-block
-  = image_tag asset_path('stock/538359264.jpg')
+  = image_tag asset_path('fw-images/stocks.jpg')
 
 .text-block
   .container-fluid
@@ -47,4 +47,48 @@
         .sub-h2
           We provide the business energy market with the best service whilst maintaining its ability
           to supply electricity and gas at highly competitive prices.
+      .col-sm-3.col-sm-offset-1.no-padding-left-right
+        = image_tag asset_path('icons/partnerships.svg'), id: 'partnerships-icon', height: 200
+        %h3 Partnerships
+        %p.center_80
+          Across our business, we work with best-in-class third parties to ensure a high level
+          of service throughout your journey.
+      .col-sm-4.no-padding-left-right
+        = image_tag asset_path('icons/industry-expertise.svg'), id: 'industry-expertise-icon', height: 200
+        %h3 Industry Expertise
+        %p.center_80
+          The Brook Green Supply team is comprised of experienced individuals stemming across
+          settlements, operations, marketing and trading.
+      .col-sm-3.no-padding-left-right
+        = image_tag asset_path('icons/business-support.svg'), id: 'business-support-icon', height: 200
+        %h3 Business Support
+        %p.center_80
+          Our UK based support team aims to provide customers with immediate solutions and answers
+          in relation to their energy supply.
 
+.full-width-cta.bg-blue-blue
+  %a{href: '/quotes/new'}
+    Find out more reasons why you should choose us &gt;
+
+.full-width-cta.bg-switch
+  .container-fluid
+    .row.text-center
+      .col-xs-6.col-xs-offset-3.table-row
+        #easy_to_switch_icon
+          = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
+        #easy_to_switch_text
+          %h2 It's easy to switch
+          .sub-h2
+            Move your electricity and gas
+            %br
+            to Brook Green Supply today.
+            %br
+          %p
+            Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions.
+            Our team of energy specialists will work with you to ensure that we meet your gas
+            and electricity supply needs at the best price.
+          %p
+            %a.more-info{href: slug_to_url('switch')} Get Started &gt;
+
+.full-width-image-block
+  = image_tag asset_path('fw-images/cinema.jpg')

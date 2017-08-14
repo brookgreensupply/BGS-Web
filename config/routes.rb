@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
   root to: 'visitors#index'
 
+  get "/graphics/hero", to: "graphics#hero", format: :svg
+
   get "/help", to: "visitors#help"
   post "/help/search", to: "visitors#help_search", as: 'help_search'
 

@@ -6,3 +6,21 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.full-width-cta.bg-blue-blue {
+  padding: 20px 30px;
+  color: white;
+  background: image-url('cta-bg-blue-blue.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.full-width-cta.bg-switch {
+  padding: 20px 30px;
+  color: black;
+  background: image-url('cta-bg-switch.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
