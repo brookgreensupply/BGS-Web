@@ -74,21 +74,20 @@
   .container-fluid
     .row.text-center
       .col-xs-6.col-xs-offset-3.table-row
-        #easy_to_switch_icon
-          = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
-        #easy_to_switch_text
-          %h2 It's easy to switch
-          .sub-h2
-            Move your electricity and gas
-            %br
-            to Brook Green Supply today.
-            %br
-          %p
-            Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions.
-            Our team of energy specialists will work with you to ensure that we meet your gas
-            and electricity supply needs at the best price.
-          %p
-            %a.more-info{href: slug_to_url('switch')} Get Started &gt;
+        .row
+          #easy_to_switch_icon.col-md-2
+            = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
+          #easy_to_switch_text.col-md-8.col-md-offset-2
+            %h2 It's easy to switch
+            .sub-h2
+              Move your electricity and gas
+              to Brook Green Supply today.
+            %p
+              Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions.
+              Our team of energy specialists will work with you to ensure that we meet your gas
+              and electricity supply needs at the best price.
+            %p
+              %a.more-info{href: slug_to_url('switch')} Get Started &gt;
 
 .full-width-image-block
   = image_tag asset_path('fw-images/cinema.jpg')
