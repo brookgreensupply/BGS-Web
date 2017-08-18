@@ -7,7 +7,8 @@
   %br/
   = submit_tag "Upload CSV"
 
-%h3 Current prices [latest update: #{ElectricityProduct.all.max_by(&:created_at).created_at}]
+- most_recent_product = ElectricityProduct.all.max_by(&:created_at)
+%h3 Current prices [latest update: #{most_recent_product.created_at if most_recent_product}]
 
 %p
   Sort by:
