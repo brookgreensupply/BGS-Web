@@ -1,0 +1,35 @@
+.container-fluid
+  .row
+    .col-xs-12
+      - if @quote.product_type == 'electricity'
+        %table.table.table-responsive.table-striped
+          %tr
+            %th
+              Product name
+            %th
+              Standing charge
+            - if @products.first && @products.first['profile_class'] == 4
+              %th
+                Unit rate (day)
+              %th
+                Unit rate (night)
+            - else
+              %th
+                Unit rate
+            %th
+              Contract length
+            %th
+              Product code
+          - @products.each do |product|
+            %tr
+              %td= product['rate1_name']
+              %td= product['standing_charge_rate'] + " p/day"
+              %td= product['rate1'] + " p/kWh"
+              - if product['profile_class'] == 4
+                %td= product['rate2'] + " p/kWh"
+              - duration = product['duration']
+              %td= "#{duration} #{duration == 1 ? ' year' : ' years'}"
+              %td= product['matrix_id']
+
+      - elsif @quote.product_type == 'gas'
+

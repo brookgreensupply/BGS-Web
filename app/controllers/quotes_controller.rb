@@ -25,15 +25,27 @@ class QuotesController < ApplicationController
     end
     @quote.mprn = nil if @quote.product_type == 'electricity'
     @quote.mpan = nil if @quote.product_type == 'gas'
-    if @quote.save && false
+
+    products = if @quote.product_type == 'electricity'
+      pc = @quote.mpan[0..1]
+      distributor_id = @quote.mpan[8..9]
+      ElectricityProduct.profile_class(pc.to_i).area(distributor_id.to_i)
+    elsif @quote.product_type == 'gas'
+
+    end
+    @quote.presented_products = products.to_json
+
+    if products && !products.empty? && @quote.save
       redirect_to action: 'show', id: @quote.id
     else
-      flash[:alert] = 'Please try again'
+      flash[:alert] = 'Sorry, no relevant products'
       redirect_to action: 'new', postcode: @quote.postcode, product_type: @quote.product_type
     end
   end
 
   def show
+    @quote = Quote.find(params[:id])
+    @products = JSON.parse @quote.presented_products
   end
 
   private
