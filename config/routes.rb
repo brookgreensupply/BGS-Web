@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     get 'features', to: "feature_flipper#index", as: :features_admin
     put 'features/:feature/flip', to: "feature_flipper#flip", as: :feature_flip
     resources :products
+    put 'products/electricity/prices', to: "products#update_electricity_prices", as: :new_electricity_prices
+    put 'products/gas/prices', to: "products#update_gas_prices", as: :new_gas_prices
   end
 
   comfy_route :cms_admin, :path => '/admin'
