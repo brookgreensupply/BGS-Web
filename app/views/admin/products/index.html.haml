@@ -10,13 +10,6 @@
 - most_recent_product = ElectricityProduct.all.max_by(&:created_at)
 %h3 Current prices [latest update: #{most_recent_product.created_at if most_recent_product}]
 
-%p
-  Sort by:
-  %button.sort{data: {sort: "area"}}
-    area
-  %button.sort{data: {sort: "duration"}}
-    duration
-
 %table.table.table-striped.table-hover.table-bordered
   %thead.list
     %tr
@@ -37,14 +30,24 @@
 
 %h3 Update prices
 
-= form_tag '/', multipart: true do
+= form_tag admin_new_gas_prices_path, method: :put, multipart: true do
   = file_field_tag :file, accept: "text/csv"
   %br/
   = submit_tag "Upload CSV"
 
-%h3 Current prices
+- most_recent_product = GasProduct.all.max_by(&:created_at)
+%h3 Current prices [latest update: #{most_recent_product.created_at if most_recent_product}]
 
 %table.table.table-striped.table-hover.table-bordered
+  %thead.list
+    %tr
+      %th Matrix id
+      %th Distribution zone
+      %th Contract length
+      %th Lower AQ limit
+      %th Upper AQ limit
+      %th Standing charge
+      %th Unit rate
   %tbody.list
     - @gas_products.each_with_index do |product, idx|
       %tr

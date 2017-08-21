@@ -18,6 +18,15 @@ class Admin::ProductsController < Comfy::Admin::Cms::BaseController
   end
 
   def update_gas_prices
+    begin
+      csv = File.read(params[:file].path).gsub(/\r\n?/, "\n")
+      GasProductUpload.start(csv)
+      GasProductUpload.finish
+      flash[:notice] = 'New gas prices available'
+    rescue => e
+      Rails.logger.warn e.inspect
+      flash[:alert] = 'Unable to process gas prices CSV'
+    end
     redirect_to action: 'index'
   end
 end
