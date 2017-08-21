@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811131500) do
+ActiveRecord::Schema.define(version: 20170821144652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,15 @@ ActiveRecord::Schema.define(version: 20170811131500) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true, using: :btree
+  end
+
+  create_table "gas_postcodes", id: false, force: :cascade do |t|
+    t.string   "postcode"
+    t.string   "zone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postcode"], name: "index_gas_postcodes_on_postcode", unique: true, using: :btree
+    t.index ["zone"], name: "index_gas_postcodes_on_zone", using: :btree
   end
 
   create_table "gas_products", id: false, force: :cascade do |t|
