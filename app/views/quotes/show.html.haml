@@ -32,4 +32,31 @@
               %td= product['matrix_id']
 
       - elsif @quote.product_type == 'gas'
+        %table.table.table-responsive.table-striped
+          %tr
+            %th
+              Product code
+            %th
+              Distribution zone
+            %th
+              Contract length
+            %th
+              Standing charge
+            %th
+              Unit rate
+            %th
+              Lower AQ limit
+            %th
+              Upper AQ limit
+          - @products.each do |product|
+            %tr
+              %td= product['matrix_id']
+              - gas_postcode = GasPostcode.lookup(@quote.postcode)
+              %td= gas_postcode.zone if gas_postcode
+              - duration = product['duration']
+              %td= "#{duration} #{duration == 1 ? ' year' : ' years'}"
+              %td= product['standing_charge_rate'] + " p/day"
+              %td= product['rate'] + " p/kWh"
+              %td= product['lower_limit_aq']
+              %td= product['upper_limit_aq']
 

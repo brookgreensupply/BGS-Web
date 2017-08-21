@@ -31,7 +31,17 @@ class QuotesController < ApplicationController
       distributor_id = @quote.mpan[8..9]
       ElectricityProduct.profile_class(pc.to_i).area(distributor_id.to_i)
     elsif @quote.product_type == 'gas'
-
+      gas_postcode = GasPostcode.lookup @quote.postcode
+      if gas_postcode
+        @zone = gas_postcode.zone
+        if @quote.cost
+          GasProduct.zone(@zone).spend(@quote.cost)
+        else
+          GasProduct.zone(@zone).usage(@quote.usage)
+        end
+      else
+        []
+      end
     end
     @quote.presented_products = products.to_json
 
