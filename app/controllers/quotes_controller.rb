@@ -34,10 +34,17 @@ class QuotesController < ApplicationController
       gas_postcode = GasPostcode.lookup @quote.postcode
       if gas_postcode
         @zone = gas_postcode.zone
+        multiply_by = case @quote.usage_or_cost_period
+          when 'year' then 1
+          when 'six_months' then 2
+          when 'quarter' then 4
+          when 'month' then 12
+          else 1
+        end
         if @quote.cost
-          GasProduct.zone(@zone).spend(@quote.cost)
+          GasProduct.zone(@zone).spend(multiply_by*@quote.cost)
         else
-          GasProduct.zone(@zone).usage(@quote.usage)
+          GasProduct.zone(@zone).usage(multiply_by*@quote.usage)
         end
       else
         []
