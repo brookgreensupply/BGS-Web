@@ -1,8 +1,17 @@
+h1 { font-family: 'Gotham-Medium'; color: #312783; }
+
+h2 { font-family: 'Gotham-Medium'; color: #312783; }
+
 h3 { font-family: 'Gotham-Medium'; color: #312783; }
 
 .summary { 
   font-size: 64px;
   font-family: 'Gotham-Medium';
   color: #312783;
+  line-height: 1.5;
+}
+
+.emergency { 
+  color: #951b81;
   line-height: 1.5;
 }
