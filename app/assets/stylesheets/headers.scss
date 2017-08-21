@@ -1,8 +1,36 @@
-h1 { font-family: 'Gotham-Medium'; color: #312783; }
+h1 { 
+  font-family: 'Gotham-Medium';
+  font-size: 36px;
+  font-weight:700;
+  color: #312783;
+}
 
-h2 { font-family: 'Gotham-Medium'; color: #312783; }
+h2 { 
+  font-family: 'Gotham-Medium';
+  font-size: 32px;
+  font-weight:400;
+  color: #312783;
+}
 
-h3 { font-family: 'Gotham-Medium'; color: #312783; }
+h3 { 
+  font-family: 'Gotham-Medium';
+  font-size: 28px;
+  font-weight:400;
+  color: #312783;
+}
+
+h4 { 
+  font-family: 'Gotham-Medium';
+  font-size: 24px;
+  font-weight:400;
+  color: #312783;
+}
+
+.heroheader { 
+  font-size: 125%;
+  color: #fff;
+  line-height: 1.5;
+}
 
 .summary { 
   font-size: 64px;
