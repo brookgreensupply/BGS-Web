@@ -5,25 +5,23 @@
 .gas { color: #951b81; }
 
 .link {
-    font-family: "Gotham-medium";
-    color: #951b81;
-    font-weight: 500;
-    font-size: 18px;
-    }
+  @extend .font-emphasis, .font-size-normal;
+  color: #951b81;
+  font-weight: 500;
+}
 
 .ctctxt {
-    color: #FFF;
+  color: #FFF;
 }
 
 .ctclink {
-    font-family: "Gotham-medium";
-    color: #FFF;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.2;
+  @extend .font-emphasis, .font-size-large;
+  color: #FFF;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .list {
-    font-size: 18px;
-    line-height: 1.5;
+  @extend .font-size-normal;
+  line-height: 1.5;
 }

@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  font-family: 'Gotham-Book';
+  @extend .font-primary, .font-size-normal;
 }
 
 #main {
@@ -62,7 +62,7 @@ p.center_80 {
 
 .full-width-cta {
   text-align: center;
-  font-size: 1.5em;
+  @extend .font-size-h3;
 }
 
 .full-width-cta a {
@@ -74,7 +74,7 @@ p.center_80 {
   max-width: 600px;
   p {
     padding-top: 20px;
-    font-size: 0.8em;
+    @extend .font-size-small;
   }
 }
 

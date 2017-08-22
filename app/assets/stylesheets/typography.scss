@@ -1,40 +1,52 @@
 @font-face {
-    font-family: 'Gotham-Light';
-    src: font-url('Gotham-Light.otf') format('opentype');
+  font-family: 'Gotham-Light';
+  src: font-url('Gotham-Light.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Light-Italic';
-    src: font-url('Gotham-LightItalic.otf') format('opentype');
+  font-family: 'Gotham-Light-Italic';
+  src: font-url('Gotham-LightItalic.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Medium';
-    src: font-url('Gotham-Medium.otf') format('opentype');
+  font-family: 'Gotham-Medium';
+  src: font-url('Gotham-Medium.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Medium-Italic';
-    src: font-url('Gotham-MediumItalic.otf') format('opentype');
+  font-family: 'Gotham-Medium-Italic';
+  src: font-url('Gotham-MediumItalic.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Book';
-    src: font-url('Gotham-Book.otf') format('opentype');
+  font-family: 'Gotham-Book';
+  src: font-url('Gotham-Book.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Book-Italic';
-    src: font-url('Gotham-BookItalic.otf') format('opentype');
+  font-family: 'Gotham-Book-Italic';
+  src: font-url('Gotham-BookItalic.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Bold';
-    src: font-url('Gotham-Bold.otf') format('opentype');
+  font-family: 'Gotham-Bold';
+  src: font-url('Gotham-Bold.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Gotham-Bold-Italic';
-    src: font-url('Gotham-BoldItalic.otf') format('opentype');
+  font-family: 'Gotham-Bold-Italic';
+  src: font-url('Gotham-BoldItalic.otf') format('opentype');
 }
 
+.font-primary  { font-family: 'Gotham Light', 'Gotham-Light', sans-serif; }
+.font-emphasis { font-family: 'Gotham Medium', 'Gotham-Medium', sans-serif; }
+.font-system   { font-family: 'Calibri', sans-serif; }
+
+.font-size-normal { font-size: $font-size-base;  }
+.font-size-large  { font-size: 1.34em; }
+.font-size-small  { font-size: 0.78em; }
+
+.font-size-h1  { font-size: 2.00em; }
+.font-size-h2  { font-size: 1.80em; }
+.font-size-h3  { font-size: 1.60em; }
+.font-size-h4  { font-size: 1.34em; }

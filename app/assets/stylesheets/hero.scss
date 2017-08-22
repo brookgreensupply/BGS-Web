@@ -19,8 +19,8 @@
 }
 
 .hero-main .hero-p {
+  @extend .font-size-normal;
   padding: 40px 20px 0px 20px;
-  font-size: 1.2em;
   line-height: 1.5;
 }
 

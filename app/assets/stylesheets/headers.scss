@@ -1,51 +1,46 @@
-h1 { 
-  font-family: 'Gotham-Medium';
-  font-size: 36px;
+h1 {
+  @extend .font-emphasis, .font-size-h1;
   font-weight:700;
   color: #312783;
 }
 
-h2 { 
-  font-family: 'Gotham-Medium';
-  font-size: 32px;
+h2 {
+  @extend .font-emphasis, .font-size-h2;
   font-weight:400;
   color: #312783;
 }
 
-h3 { 
-  font-family: 'Gotham-Medium';
-  font-size: 28px;
+h3 {
+  @extend .font-emphasis, .font-size-h3;
   font-weight:400;
   color: #312783;
 }
 
-h4 { 
-  font-family: 'Gotham-Medium';
-  font-size: 24px;
+h4 {
+  @extend .font-emphasis, .font-size-h4;
   font-weight:400;
   color: #312783;
   line-height: inherit;
 }
 
-.h1heroheader { 
-  font-size: 46px;
+.h1heroheader {
+  font-size: 2.56em;
   color: #fff;
   line-height: 1.5;
 }
 
-.h3heroheader { 
+.h3heroheader {
   color: #fff;
   line-height: 1.5;
 }
 
-.summary { 
-  font-size: 24px;
-  font-family: 'Gotham-Medium';
+.summary {
+  @extend .font-emphasis, .font-size-large;
   color: #312783;
   line-height: 1.5;
 }
 
-.emergency { 
+.emergency {
   color: #D83553;
   line-height: 1.5;
 }
