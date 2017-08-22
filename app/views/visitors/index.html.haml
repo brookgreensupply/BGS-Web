@@ -10,14 +10,14 @@
             %h2 What are your business needs?
         .col-md-4.col-md-offset-2.no-padding-left-right
           %h3.before-caption Small business
-          = link_to slug_to_url('small-business-electricity-supply') do
+          = link_to slug_to_url('small-business') do
             .photo-with-caption.sector-photo
               = image_tag asset_path('stock/173900235.jpg'), id: 'small-business-photo', class: 'sector-photo'
               .caption
                 .blur.sector-photo
                 .caption-text
                   %p Some text to do with small businesses goes here.
-                  %a.more-info{href: slug_to_url('small-business-electricity-supply')} Find Out More
+                  %a.more-info{href: slug_to_url('small-business')} Find Out More
         .col-md-4.no-padding-left-right
           %h3.before-caption Corporate &amp; Industrial
           = link_to slug_to_url('large-business') do
@@ -87,7 +87,7 @@
               Our team of energy specialists will work with you to ensure that we meet your gas
               and electricity supply needs at the best price.
             %p
-              %a.more-info{href: slug_to_url('switch')} Get Started &gt;
+              %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get Started &gt;
 
 .full-width-image-block
   = image_tag asset_path('fw-images/cinema.jpg')
