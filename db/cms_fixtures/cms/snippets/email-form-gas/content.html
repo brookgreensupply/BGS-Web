@@ -1,0 +1,15 @@
+<h3>Whether you are a new business or considering switching energy supplier, Brook Green Supply aims to simplify the process and offer excellent price for your gas supply.</h3>
+<p>In order for us to discuss your energy requirements please call us on <a class="link">020 7870 4942</a>. Alternatively, please provide your details below and a member of our team will get back to you shortly.</p>
+<hr>
+<h3>Receive the very best gas quote today</h3><br/>
+
+<form action="/email/leads/gas" enctype="multipart/form-data" method="post" name="email-gas" id="email-gas" class="email-form">
+  <input name="authenticity_token" value="{{ cms:helper:form_authenticity_token }}" type="hidden">
+  <input name="fullname" id="fullname" value="" placeholder="Full Name" type="text" required><br/>
+  <input name="company" id="company" value="" placeholder="Company Name" type="text" required><br/>
+  <input name="telephone" id="telephone" value="" placeholder="Telephone Number" type="tel"><br/>
+  <input name="postcode" id="postcode" value="" placeholder="Company Postcode" type="text"><br/>
+  <input name="email" id="email" value="" placeholder="Email Address" type="email"><br/>
+  <input name="spend" id="spend" value="" placeholder="Estimated Annual Energy Spend" type="number"><br/>
+  <p><input name="submit" id="submit" type="submit" value="Submit" class="button"></p>
+</form>

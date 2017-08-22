@@ -1,9 +1,10 @@
 ---
 label: Smart Meter Rollout
-layout: basic
+layout: faq
 parent: meter
 target_page: 
 categories:
+- FAQ-Meter
 - L4 Pages
 is_published: true
 position: 2

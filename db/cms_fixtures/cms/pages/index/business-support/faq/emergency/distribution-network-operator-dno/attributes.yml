@@ -1,9 +1,10 @@
 ---
 label: Distribution Network Operator (DNO)
-layout: basic
+layout: faq
 parent: emergency
 target_page: 
 categories:
+- FAQ-Emergency
 - L4 Pages
 is_published: true
 position: 0
