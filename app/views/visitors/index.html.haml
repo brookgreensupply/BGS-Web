@@ -8,30 +8,23 @@
         .col-xs-12
           .header-text
             %h2.font-primary What are your business needs?
-        .col-md-4.col-md-offset-2.no-padding-left-right
-          %h3.before-caption Small business
-          = link_to slug_to_url('small-business') do
-            .photo-with-caption.sector-photo
-              = image_tag asset_path('stock/173900235.jpg'), id: 'small-business-photo', class: 'sector-photo'
-              .caption
-                .blur.sector-photo
-                .caption-text
-                  %p Some text to do with small businesses goes here.
-                  %a.more-info{href: slug_to_url('small-business')} Find Out More
-        .col-md-4.no-padding-left-right
-          %h3.before-caption Corporate &amp; Industrial
-          = link_to slug_to_url('large-business') do
-            .photo-with-caption.sector-photo
-              = image_tag asset_path('stock/507851977.jpg'), id: 'corporate-industrial-photo', class: 'sector-photo'
-              .caption
-                .blur.sector-photo
-                .caption-text
-                  %p Some text to for the Corporate &amp; Industrial sector.
-                  %a.more-info{href: slug_to_url('large-business')} Find Out More
-        .col-xs-12.spacer
 
-.full-width-cta.bg-blue-purple
-  %a{href: '/quotes/new'}
+&nbsp;
+
+= link_to slug_to_url('large-business') do
+  .full-width-cta.bg-large-business
+    %h1 Corporate &amp; Industrial
+
+&nbsp;
+
+= link_to slug_to_url('small-business') do
+  .full-width-cta.bg-small-business
+    %h1 Small business
+
+.spacer
+
+= link_to 'quotes/new' do
+  .full-width-cta.bg-blue-purple
     Are you a small business? Click here to get a quote in 2 minutes &gt;
 
 .full-width-image-block
