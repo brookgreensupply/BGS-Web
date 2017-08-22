@@ -1,6 +1,7 @@
 body {
   width: 100%;
   @extend .font-primary, .font-size-normal;
+  line-height: 1.5;
 }
 
 #main {
