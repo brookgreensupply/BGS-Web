@@ -18,6 +18,7 @@
 
 .footer-links {
   text-align: left;
+  @extend .font-size-small;
 }
 
 .footer-links.products {
@@ -28,6 +29,7 @@
 
 #bottom-text {
   padding: 24px;
+  @extend .font-size-small;
 }
 
 #bottom-text .full-until-sm-then-fixed-width {

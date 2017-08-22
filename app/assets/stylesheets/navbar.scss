@@ -1,6 +1,6 @@
 #top-nav {
   padding-top: 20px;
-  min-height: 180px;
+  min-height: 170px;
   margin: 0px;
   background: transparent;
 }
@@ -63,7 +63,7 @@
   display: block;
   padding: 10px;
   text-transform: uppercase;
-  @extend .font-size-large;
+  @extend .font-size-navbar;
   @media (min-width: $grid-float-breakpoint) {
     display: inline-block;
   }
@@ -87,7 +87,7 @@
   padding: 0px;
   overflow: hidden;
   @media (min-width: $hamburger-under-logo-breakpoint) {
-    margin-top: 68px;
+    margin-top: 36px;
   }
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 46px;
@@ -98,7 +98,7 @@
   min-width: 68px;
   margin-top: 128px;
   a {
-    @extend .font-size-large;
+    @extend .font-size-navbar;
     padding: 0px;
     color: black;
   }
@@ -127,7 +127,7 @@
 
 #top-nav ul li.search {
   padding-top: 0px;
-  @extend .font-size-large;
+  @extend .font-size-navbar;
   @media (max-width: $grid-float-breakpoint) {
     display: none;
   }
