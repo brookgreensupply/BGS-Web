@@ -9,17 +9,44 @@
           .header-text
             %h2.font-primary What are your business needs?
 
-&nbsp;
-
-= link_to slug_to_url('large-business') do
-  .full-width-cta.bg-large-business
-    %h1 Corporate &amp; Industrial
-
-&nbsp;
-
-= link_to slug_to_url('small-business') do
-  .full-width-cta.bg-small-business
-    %h1 Small business
+.row
+  .col-xs-12.content-text.text-center.carousel-col
+    #sectors_carousel.carousel.slide{data: {interval: 4000, ride: 'carousel'}}
+      %ol.carousel-indicators
+        %li.bg-color-large-business.active{data: {target: '#sectors_carousel', slide: {to: 0}}}
+        %li.bg-color-small-business{data: {target: '#sectors_carousel', slide: {to: 1}}}
+        %li.bg-color-consultants{data: {target: '#sectors_carousel', slide: {to: 2}}}
+      .carousel-inner
+        .item.active
+          = link_to slug_to_url('large-business') do
+            .sector
+              %h3 Corporate &amp; Industrial
+              %center
+                .carousel-img.sparks
+                .box
+                  %p
+                    This is some blurb
+                  .more Read about our corporate &amp; industrial products
+        .item
+          = link_to slug_to_url('small-business') do
+            .sector
+              %h3 Small &amp; Medium businesses
+              %center
+                .carousel-img.bakery
+                .box
+                  %p
+                    Simple fixed-rate electricity and gas contracts.
+                  .more Read about our SME products
+        .item
+          = link_to slug_to_url('consultants') do
+            .sector
+              %h3 Consultants
+              %center
+                .carousel-img.bakery
+                .box
+                  %p
+                    This is some blurb
+                  .more Read about how we can help
 
 .spacer
 

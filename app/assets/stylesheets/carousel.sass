@@ -1,0 +1,97 @@
+$carousel-item-width-desktop: 600px
+$carousel-item-width-tablet: 400px
+$carousel-item-width-mobile: 240px
+
+.carousel-col
+  min-height: 200px
+
+#sectors_carousel
+  margin-top: -80px
+  min-height: 240px 
+  background-repeat: no-repeat
+  background-size: cover
+  &> .carousel-inner .item .sector
+    max-width: ($carousel-item-width-mobile + 100)
+    float: none
+    margin: 0 auto
+    padding: 20px
+    padding-top: 90px
+    padding-bottom: 120px
+    @media (min-width: 470px)
+      max-width: ($carousel-item-width-tablet + 100)
+    @media (min-width: 700px)
+      max-width: ($carousel-item-width-desktop + 100)
+    &> h3
+      color: $dark-blue
+      padding-bottom: 20px
+    &> center .box
+      width: $carousel-item-width-mobile
+      padding: 10px
+      color: $light-blue
+      border-color: $light-blue
+      border-style: solid
+      border-width: 1px
+      border-radius: 0px 0px 20px 20px
+      border-top-style: none
+      @media (min-width: 470px)
+        width: $carousel-item-width-tablet
+      @media (min-width: 700px)
+        width: $carousel-item-width-desktop
+    &> center .box p
+      @extend .font-size-normal
+      color: black !important
+      line-height: 1.5
+    &> center .box .more
+      width: ($carousel-item-width-mobile - 50)
+      @media (min-width: 470px)
+        width: ($carousel-item-width-tablet - 100)
+      @media (min-width: 700px)
+        width: ($carousel-item-width-desktop - 100)
+  &> ol.carousel-indicators li
+    width: 24px
+    height: 24px
+    margin: 10px
+    border-radius: 20px
+    background-color: grey
+  &> ol.carousel-indicators li.active
+    width: 24px
+    height: 24px
+    margin: 10px
+    border-radius: 20px
+    background-color: $orange
+
+a.carousel-control
+  background-position: center center
+
+a.carousel-control.left
+  color: grey
+  background-image: image-url("carousel-prev.png")!important
+  background-repeat: no-repeat
+  background-size: 60px
+
+a.carousel-control.right
+  color: grey
+  background-image: image-url("carousel-next.png")!important
+  background-repeat: no-repeat
+  background-size: 60px
+
+.carousel-img
+  padding: 20px
+  min-height: 150px
+  width: $carousel-item-width-mobile
+  background-image: image-url("fw-images/bakery.jpg") !important
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  border-radius: 20px 20px 0px 0px
+  @media (min-width: 470px)
+    width: $carousel-item-width-tablet
+  @media (min-width: 700px)
+    width: $carousel-item-width-desktop
+
+.carousel-img.sparks
+  background-image: image-url("fw-images/sparks.jpg") !important
+
+.carousel-img.bakery
+  background-image: image-url("fw-images/bakery.jpg") !important
+
