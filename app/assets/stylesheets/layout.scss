@@ -87,11 +87,13 @@ p.center_80 {
 }
 
 #easy_to_switch_text {
-  text-align: left;
-  max-width: 600px;
+  text-align: center;
   p {
     padding-top: 20px;
     @extend .font-size-small;
+  }
+  @media (min-width: $screen-md-min) {
+    text-align: left;
   }
 }
 

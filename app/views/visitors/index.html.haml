@@ -103,21 +103,53 @@
 .full-width-cta.bg-switch
   .container-fluid
     .row.text-center
-      .col-xs-10.col-xs-offset-1.col-lg-8.col-lg-offset-2
-        .row
-          #easy_to_switch_icon.col-sm-6
-            = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
-          #easy_to_switch_text.col-sm-6
-            %h2 It's easy to switch
-            .sub-h2
-              Move your electricity and gas
-              to Brook Green Supply today.
-            %p
-              Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions.
-              Our team of energy specialists will work with you to ensure that we meet your gas
-              and electricity supply needs at the best price.
-            %p
-              %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get Started &gt;
+      .col-md-6.col-sm-12.content-text.text-center.carousel-col
+        - most_recent_updates = Comfy::Cms::Page.for_category('Market Update').sort_by(&:created_at).reverse[0..2]
+        #updates_carousel.carousel.vertical.slide{data: {interval: 4000, ride: 'carousel'}}
+          .carousel-inner
+            .item.active
+              = link_to slug_to_url(most_recent_updates.first.slug) do
+                .sector
+                  %h3= most_recent_updates.first.label
+                  %p{style: 'color: black;'}
+                    = cms_block_content(:preview, most_recent_updates.first)
+                  .more
+                    Read more
+            .item
+              = link_to slug_to_url(most_recent_updates.second.slug) do
+                .sector
+                  %h3= most_recent_updates.second.label
+                  %p{style: 'color: black;'}
+                    = cms_block_content(:preview, most_recent_updates.second)
+                  .more
+                    Read more
+            .item
+              = link_to slug_to_url(most_recent_updates.third.slug) do
+                .sector
+                  %h3= most_recent_updates.third.label
+                  %p{style: 'color: black;'}
+                    = cms_block_render(:preview, most_recent_updates.third)
+                  .more
+                    Read more
+          %a.up.carousel-control{href: '#updates_carousel', role: 'button', data: {slide: 'prev'}}
+            %span.glyphicon.glyphicon-chevron-up
+            %span.sr-only Previous
+          %a.down.carousel-control{href: '#updates_carousel', data: {slide: 'next'}}
+            %span.glyphicon.glyphicon-chevron-down
+            %span.sr-only Next
+
+      .col-md-5.col-sm-10.col-sm-offset-1
+        #easy_to_switch_text
+          %h2 It's easy to switch
+          .sub-h2
+            Move your electricity and gas
+            to Brook Green Supply today.
+          %p
+            Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions.
+            Our team of energy specialists will work with you to ensure that we meet your gas
+            and electricity supply needs at the best price.
+          %p
+            %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get Started &gt;
 
 .full-width-image-block
   = image_tag asset_path('fw-images/cinema.jpg')

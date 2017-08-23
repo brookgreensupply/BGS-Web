@@ -55,3 +55,23 @@
   background-repeat: no-repeat;
 }
 
+.full-width-cta.bg-football {
+  padding: 45px 30px;
+  min-height: 280px;
+  color: white;
+  background: image-url('fw-images/football.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.full-width-cta.bg-restaurant {
+  padding: 45px 30px;
+  min-height: 280px;
+  color: white;
+  background: image-url('fw-images/restaurant.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
