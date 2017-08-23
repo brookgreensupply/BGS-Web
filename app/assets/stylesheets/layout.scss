@@ -4,9 +4,25 @@ body {
   line-height: 1.5;
 }
 
+header {
+  position: fixed;
+  background: white;
+  width: 100%;
+  top: 0px;
+  z-index: 1000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+}
+
+#alerts { margin-top: $fixed-navbar-height; }
+
 #main {
+  margin-top: $fixed-navbar-height;
   padding-bottom: 20px;
 }
+
+#footer { margin-top: $fixed-navbar-height; }
 
 .full-width {
   width: 100%;
