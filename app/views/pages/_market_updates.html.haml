@@ -1,6 +1,6 @@
 - updates = Comfy::Cms::Page.for_category("Market Update").published
 - sorted = updates.sort_by(&:created_at).reverse
-%ul
+%ul.no-mark
   - sorted.each do |update|
     %li
       %h4= update.label
