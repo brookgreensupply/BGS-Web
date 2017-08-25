@@ -16,7 +16,7 @@ module CmsHelper
           content_tag(:div, class: "row text-center") do
             content_tag(:div, class: "col-xs-12") do
               content_tag(:div, class: "header-text") do
-                content_tag(:div, class: "h2 font-primary") do
+                content_tag(:h2, class: "font-primary") do
                   h2
                 end
               end
