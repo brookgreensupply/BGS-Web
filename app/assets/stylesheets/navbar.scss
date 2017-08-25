@@ -1,6 +1,6 @@
 #top-nav {
   padding-top: 20px;
-  min-height: 175px;
+  min-height: 125px;
   margin: 0px;
   background: transparent;
 }
@@ -10,17 +10,19 @@
 }
 
 #top-logo {
-  width: 320px;
+  width: 200px;
   padding-left: 15px;
   @media (max-width: $hamburger-under-logo-breakpoint) {
     padding-left: 0px;
   }
   @media (min-width: $grid-float-breakpoint) {
+    width: 280px;
     padding-left: 35px;
   }
 }
 
 #top-nav .full-width-until-navbar-border {
+  margin-top: -14px;
   @media (max-width: $navbar-border-breakpoint) {
     padding: 0px;
   }
@@ -86,8 +88,9 @@
 #top-nav .navbar-links {
   padding: 0px;
   overflow: hidden;
+  margin-top: 18px;
   @media (min-width: $hamburger-under-logo-breakpoint) {
-    margin-top: 36px;
+    margin-top: 18px;
   }
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 46px;
@@ -96,7 +99,7 @@
 
 #hamburger {
   min-width: 68px;
-  margin-top: 128px;
+  margin-top: 25px;
   a {
     @extend .font-size-navbar;
     padding: 0px;
@@ -106,7 +109,7 @@
     margin-left: -26px;
   }
   @media (min-width: $hamburger-under-logo-breakpoint) {
-    margin-top: 48px;
+    margin-top: 25px;
   }
   @media (min-width: $grid-float-breakpoint) {
     display: none;

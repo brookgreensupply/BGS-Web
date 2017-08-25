@@ -7,10 +7,15 @@ $carousel-item-width-mobile: 240px
 
 #sectors_carousel, #updates_carousel
   margin-top: -80px
-  min-height: 240px 
+  height: 640px
   background-repeat: no-repeat
   background-size: cover
-  &> .carousel-inner .item .sector
+  @media (min-width: 470px)
+    height: 580px
+  @media (min-width: 700px)
+    height: 550px
+  .carousel-inner .item .sector, .carousel-inner .item .update
+    max-height: 600px
     max-width: ($carousel-item-width-mobile + 100)
     float: none
     margin: 0 auto
@@ -59,6 +64,24 @@ $carousel-item-width-mobile: 240px
     margin: 10px
     border-radius: 20px
     background-color: $orange
+
+#updates_carousel
+  margin-top: -20px
+  padding-top: 30px
+  height: 600px
+  @media (min-width: 470px)
+    height: 480px
+  @media (min-width: 700px)
+    height: 350px
+  .carousel-inner .item .update
+    padding-top: 0px
+    padding-bottom: 0px
+    h3
+      font-size: 28px
+    p
+      font-size: 16px
+    .more
+      font-size: 18px
 
 a.carousel-control
   background-position: center center

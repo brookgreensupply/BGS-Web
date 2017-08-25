@@ -10,23 +10,32 @@ header {
   width: 100%;
   top: 0px;
   z-index: 1000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: black;
 }
 
-#alerts { margin-top: $fixed-navbar-height; }
+#alerts {
+  margin-top: $fixed-navbar-margin-mobile;
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: $fixed-navbar-margin;
+  }
+}
+
 
 #main {
-  margin-top: $fixed-navbar-height;
+  margin-top: $fixed-navbar-margin-mobile;
   padding-bottom: 20px;
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: $fixed-navbar-margin;
+  }
 }
 
-#footer { margin-top: $fixed-navbar-height; }
-
-.full-width {
-  width: 100%;
+#footer {
+  margin-top: $fixed-navbar-margin-mobile;
+  @media (min-width: $grid-float-breakpoint) {
+    margin-top: $fixed-navbar-margin;
+  }
 }
+
+.full-width { width: 100%; }
 
 .cover {
   width: 100%;
@@ -96,6 +105,10 @@ p.center_80 {
     text-align: left;
   }
 }
+
+img#partnerships-icon { height: 140px; }
+img#industry-expertise-icon { height: 140px; }
+img#business-support-icon { height: 140px; }
 
 .spacer { min-height: 50px; }
 .spacer:after { content: '' }
