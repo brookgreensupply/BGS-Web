@@ -1,9 +1,16 @@
 module CmsHelper
 
-  def bgs_header(h1, h2, summary=nil)
+  def bgs_header(h1, mobile_h1, h2, summary=nil)
     html = content_tag(:div, class: "hero") do
       content_tag(:div, class: "hero-top hero-home full-width") do
-        content_tag(:div, class: "header-text text-center") do
+        content_tag(:div, class: "visible-xs-block header-text text-center") do
+          content_tag(:center) do
+            content_tag(:h1) do
+              mobile_h1
+            end
+          end
+        end +
+        content_tag(:div, class: "hidden-xs header-text text-center") do
           content_tag(:center) do
             content_tag(:h1) do
               h1

@@ -13,9 +13,8 @@
     h1, h2, h3, h4 {
       max-width: 2400px;
       font-size: 3vw;
-      visibility: hidden;
-      @media (min-width: 500px) {
-        visibility: visible;
+      @media (max-width: $screen-sm-min) {
+        font-size: 1.2em;
       }
       @media all and (min-width: 1920px) {
         padding-top: 20px;
