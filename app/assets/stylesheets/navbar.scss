@@ -3,6 +3,9 @@
   min-height: 125px;
   margin: 0px;
   background: transparent;
+  @media (min-width: $grid-float-breakpoint) {
+    min-height: 152px;
+  }
 }
 
 #top-nav a.navbar-brand {
