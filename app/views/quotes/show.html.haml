@@ -1,62 +1,20 @@
 .container-fluid
   .row
     .col-xs-12
-      - if @quote.product_type == 'electricity'
-        %table.table.table-responsive.table-striped
-          %tr
-            %th
-              Product name
-            %th
-              Standing charge
-            - if @products.first && @products.first['profile_class'] == 4
-              %th
-                Unit rate (day)
-              %th
-                Unit rate (night)
-            - else
-              %th
-                Unit rate
-            %th
-              Contract length
-            %th
-              Product code
+      %center
+        %h4 Relevant products:
+        %div
+          Reference:
+          = @quote.id + 10000
+        %div
+          Date:
+          = @quote.created_at
+    .col-xs-12
+      %center
+        - if @quote.product_type == 'electricity'
           - @products.each do |product|
-            %tr
-              %td= product['rate1_name']
-              %td= product['standing_charge_rate'] + " p/day"
-              %td= product['rate1'] + " p/kWh"
-              - if product['profile_class'] == 4
-                %td= product['rate2'] + " p/kWh"
-              - duration = product['duration']
-              %td= "#{duration} #{duration == 1 ? ' year' : ' years'}"
-              %td= product['matrix_id']
-
-      - elsif @quote.product_type == 'gas'
-        %table.table.table-responsive.table-striped
-          %tr
-            %th
-              Product code
-            %th
-              Distribution zone
-            %th
-              Contract length
-            %th
-              Standing charge
-            %th
-              Unit rate
-            %th
-              Lower AQ limit
-            %th
-              Upper AQ limit
+            = render 'electricity_product', product: product, usage: @quote.annual_usage
+        - elsif @quote.product_type == 'gas'
           - @products.each do |product|
-            %tr
-              %td= product['matrix_id']
-              - gas_postcode = GasPostcode.lookup(@quote.postcode)
-              %td= gas_postcode.zone if gas_postcode
-              - duration = product['duration']
-              %td= "#{duration} #{duration == 1 ? ' year' : ' years'}"
-              %td= product['standing_charge_rate'] + " p/day"
-              %td= product['rate'] + " p/kWh"
-              %td= product['lower_limit_aq']
-              %td= product['upper_limit_aq']
+            = render 'gas_product', product: product, usage: @quote.annual_usage
 
