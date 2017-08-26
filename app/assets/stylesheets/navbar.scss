@@ -29,6 +29,10 @@
   @media (max-width: $navbar-border-breakpoint) {
     padding: 0px;
   }
+  @media (min-width: $grid-float-breakpoint) {
+    width: 75%;
+    margin-left: 8.333333333%;
+  }
 }
 
 #top-nav ul {
@@ -113,6 +117,9 @@
   }
   @media (min-width: $hamburger-under-logo-breakpoint) {
     margin-top: 25px;
+  }
+  @media (min-width: 700px) and (max-width: ($grid-float-breakpoint - 1)) {
+    padding-left: 4vw;
   }
   @media (min-width: $grid-float-breakpoint) {
     display: none;

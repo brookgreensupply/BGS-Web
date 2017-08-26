@@ -4,7 +4,7 @@
   @media (max-width: 470px) {
     padding: 20px 10px 140px 10px;
   }
-  @media all and (min-width: 1920px) {
+  @media (min-width: 1920px) {
     padding: 20px 10px 340px 10px;
   }
 }
@@ -14,13 +14,14 @@
   margin-top: -26px;
   center {
     h1, h2, h3, h4 {
+      margin-top: 20px;
       max-width: 2400px;
-      font-size: 3vw;
+      font-size: 2.6vw;
       @media (max-width: $screen-sm-min) {
         font-size: 1.2em;
       }
       @media all and (min-width: 1920px) {
-        padding-top: 20px;
+        margin-top: 50px;
         font-size: 2.6vw;
       }
     }
