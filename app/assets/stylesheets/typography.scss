@@ -42,7 +42,15 @@
 .font-emphasis { font-family: 'Gotham Medium', 'Gotham-Medium', sans-serif; }
 .font-system   { font-family: 'Calibri', sans-serif; }
 
-.font-size-normal { font-size: $font-size-base;  }
+.font-size-normal {
+  font-size: $font-size-base;
+  font-size: 4vw;
+  @media (min-width: 470px) { font-size: 2.7vw; }
+  @media (min-width: 780px) { font-size: 2vw; }
+  @media (min-width: 1080px) { font-size: 1.4vw; }
+  @media (min-width: 1200px) { font-size: 1.25vw; }
+}
+
 .font-size-large  { font-size: 1.34em; }
 .font-size-small  { font-size: 0.82em; }
 

@@ -88,7 +88,7 @@ p.center_80 {
 
 .full-width-cta {
   text-align: center;
-  @extend .font-size-h3;
+  @extend .font-size-h4;
 }
 
 .full-width-cta a {
@@ -99,7 +99,6 @@ p.center_80 {
   text-align: center;
   p {
     padding-top: 20px;
-    @extend .font-size-small;
   }
   @media (min-width: $screen-md-min) {
     text-align: left;
@@ -109,6 +108,12 @@ p.center_80 {
 img#partnerships-icon { height: 140px; }
 img#industry-expertise-icon { height: 140px; }
 img#business-support-icon { height: 140px; }
+
+.hidden-on-narrow-mobiles {
+  @media (max-width: 370px) {
+    display: none;
+  }
+}
 
 .spacer { min-height: 50px; }
 .spacer:after { content: '' }
