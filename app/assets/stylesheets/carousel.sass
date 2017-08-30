@@ -6,7 +6,6 @@ $carousel-item-width-mobile: 240px
   min-height: 200px
 
 #sectors_carousel, #updates_carousel
-  margin-top: -80px
   height: 640px
   background-repeat: no-repeat
   background-size: cover
@@ -105,6 +104,25 @@ a.carousel-control.right
 #updates_carousel .more
   color: $light-blue
 
+#sectors_carousel
+  height: auto
+
+#sectors_carousel .carousel-inner .item .sector
+  margin-top: 1vw
+  max-width: 100%
+  width: 100%
+  padding: 0px 0px 0px 0px
+  color: white
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
+  center .carousel-fw-img h3
+    margin-top: 0px
+  center .carousel-fw-img p
+    padding-left: 3%
+    padding-right: 3%
+  center .carousel-fw-img .more
+    font-weight: bold
+    color: $orange
+
 .carousel-img
   padding: 20px
   min-height: 150px
@@ -119,12 +137,47 @@ a.carousel-control.right
   @media (min-width: 700px)
     width: $carousel-item-width-desktop
 
+.carousel-fw-img
+  padding: 15px 0px 0px 0px
+  min-height: 170px
+  width: 100%
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/bakery.jpg') !important
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  @media (min-width: 470px)
+    padding: 2vw 0px 2vw 0px
+    min-height: 28vw
+  @media (min-width: 700px)
+    padding: 3vw 0px 2vw 0px
+    min-height: 22vw
+  @media (min-width: 1058px)
+    min-height: 16vw
+
 .carousel-img.sparks
   background-image: image-url("fw-images/sparks.jpg") !important
+
+.carousel-fw-img.sparks
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/sparks.jpg') !important
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
 
 .carousel-img.bakery
   background-image: image-url("fw-images/bakery.jpg") !important
 
-.carousel-img.apples
+.carousel-fw-img.bakery
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/bakery.jpg') !important
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+
+.carousel-img.apples,
   background-image: image-url("fw-images/apples.jpg") !important
+
+.carousel-fw-img.apples
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/apples.jpg') !important
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
 

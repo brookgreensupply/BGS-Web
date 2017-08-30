@@ -45,6 +45,16 @@
   background-repeat: no-repeat;
 }
 
+.full-width-cta.bg-consultants {
+  padding: 45px 30px;
+  min-height: 200px;
+  color: white;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/apples.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .full-width-cta.bg-stocks {
   padding: 45px 30px;
   min-height: 280px;

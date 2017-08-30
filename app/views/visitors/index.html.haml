@@ -5,44 +5,40 @@
 = bgs_header(h1, mobile_h1, h2)
 
 .row.cover
-  .col-xs-12.content-text.text-center.carousel-col
+  .content-text.text-center
     #sectors_carousel.carousel.slide{data: {interval: 4000, ride: 'carousel'}}
-      %ol.carousel-indicators
-        %li.bg-color-large-business.active{data: {target: '#sectors_carousel', slide: {to: 0}}}
-        %li.bg-color-small-business{data: {target: '#sectors_carousel', slide: {to: 1}}}
-        %li.bg-color-consultants{data: {target: '#sectors_carousel', slide: {to: 2}}}
       .carousel-inner
         .item.active
           = link_to slug_to_url('large-business') do
             .sector
-              %h3 Corporate &amp; Industrial
               %center
-                .carousel-img.sparks
-                .box
+                .carousel-fw-img.sparks
+                  %h3 Corporate &amp; Industrial
                   %p
-                    Fixed-rate electricity and gas contracts
-                    for larger businesses.
-                  .more Read about our corporate &amp; industrial products
+                    Bespoke contracts for for larger consumers of electricity and gas.
+                  .more
+                    %br
+                    Read about our corporate &amp; industrial products
         .item
           = link_to slug_to_url('small-business') do
             .sector
-              %h3 Small &amp; Medium businesses
               %center
-                .carousel-img.bakery
-                .box
+                .carousel-fw-img.bakery
+                  %h3 Small &amp; Medium businesses
                   %p
-                    Simple fixed-rate electricity and gas contracts.
+                    We supply our small business customers with 1, 2 and 3-year electricity rates.
                   .more Read about our SME products
         .item
           = link_to slug_to_url('consultants') do
             .sector
-              %h3 Consultants
               %center
-                .carousel-img.apples
-                .box
+                .carousel-fw-img.apples
+                  %h3 Consultants
                   %p
-                    This is some blurb
-                  .more Read about how we can help
+                    Our trading desk offers access to a full range of energy products.
+                  .more
+                    %br
+                    Read about how we can help
 
 .spacer
 
