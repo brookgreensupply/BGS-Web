@@ -95,3 +95,16 @@
   background-repeat: no-repeat;
 }
 
+.sector-flex.small-business {
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/icecream.jpg') top / cover no-repeat !important ;
+}
+
+.sector-flex.large-business {
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/sparks.jpg') top / cover no-repeat !important ;
+}
+
+.sector-flex.other-products {
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/apples.jpg') top / cover no-repeat !important ;
+}
+
+

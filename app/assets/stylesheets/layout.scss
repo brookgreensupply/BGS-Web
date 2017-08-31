@@ -134,6 +134,24 @@ p.center_80 {
   }
 }
 
+.sector-flex {
+  height: 450px;
+  padding: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  @media (min-width: 1600px) {
+    height: 640px;
+  }
+}
+
+.flex {
+  flex: 1;
+}
+
 img#partnerships-icon { height: 140px; }
 img#industry-expertise-icon { height: 140px; }
 img#business-support-icon { height: 140px; }
