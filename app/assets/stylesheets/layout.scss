@@ -95,10 +95,33 @@ p.center_80 {
   color: white;
 }
 
+#easy_to_switch {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  @media (min-width: $screen-md-min) {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+
 #easy_to_switch_text {
+  flex-basis: 60%;
   text-align: center;
+  padding: 0px 15px 0px 15px;
   p {
     padding-top: 20px;
+  }
+  h2 {
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    .sub-h2 {
+      font-weight: normal;
+      font-size: 0.95em;
+      @extend .font-primary;
+    }
   }
   @media (min-width: $screen-md-min) {
     text-align: left;
@@ -113,6 +136,10 @@ img#business-support-icon { height: 140px; }
   @media (max-width: 370px) {
     display: none;
   }
+}
+
+.flex-container {
+  display: flex;
 }
 
 .spacer { min-height: 50px; }

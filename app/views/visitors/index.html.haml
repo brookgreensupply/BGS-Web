@@ -21,7 +21,7 @@
                     - else
                       Bespoke contracts for for larger consumers of electricity and gas.
                   .more
-                    Read about our corporate &amp; industrial products
+                    Read about our products
         .item
           = link_to slug_to_url('small-business') do
             .sector
@@ -105,24 +105,23 @@
 .full-width-cta.bg-switch
   .container-fluid
     .row.text-center
-      .col-xs-10.col-xs-offset-1.col-lg-8.col-lg-offset-2
-        .row
-          #easy_to_switch_icon.col-sm-6
-            = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
-          #easy_to_switch_text.col-sm-6
-            %h2
-              It's easy to switch
+      #easy_to_switch.text-center.flex-container.col-lg-8.col-lg-offset-2
+        #easy_to_switch_icon
+          = image_tag asset_path('icons/switch.svg'), id: 'business-support-icon', height: 200
+        #easy_to_switch_text
+          %h2
+            It's easy to switch
             .sub-h2
               Move your electricity and gas
               to Brook Green Supply today.
-            %p
-              - snippet = cms_snippet_content('hp-switch-text')
-              - if !snippet.blank?
-                = snippet
-              - else
-                Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions. Our team of energy specialists will work with you to ensure that we meet your gas and electricity supply needs at the best price.
-            %p
-              %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get&nbsp;Started
+          %p
+            - snippet = cms_snippet_content('hp-switch-text')
+            - if !snippet.blank?
+              = snippet
+            - else
+              Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions. Our team of energy specialists will work with you to ensure that we meet your gas and electricity supply needs at the best price.
+          %p
+            %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get&nbsp;Started
 
 &nbsp;
 
