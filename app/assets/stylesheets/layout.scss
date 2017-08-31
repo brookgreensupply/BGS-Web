@@ -95,6 +95,10 @@ p.center_80 {
   color: white;
 }
 
+#easy_to_switch_container {
+  padding: 20px 0px 20px 0px;
+}
+
 #easy_to_switch {
   justify-content: center;
   flex-direction: column;
@@ -108,7 +112,8 @@ p.center_80 {
 }
 
 #easy_to_switch_text {
-  flex-basis: 60%;
+  width: 100%;
+  flex-basis: auto;
   text-align: center;
   padding: 0px 15px 0px 15px;
   p {
@@ -124,6 +129,7 @@ p.center_80 {
     }
   }
   @media (min-width: $screen-md-min) {
+    flex-basis: 60%;
     text-align: left;
   }
 }
@@ -140,6 +146,7 @@ img#business-support-icon { height: 140px; }
 
 .flex-container {
   display: flex;
+  flex: 0 1 auto;
 }
 
 .spacer { min-height: 50px; }
