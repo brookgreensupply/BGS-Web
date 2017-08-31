@@ -11,7 +11,8 @@ a:hover, a:focus {
 }
 
 a.more-info {
-  color: white;
-  background: linear-gradient(to right, #d83454 , #971b80);
-  padding: 10px 50px;
+  color: white !important;
+  background: linear-gradient(to right, #d83454 , #971b80) !important;
+  padding: 1vw 50px;
+  font-size: 1em;
 }

@@ -126,7 +126,7 @@
 
 &nbsp;
 
-.full-width-cta.hidden-on-narrow-mobiles
+.full-width-cta.bg-updates.hidden-on-narrow-mobiles
   .container-fluid
     .row.text-center
       .col-xs-12.content-text.text-center.carousel-col
@@ -136,27 +136,30 @@
             .item.active
               = link_to slug_to_url(most_recent_updates.first.slug) do
                 .update
-                  %h3= most_recent_updates.first.label
+                  %h3{style: 'color: black;'}= most_recent_updates.first.label
                   %p{style: 'color: black;'}
                     = cms_block_content(:preview, most_recent_updates.first)
                   .more
-                    Read more
+                    %a.more-info
+                      Read more
             .item
               = link_to slug_to_url(most_recent_updates.second.slug) do
                 .update
-                  %h3= most_recent_updates.second.label
+                  %h3{style: 'color: black;'}= most_recent_updates.second.label
                   %p{style: 'color: black;'}
                     = cms_block_content(:preview, most_recent_updates.second)
                   .more
-                    Read more
+                    %a.more-info
+                      Read more
             .item
               = link_to slug_to_url(most_recent_updates.third.slug) do
                 .update
-                  %h3= most_recent_updates.third.label
+                  %h3{style: 'color: black;'}= most_recent_updates.third.label
                   %p{style: 'color: black;'}
                     = cms_block_render(:preview, most_recent_updates.third)
                   .more
-                    Read more
+                    %a.more-info
+                      Read more
           %a.left.carousel-control{href: '#updates_carousel', role: 'button', data: {slide: 'prev'}}
             %span.glyphicon.glyphicon-chevron-left
             %span.sr-only Previous

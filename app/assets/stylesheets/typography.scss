@@ -44,11 +44,11 @@
 
 .font-size-normal {
   font-size: $font-size-base;
-  font-size: 4vw;
-  @media (min-width: 470px) { font-size: 2.7vw; }
-  @media (min-width: 780px) { font-size: 2vw; }
-  @media (min-width: 1080px) { font-size: 1.4vw; }
-  @media (min-width: 1200px) { font-size: 1.25vw; }
+  font-size: 3.9vw;
+  @media (min-width: 470px) { font-size: 2.6vw; }
+  @media (min-width: 780px) { font-size: 1.9vw; }
+  @media (min-width: 1080px) { font-size: 1.3vw; }
+  @media (min-width: 1200px) { font-size: 1.15vw; }
 }
 
 .font-size-large  { font-size: 1.34em; }
