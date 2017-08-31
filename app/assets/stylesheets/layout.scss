@@ -149,6 +149,16 @@ img#business-support-icon { height: 140px; }
   flex: 0 1 auto;
 }
 
+li.market_update {
+  padding: 20px 40px 20px 40px;
+  margin: 0px 20px 20px 5px;
+  border-radius: 20px;
+  background: image-url('cta-bg-updates.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .spacer { min-height: 50px; }
 .spacer:after { content: '' }
 
