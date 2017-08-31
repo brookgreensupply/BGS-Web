@@ -7,11 +7,8 @@
 
   - @results.each do |result|
     .col-xs-12.text-center
-      .faq-button-inner
-        %a.btn.btn-dropdown.selected{href: "#{result.path}"}
-          .flex-sub
-            .text.btn-text
-              = result.title
+      %a.search_result{href: "#{result.path}"}
+        = result.title
 
 - else
   :javascript

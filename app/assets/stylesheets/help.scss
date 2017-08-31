@@ -26,7 +26,6 @@
 #search_box.input-group {
   z-index: none;
   margin: none;
-  width: 400px;
   padding-top: 2em;
 }
 
@@ -35,12 +34,10 @@
   padding-bottom: 100px;
 }
 
-.faq-button-inner {
-  max-width: 1024px;
+.search_result {
   margin: auto;
-  &> a {
-    line-height: 1.5;
-    text-decoration: none;
-  }
+  max-width: 1024px;
+  line-height: 1.5;
+  text-decoration: none;
 }
 
