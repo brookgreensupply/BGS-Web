@@ -29,14 +29,14 @@
 
 #bottom-text {
   padding: 24px;
-  @extend .font-size-small;
+  font-size: 0.79em;
 }
 
 #bottom-text .full-until-sm-then-fixed-width {
   width: 100%;
   text-align: center;
   @media (min-width: $screen-sm-min) {
-    width: 800px;
+    width: 900px;
   }
 }
 
