@@ -15,7 +15,11 @@
                 .carousel-fw-img.sparks
                   %h3 Corporate &amp; Industrial
                   %p
-                    Bespoke contracts for for larger consumers of electricity and gas.
+                    - snippet = cms_snippet_content('hp-sectors-p-sme')
+                    - if !snippet.blank?
+                      = snippet
+                    - else
+                      Bespoke contracts for for larger consumers of electricity and gas.
                   .more
                     %br
                     Read about our corporate &amp; industrial products
@@ -26,7 +30,11 @@
                 .carousel-fw-img.bakery
                   %h3 Small &amp; Medium businesses
                   %p
-                    We supply our small business customers with 1, 2 and 3-year electricity rates.
+                    - snippet = cms_snippet_content('hp-sectors-p-ic')
+                    - if !snippet.blank?
+                      = snippet
+                    - else
+                      We supply our small business customers with 1, 2 and 3-year electricity rates.
                   .more Read about our SME products
         .item
           = link_to slug_to_url('consultants') do
@@ -35,7 +43,11 @@
                 .carousel-fw-img.apples
                   %h3 Consultants
                   %p
-                    Our trading desk offers access to a full range of energy products.
+                    - snippet = cms_snippet_content('hp-sectors-p-consultants')
+                    - if !snippet.blank?
+                      = snippet
+                    - else
+                      Our trading desk offers access to a full range of energy products.
                   .more
                     %br
                     Read about how we can help
@@ -45,9 +57,17 @@
 = link_to 'quotes/new' do
   .full-width-cta.bg-blue-purple
     .hidden-xs.scalable-text
-      Are you a small business? Click here to get a quote in 2 minutes.
+      - snippet = cms_snippet_content('hp-get-quote-desktop')
+      - if !snippet.blank?
+        = snippet
+      - else
+        Are you a small business? Click here to get a quote in 2 minutes.
     .visible-xs-block.scalable-text
-      Small business? Click here to get a quote in 2 minutes.
+      - snippet = cms_snippet_content('hp-get-quote-mobile')
+      - if !snippet.blank?
+        = snippet
+      - else
+        Small business? Click here to get a quote in 2 minutes.
 
 .spacer
 
@@ -98,7 +118,11 @@
               Move your electricity and gas
               to Brook Green Supply today.
             %p
-              Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions. Our team of energy specialists will work with you to ensure that we meet your gas and electricity supply needs at the best price.
+              - snippet = cms_snippet_content('hp-switch-text')
+              - if !snippet.blank?
+                = snippet
+              - else
+                Brook Green Supply provides 1, 2 and 3 year fixed rates or bespoke energy solutions. Our team of energy specialists will work with you to ensure that we meet your gas and electricity supply needs at the best price.
             %p
               %a.more-info{href: slug_to_url('switching-to-brook-green-supply')} Get&nbsp;Started
 
