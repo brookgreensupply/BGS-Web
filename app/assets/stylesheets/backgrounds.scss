@@ -16,6 +16,13 @@
   background-repeat: no-repeat;
 }
 
+.contact-us-container {
+  background: image-url('cta-bg-blue-blue.svg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
 .full-width-cta.bg-switch {
   padding: 20px 30px;
   color: black;
@@ -96,15 +103,15 @@
 }
 
 .sector-flex.small-business {
-  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/icecream.jpg') top / cover no-repeat !important ;
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7) ), image-url('fw-images/icecream.jpg') top / cover no-repeat !important ;
 }
 
 .sector-flex.large-business {
-  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/sparks.jpg') top / cover no-repeat !important ;
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7) ), image-url('fw-images/sparks.jpg') top / cover no-repeat !important ;
 }
 
 .sector-flex.other-products {
-  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8) ), image-url('fw-images/apples.jpg') top / cover no-repeat !important ;
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7) ), image-url('fw-images/apples.jpg') top / cover no-repeat !important ;
 }
 
 
