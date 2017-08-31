@@ -44,11 +44,11 @@
   padding-left: 47px;
   padding-right: 24px;
   margin-bottom: -4px;
-  margin-left: -6vw;
+  margin-left: -2vw;
   margin-right: -15px;
   border-top: 1px solid black;
   @media (max-width: ($grid-float-breakpoint - 1)) {
-    margin-top: 0px;
+    margin-top: 10px;
   }
   @media (min-width: $navbar-border-breakpoint) {
     border: none;
