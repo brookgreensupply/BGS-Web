@@ -10,7 +10,7 @@
   center {
     h1, h2, h3, h4 {
       max-width: 2400px;
-      font-size: 3.3vw;
+      font-size: 3vw;
       @media (max-width: $screen-sm-min) { font-size: 1.2em; }
       @media (min-width: 1920px) { font-size: 3vw; }
     }
