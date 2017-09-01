@@ -104,9 +104,29 @@
 
 .full-width-cta.bg-bakery {
   padding: 45px 30px;
-  min-height: 280px;
+  min-height: 200px;
   color: white;
   background: image-url('fw-images/bakery.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.full-width-cta.bg-sparks {
+  padding: 45px 30px;
+  min-height: 200px;
+  color: white;
+  background: image-url('fw-images/sparks.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.full-width-cta.bg-stocks-short {
+  padding: 45px 30px;
+  min-height: 200px;
+  color: white;
+  background: image-url('fw-images/stocks.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
