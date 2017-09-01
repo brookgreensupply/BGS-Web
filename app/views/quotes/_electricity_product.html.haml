@@ -1,11 +1,11 @@
 - if product['profile_class'] == 4
-  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f + usage * (product['rate1'].to_f + product['rate2'].to_f)/2.0
-  - calculation = "365*#{product['standing_charge_rate'].to_f}+#{usage}*(#{product['rate1'].to_f}+#{product['rate2'].to_f})/2"
+  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * (product['rate1'].to_f + product['rate2'].to_f)/2.0
+  - calculation = "(365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*(#{product['rate1'].to_f}+#{product['rate2'].to_f})/2)/100"
 - else
-  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f + usage * product['rate1'].to_f
-  - calculation = "365*#{product['standing_charge_rate'].to_f}+#{usage}*#{product['rate1'].to_f}"
+  - yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * product['rate1'].to_f
+  - calculation = "(365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*#{product['rate1'].to_f})/100"
 - cost = product['duration'] * yearly_cost_pence / 100.0
-- calculation = "#{product['duration']}*(#{calculation})/100"
+- calculation = "#{product['duration']}*(#{calculation})"
 
 .cma-result
   .title
@@ -32,7 +32,7 @@
       .field.col-sm-4
         Standing Charge
         .value
-          = product['standing_charge_rate'] + " p/day"
+          = (product['standing_charge_rate'].to_f * 100.0).round.to_s + " p/day"
       .field.col-sm-4
         Product Code
         .value
