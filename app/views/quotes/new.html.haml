@@ -18,32 +18,34 @@
           .cma-block
             %center
               .field-container
-                = f.text_field :postcode, class: 'postcode-box', style: 'width: 160px;', placeholder: 'Postcode'
+                = f.text_field :postcode, class: 'postcode-box', style: 'width: 190px; margin-bottom: 20px;', placeholder: 'Postcode'
                 &nbsp;&nbsp;
-                = submit_tag 'Electricity', class: 'btn btn-primary btn-sm btn-elec'
-                &nbsp;or&nbsp;
-                = submit_tag 'Gas', class: 'btn btn-primary btn-sm btn-gas'
+                .buttons{style: 'display: inline; white-space: nowrap;'}>
+                  = submit_tag 'Electricity', class: 'btn btn-primary btn-sm btn-elec'
+                  &nbsp;or&nbsp;
+                  = submit_tag 'Gas', class: 'btn btn-primary btn-sm btn-gas'
       - else
         = form_for @quote do |f|
           .cma-block
             %center
               .field-container
-                = f.text_field :postcode, disabled: true, class: 'postcode-box', style: 'width: 160px;'
+                = f.text_field :postcode, disabled: true, class: 'postcode-box', style: 'width: 190px; margin-bottom: 20px;', placeholder: 'Postcode'
                 = f.hidden_field :postcode
                 &nbsp;&nbsp;
-                - if @quote.product_type == 'electricity'
-                  %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed"}
-                    Electricity
-                  &nbsp;or&nbsp;
-                  %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed btn-disabled"}
-                    Gas
-                - else
-                  %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed btn-disabled"}
-                    Electricity
-                  &nbsp;or&nbsp;
-                  %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed"}
-                    Gas
-                = f.hidden_field :product_type
+                .buttons{style: 'display: inline; white-space: nowrap;'}>
+                  - if @quote.product_type == 'electricity'
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed"}
+                      Electricity
+                    &nbsp;or&nbsp;
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed btn-disabled"}
+                      Gas
+                  - else
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed btn-disabled"}
+                      Electricity
+                    &nbsp;or&nbsp;
+                    %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-gas btn-pressed"}
+                      Gas
+                  = f.hidden_field :product_type
           .cma-block
             .label-container
               = f.label :address, class: 'with-colon'
@@ -69,10 +71,12 @@
             .label-container
               = label_tag :usage, 'Usage', class: 'with-colon'
             .field-container
-              = f.text_field :usage, style: 'width: 100px; height: 29px;'
-              %input{type: 'checkbox', name: 'cost', data: {toggle: 'toggle', size: 'small', on: '£', off: 'KWh', onstyle: 'default', offstyle: 'default', width: '70'}}
-              &nbsp;per&nbsp;
-              = f.select :usage_or_cost_period, Quote.usage_or_cost_periods.keys.map {|p| [p.titleize, p]}, {}, { style: 'width: 70px; max-width: 70px;' }
+              %span{style: 'white-space: nowrap;'}
+                = f.text_field :usage, style: 'width: 100px; height: 29px;'
+                %input{type: 'checkbox', name: 'cost', data: {toggle: 'toggle', size: 'small', on: '£', off: 'KWh', onstyle: 'default', offstyle: 'default', width: '70'}}
+              %span{style: 'white-space: nowrap;'}
+                &nbsp;per&nbsp;
+                = f.select :usage_or_cost_period, Quote.usage_or_cost_periods.keys.map {|p| [p.titleize, p]}, {}, { style: 'width: 70px; max-width: 70px;' }
 
           .cma-block.show-on-select-address.hidden
             .label-container
