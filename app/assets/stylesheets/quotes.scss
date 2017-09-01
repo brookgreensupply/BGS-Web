@@ -40,8 +40,8 @@
 }
 
 .btn-disabled {
-  background-color: grey !important;
   border-color: grey !important;
+  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px) !important;
 }
 
 .label-container {

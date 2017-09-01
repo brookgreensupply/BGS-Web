@@ -32,7 +32,7 @@
                 = f.text_field :postcode, disabled: true, class: 'postcode-box', style: 'width: 190px; margin-bottom: 20px;', placeholder: 'Postcode'
                 = f.hidden_field :postcode
                 &nbsp;&nbsp;
-                .buttons{style: 'display: inline; white-space: nowrap;'}>
+                .buttons{style: 'display: inline; white-space: nowrap; margin-bottom: 20px;'}>
                   - if @quote.product_type == 'electricity'
                     %a{href: "#{new_quote_path}", class: "btn btn-primary btn-sm btn-elec btn-pressed"}
                       Electricity

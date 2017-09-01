@@ -6,7 +6,7 @@
 
 .container-fluid
   .row
-    .col-md-5.col-md-offset-4
+    .col-md-6.col-md-offset-3
       - content = cms_snippet_content('quote-no-products')
       - content = "We couldn't find any appropriate products." if content.blank?
       != content
