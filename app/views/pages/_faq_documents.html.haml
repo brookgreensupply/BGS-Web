@@ -1,5 +1,5 @@
 - pages = Comfy::Cms::Page.for_category("FAQ-#{param_1}").published
-%ul
+%ul.no-mark
   - pages.each do |page|
     %li
       %h4= page.label
