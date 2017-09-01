@@ -10,7 +10,10 @@
     - meta_description = 'Brook Green Supply' if meta_description.blank?
     %meta{"name" => "description", "content" => meta_description}
     - if Rails.env.production?
-      %link{rel: "stylesheet", type: "text/css", href: "https://cloud.typography.com/7613196/7458792/css/fonts.css"}
+      - if !ENV['CLOUD_TYPOGRAPHY_URL'].blank?
+        %link{rel: "stylesheet", type: "text/css", href: ENV['CLOUD_TYPOGRAPHY_URL']}
+      - else
+        %link{rel: "stylesheet", type: "text/css", href: "https://cloud.typography.com/7613196/7458792/css/fonts.css"}
     = stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
 
