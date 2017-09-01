@@ -13,7 +13,8 @@ class Quote < ApplicationRecord
     annual = if cost
       products = JSON.parse presented_products
       p = products.first
-      annual_cost_per_kwh = p['rate1'].to_f / 100.0
+      rate = (product_type == 'electricity' ? p['rate1'] : p['rate'])
+      annual_cost_per_kwh = rate.to_f / 100.0
       annual_standing_charge = 365 * p['standing_charge'].to_f
       0.96*((multiply_by * cost/p['duration'].to_f) - annual_standing_charge)/annual_cost_per_kwh
     else
