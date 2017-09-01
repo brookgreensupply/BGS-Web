@@ -15,7 +15,7 @@
       .total-cost.field.col-sm-4
         - duration = product['duration']
         Total Cost
-        .amount= number_to_currency(cost)
+        .amount= number_to_currency(cost, locale: :'en-GB')
       .field.col-sm-4
         - if product['profile_class'] == 4
           Rate (Day)
