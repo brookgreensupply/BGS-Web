@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   include QuotesHelper
+  include ApplicationHelper
 
   def new
     @quote = if params[:quote] then Quote.new(quote_params_for_new) else Quote.new end
@@ -55,14 +56,24 @@ class QuotesController < ApplicationController
     if products && !products.empty? && @quote.save
       redirect_to action: 'show', id: @quote.id
     else
-      flash[:alert] = 'Sorry, no relevant products'
-      redirect_to action: 'new', postcode: @quote.postcode, product_type: @quote.product_type
+      if @quote.product_type == 'electricity'
+        redirect_to not_a_small_business_path
+      elsif @quote.product_type == 'gas'
+        redirect_to not_a_small_business_path
+      else
+        flash[:alert] = 'Sorry, no relevant products'
+        redirect_to action: 'new', postcode: @quote.postcode, product_type: @quote.product_type
+       end
     end
   end
 
   def show
+    I18n.locale = :'en-GB'
     @quote = Quote.find(params[:id])
     @products = JSON.parse @quote.presented_products
+  end
+
+  def sorry
   end
 
   private

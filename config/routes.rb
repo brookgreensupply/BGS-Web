@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/email/leads/gas", to: "leads#gas"
 
   resources :quotes
+  get "/quotes/new/not-a-small-business", to: "quotes#sorry", as: :not_a_small_business
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

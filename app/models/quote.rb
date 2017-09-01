@@ -10,10 +10,12 @@ class Quote < ApplicationRecord
       when 'month' then 12
       else 1
     end
-    Rails.logger.warn usage
     annual = if cost
       products = JSON.parse presented_products
-      multiply_by * (cost / products.first['rate1'].to_f) / 100.0
+      p = products.first
+      annual_cost_per_kwh = p['rate1'].to_f / 100.0
+      annual_standing_charge = 365 * p['standing_charge'].to_f
+      0.96*((multiply_by * cost/p['duration'].to_f) - annual_standing_charge)/annual_cost_per_kwh
     else
       if usage
         multiply_by * usage

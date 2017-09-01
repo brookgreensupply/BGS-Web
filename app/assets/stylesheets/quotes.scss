@@ -1,6 +1,47 @@
-.cma-block {
-  width: 75%;
-  margin: auto;
+#cma-container {
+  background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) ), image-url('fw-images/icecream.jpg') top / cover no-repeat !important ;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.cma-inner {
+  background: linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7) ) top / cover no-repeat !important ;
+}
+
+.cma-block { margin: auto; }
+
+.cma-block input {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.toggle.btn-sm {
+  margin-top: -2px;
+  min-height: 31px;
+}
+
+.field-container .btn:hover {
+  opacity: 1;
+  background-color: $light-blue;
+}
+
+.btn-elec {
+  background-color: $orange;
+  border-color: $orange;
+}
+
+.btn-gas {
+  background-color: $purple;
+  border-color: $purple;
+}
+
+.btn-pressed {
+  opacity: 0.7;
+}
+
+.btn-disabled {
+  background-color: grey !important;
+  border-color: grey !important;
 }
 
 .label-container {
@@ -12,13 +53,8 @@
 .with-colon:after { content: ":"; }
 
 .field-container {
-  display: block;
-  padding: 20px 10px 20px 10px;
-  @media (min-width: 1380px) {
-    display: inline-block;
-    padding: 20px 10px 20px 30px;
-    border-left: solid 1px;
-  }
+  display: inline-block;
+  padding: 20px 10px 20px 30px;
 }
 
 .postcode-box { width: 100px; }
