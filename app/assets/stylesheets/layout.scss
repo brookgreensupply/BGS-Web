@@ -207,6 +207,19 @@ li.market_update {
   background-repeat: no-repeat;
 }
 
+.sidebox {
+  width: 300px;
+  float: right;
+  padding: 40px;
+  background: image-url('cta-bg-switch.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  p {
+    padding: 10px;
+  }
+}
+
 .spacer { min-height: 50px; }
 .spacer:after { content: '' }
 
