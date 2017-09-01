@@ -208,14 +208,16 @@ li.market_update {
 }
 
 .sidebox {
-  width: 300px;
+  width: 280px;
+  min-height: 320px
   float: right;
-  padding: 40px;
+  margin: 30px;
+  padding: 20px;
   background: image-url('cta-bg-switch.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  p {
+  h4, p {
     padding: 10px;
   }
 }
