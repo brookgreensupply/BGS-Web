@@ -1,5 +1,5 @@
-- yearly_cost_pence = 365 * product['standing_charge_rate'].to_f + usage * product['rate1'].to_f
-- calculation = "365*#{product['standing_charge_rate'].to_f}+#{usage}*#{product['rate'].to_f}"
+- yearly_cost_pence = 365 * product['standing_charge_rate'].to_f*100.0 + usage * product['rate1'].to_f
+- calculation = "365*#{product['standing_charge_rate'].to_f*100.0}+#{usage}*#{product['rate'].to_f}"
 - cost = product['duration'] * yearly_cost_pence / 100.0
 - calculation = "#{product['duration']}*(#{calculation})/100"
 
@@ -21,7 +21,7 @@
       .field.col-sm-4
         Standing Charge
         .value
-          = product['standing_charge_rate'] + " p/day"
+          = (product['standing_charge_rate'].to_f * 100.0).round.to_s + " p/day"
       .field.col-sm-4
         Product Code
         .value
