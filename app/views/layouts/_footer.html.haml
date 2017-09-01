@@ -29,8 +29,10 @@
                   = link_to 'Energy FAQs', slug_to_url('faq')
                 %li
                   = link_to 'Electricity & gas glossary', slug_to_url('glossary')
-                %li
-                  = link_to 'Terms & conditions', slug_to_url('terms-and-conditions')
+                - file = Comfy::Cms::File.find_by_file_file_name 'BGS_Terms-and-Conditions.pdf'
+                - if file
+                  %li
+                    = link_to 'Terms & conditions', "http://#{file.file.url}"
                 %li
                   = link_to 'Deemed rates', slug_to_url('deemed-rates')
                 %li &nbsp;
