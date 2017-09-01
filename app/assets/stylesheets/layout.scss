@@ -173,6 +173,30 @@ img#business-support-icon { height: 140px; }
   flex: 0 1 auto;
 }
 
+.cover-below-sm {
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.cover-below-md {
+  @media (max-width: $screen-sm-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.cover-below-lg {
+  @media (max-width: $screen-md-max) {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
 li.market_update {
   padding: 20px 40px 20px 40px;
   margin: 0px 20px 20px 5px;
