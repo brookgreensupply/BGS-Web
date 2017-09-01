@@ -1,6 +1,15 @@
+%p
+- h1 = 'Electricity Quote Request'
+- mobile_h1 = 'Electricity Quote Request'
+- h2 = ''
+= bgs_header(h1, mobile_h1, h2)
+
 .row
   .col-xs-8.col-xs-offset-2
     %h3 We have received your request
     %p
       One of our customer advisers will contact you with relevant electricity
       products to choose from.
+
+- contact_snippet = cms_snippet_content('contact-sales')
+!= contact_snippet
