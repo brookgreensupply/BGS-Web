@@ -14,6 +14,14 @@ Rails.application.routes.draw do
   resources :quotes
   get "/quotes/new/not-a-small-business", to: "quotes#sorry", as: :not_a_small_business
 
+  get '/switch-supplier', to: redirect('/cms/switching-to-brook-green-supply', status: 301)
+  get '/contact-our-energy-team', to: redirect('/cms/contact', status: 301)
+  get '/about', to: redirect('/cms/about', status: 301)
+  get '/electricity-and-gas-supply-careers', to: redirect('/cms/bgs-careers', status: 301)
+  get '/energy-brokers-and-consultants', to: redirect('/cms/consultants', status: 301)
+  get '/our-origins', to: redirect('/cms/about', status: 301)
+  get '/faq', to: redirect('/cms/business-support/faq', status: 301)
+
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
