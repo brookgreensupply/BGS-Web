@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     put 'products/gas/prices', to: "products#update_gas_prices", as: :new_gas_prices
   end
 
+  # proxy Junifer API calls
+  get '/junifer/:request', to: "junifer#proxy", request: /[\/a-zA-z0-9]+/
+
   comfy_route :cms_admin, :path => '/admin'
   comfy_route :cms, :path => '/cms', :sitemap => true
 end
