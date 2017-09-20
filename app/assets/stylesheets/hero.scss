@@ -39,7 +39,7 @@
 .hero-main .header-text {
   padding: 0px 20px 20px 20px;
   margin-top: -60px;
-  @media (min-width: 700px) { margin-top: 4vw; }
+  @media (min-width: 700px) { margin-top: 2vw; }
 }
 
 .hero-main .hero-p {
@@ -53,10 +53,12 @@
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% auto;
-  @media (max-width: 470px) {
+  margin-bottom: 15px;
+  @media (max-width: 640px) {
+    background: image-url('hero-bg-blade-mobile.svg');
+    background-repeat: no-repeat;
     background-position: top;
-    background-size: 100% 75%;
-    margin-bottom: 50px;
+    background-size: 100% 60%;
   }
 }
 

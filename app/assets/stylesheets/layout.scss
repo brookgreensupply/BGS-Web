@@ -1,5 +1,7 @@
 body {
   width: 100%;
+  height: 100%;
+  margin-bottom: 1px;
   @extend .font-primary, .font-size-normal;
   line-height: 1.5;
 }
@@ -231,7 +233,7 @@ li.market_update {
   padding-top: 0px;
 }
 
-.spacer { min-height: 50px; }
+.spacer { min-height: 20px; }
 .spacer:after { content: '' }
 
 .test {
