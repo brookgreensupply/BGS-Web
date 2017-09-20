@@ -7,14 +7,19 @@ class JuniferController < ApplicationController
     RestClient.proxy = ENV['QUOTAGUARDSTATIC_URL']
     request_url = "#{baseurl}/#{request.fullpath.gsub(/^\/junifer\//,'')}"
     payload = request.body unless request.raw_post.empty?
-    # FIXME: needs auth, endpoint whitelist/blacklist
-    response = RestClient::Request.execute( method: request.method,
-                                            url: request_url,
-                                            payload: payload,
-                                            headers: {'Content-Type' => 'application/json'},
-                                            verify_ssl: false,
-                                            timeout: 10                                      )
-    render json: response.body
+    # TODO: endpoint whitelist/blacklist
+    begin
+      response = RestClient::Request.execute( method: request.method,
+                                              url: request_url,
+                                              payload: payload,
+                                              headers: {'Content-Type' => 'application/json'},
+                                              verify_ssl: false,
+                                              timeout: 10                                      )
+      render json: response.body
+    rescue RestClient::BadRequest => e
+      Rails.logger.warn "junifer#proxy error: #{e.http_body}"
+      render json: e.http_body, status: 400
+    end
   end
 
   def restrict_access
