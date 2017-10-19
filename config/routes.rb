@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     put 'products/gas/prices', to: "products#update_gas_prices", as: :new_gas_prices
   end
 
+  get '/api/v1/companies', to: "api#companies"
+  get '/api/v1/report', to: "api#report"
+  get '/api/v1/mpans', to: "api#mpans"
+
   # proxy Junifer API calls
   get '/junifer/:request', to: "junifer#proxy", request: /[\/a-zA-z0-9]+/
   post '/junifer/:request', to: "junifer#proxy", request: /[\/a-zA-z0-9]+/
