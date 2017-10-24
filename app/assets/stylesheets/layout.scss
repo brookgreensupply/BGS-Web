@@ -8,7 +8,6 @@ body {
 
 header {
   position: fixed;
-  background: white;
   width: 100%;
   top: 0px;
   z-index: 900;
@@ -23,10 +22,10 @@ header {
 
 
 #main {
-  margin-top: ($fixed-navbar-margin-mobile * 2);
+  margin-top: 0px;
   padding-bottom: 20px;
   @media (min-width: $grid-float-breakpoint) {
-    margin-top: ($fixed-navbar-margin * 2);
+    margin-top: 0px;
   }
 }
 
@@ -73,6 +72,8 @@ header {
 
 .table-cell {
   display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .authform {

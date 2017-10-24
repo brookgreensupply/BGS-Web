@@ -1,10 +1,10 @@
 #top-nav {
-  padding-top: 20px;
-  min-height: 125px;
+  padding-top: 0px;
+  min-height: 70px;
   margin: 0px;
-  background: transparent;
+  background: white;
   @media (min-width: $grid-float-breakpoint) {
-    min-height: 152px;
+    min-height: 70px;
   }
 }
 
@@ -13,13 +13,16 @@
 }
 
 #top-logo {
-  width: 200px;
+  width: 140px;
+  padding-top: 14px;
   padding-left: 15px;
   @media (max-width: $hamburger-under-logo-breakpoint) {
     padding-left: 0px;
+    padding-top: 8px;
   }
   @media (min-width: $grid-float-breakpoint) {
-    width: 280px;
+    width: 200px;
+    padding-top: 14px;
     padding-left: 35px;
   }
 }
@@ -37,18 +40,15 @@
 
 #top-nav ul {
   @extend .font-emphasis;
-  list-style: none;
-  text-align: justify;
-  margin-top: 60px;
+  list-style: none; text-align: justify;
+  margin-top: 42px;
   padding-top: 20px;
-  padding-left: 47px;
   padding-right: 24px;
   margin-bottom: -4px;
   margin-left: -2vw;
-  margin-right: -15px;
-  border-top: 1px solid black;
   @media (max-width: ($grid-float-breakpoint - 1)) {
-    margin-top: 10px;
+    padding-left: 47px;
+    margin-top: 0px;
   }
   @media (min-width: $navbar-border-breakpoint) {
     border: none;
@@ -70,7 +70,7 @@
 #top-nav ul li {
   float: none;
   display: block;
-  padding: 10px;
+  padding: 10px 2px;
   text-transform: uppercase;
   @extend .font-size-navbar;
   @media (min-width: $grid-float-breakpoint) {
@@ -106,17 +106,17 @@
 
 #hamburger {
   min-width: 100px;
-  margin-top: 25px;
+  margin-top: 31px;
   a {
     @extend .font-size-navbar;
     padding: 0px;
     color: black;
   }
-  @media (max-width: $screen-sm-min) {
+  @media (max-width: 515px) {
     margin-left: -26px;
   }
   @media (min-width: $hamburger-under-logo-breakpoint) {
-    margin-top: 25px;
+    margin-top: 31px;
   }
   @media (min-width: 700px) and (max-width: ($grid-float-breakpoint - 1)) {
     padding-left: 4vw;
@@ -127,13 +127,16 @@
 }
 
 #hamburger .navbar-toggle {
-  margin-right: 0px;
-  padding-right: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#hamburger .glyphicon-menu-hamburger {
+  font-size: 18px;
 }
 
 #hamburger .search {
-  float: left;
-  margin-top: 10px;
+  font-size: 18px;
   padding-left: 0px;
   padding-right: 20px;
 }

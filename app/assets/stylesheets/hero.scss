@@ -1,8 +1,16 @@
 .hero-top {
-  padding: 20px 10px 24vw 10px;
+  margin-top: 12px;
+  padding: 60px 10px 120px 10px;
   color: white;
-  @media (max-width: 470px) {
-    padding: 20px 10px 140px 10px;
+  @media (max-width: $screen-xs-max) {
+    margin-top: 12px;
+    padding: 2px 10px 120px 10px;
+  }
+  @media (min-width: 1400px) {
+    margin-top: 22px;
+  }
+  @media (min-width: 1400px) {
+    padding: 60px 10px 13vw 10px;
   }
 }
 
@@ -10,36 +18,32 @@
   center {
     h1, h2, h3, h4 {
       max-width: 2400px;
-      font-size: 3vw;
+      font-size: 1.8em;
       @media (max-width: $screen-sm-min) { font-size: 1.2em; }
-      @media (min-width: 1920px) { font-size: 3vw; }
+      @media (min-width: 1920px) { font-size: 1.8em; }
     }
   }
-  margin-top: -20px;
-  padding-top: 0px;
-  padding-bottom: 1.5vw;
-  padding-left: 13%;
-  padding-right: 13%;
-  @media (max-width: 800px) {
-    margin-top: -20px;
-    padding-bottom: 60px;
-  }
-  @media (min-width: 1920px) {
-    margin-top: 2vw;
-    padding-bottom: 0px;
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-left: -15px;
+  width: 100vw;
+  @media (min-width: 1400px) {
+    padding-top: 40px;
   }
 }
 
 .hero-main {
   padding: 0px;
   margin: 0px;
-  margin-top: -10vw;
+  margin-top: -62px;
 }
 
 .hero-main .header-text {
   padding: 0px 20px 20px 20px;
-  margin-top: -60px;
-  @media (min-width: 700px) { margin-top: -15px; }
+  margin-top: 0px;
+  @media (min-width: 700px) { margin-top: 0px; }
 }
 
 .hero-main .hero-p {
@@ -51,12 +55,12 @@
 .hero-home {
   background: image-url('hero-bg-blade.svg');
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: 0px 69px;
   background-size: 100% 70%;
   @media (max-width: 700px) {
     background: image-url('hero-bg-blade-mobile.svg');
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: 0px 69px;
     background-size: 100% 60%;
   }
 }
