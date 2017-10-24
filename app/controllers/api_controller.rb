@@ -29,7 +29,7 @@ class ApiController < ApplicationController
 
   def restrict_access
     authenticate_or_request_with_http_token do |token, options|
-      token == 'a78061dcbd13e780e69a4af14a1d0bd9'
+      token == '4e6a3e6b640aa6044df51ad235e85d3b'
     end
   end
 end
