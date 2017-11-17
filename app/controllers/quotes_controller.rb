@@ -30,7 +30,11 @@ class QuotesController < ApplicationController
     products = if @quote.product_type == 'electricity'
       pc = @quote.mpan[0..1]
       distributor_id = @quote.mpan[8..9]
-      ElectricityProduct.profile_class(pc.to_i).area(distributor_id.to_i)
+      if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage <= 50000
+        ElectricityProduct.profile_class(pc.to_i).area(distributor_id.to_i)
+      else
+        []
+      end
     elsif @quote.product_type == 'gas'
       gas_postcode = GasPostcode.lookup @quote.postcode
       if gas_postcode
@@ -42,10 +46,14 @@ class QuotesController < ApplicationController
           when 'month' then 12
           else 1
         end
-        if @quote.cost
-          GasProduct.zone(@zone).spend(multiply_by*@quote.cost)
+        if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage <= 73200
+          if @quote.cost
+            GasProduct.zone(@zone).spend(multiply_by*@quote.cost)
+          else
+            GasProduct.zone(@zone).usage(multiply_by*@quote.usage)
+          end
         else
-          GasProduct.zone(@zone).usage(multiply_by*@quote.usage)
+          []
         end
       else
         []
@@ -56,9 +64,14 @@ class QuotesController < ApplicationController
     if products && !products.empty? && @quote.save
       redirect_to action: 'show', id: @quote.id
     else
-      if @quote.product_type == 'electricity'
+      if @quote.usage.blank? && @quote.cost.blank?
+        flash[:alert] = 'Please provide estimated usage or cost'
+        redirect_to action: 'new', postcode: @quote.postcode, product_type: @quote.product_type
+      elsif @quote.product_type == 'electricity'
+        flash[:alert] = 'Your estimated usage requires a bespoke quote'
         redirect_to not_a_small_business_path
       elsif @quote.product_type == 'gas'
+        flash[:alert] = 'Your estimated usage requires a bespoke quote'
         redirect_to not_a_small_business_path
       else
         flash[:alert] = 'Sorry, no relevant products'

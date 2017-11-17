@@ -5,7 +5,7 @@ class Quote < ApplicationRecord
   def annual_usage
     multiply_by = case usage_or_cost_period
       when 'year' then 1
-      when 'six_months' then jj
+      when 'six_months' then 2
       when 'quarter' then 4
       when 'month' then 12
       else 1
