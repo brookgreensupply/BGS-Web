@@ -2,6 +2,10 @@
   .authform
     = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
       .row
+        .col-xs-12
+          &nbsp;
+          %br
+          &nbsp;
         .col-xs-4.col-xs-offset-4
           %h3 Sign in
           = devise_error_messages!
