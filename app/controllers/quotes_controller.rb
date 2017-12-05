@@ -30,7 +30,7 @@ class QuotesController < ApplicationController
     products = if @quote.product_type == 'electricity'
       pc = @quote.mpan[0..1]
       distributor_id = @quote.mpan[8..9]
-      if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage <= 50000
+      if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage > 0 && @quote.annual_usage <= 50000
         ElectricityProduct.profile_class(pc.to_i).area(distributor_id.to_i)
       else
         []
@@ -46,7 +46,7 @@ class QuotesController < ApplicationController
           when 'month' then 12
           else 1
         end
-        if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage <= 73200
+        if !(@quote.usage.blank? && @quote.cost.blank?) && @quote.annual_usage > 0 && @quote.annual_usage <= 73200
           if @quote.cost
             GasProduct.zone(@zone).spend(multiply_by*@quote.cost)
           else
