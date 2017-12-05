@@ -11,7 +11,7 @@
   .title
     = product['rate1_name']
     - product_id = product['rate1_name'].gsub(/\s/,'_')
-    %a{onclick: "$('#calc_#{product_id}').toggle();", style: 'float: right; color: white; transform: rotate(-45deg);'}
+    %a{onclick: "$('#calc_#{product_id}').toggle();", style: 'float: right; color: white; transform: rotate(-45deg); cursor: pointer;'}
       &#9906;
   .details.container-fluid
     .row
