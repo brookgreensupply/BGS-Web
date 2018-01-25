@@ -1,7 +1,16 @@
 - documents = Comfy::Cms::File.for_category('Documents')
 - sorted = documents.sort_by(&:label)
-%ul
-  - sorted.each do |doc|
-    %li
-      %a{href: doc.file.url, target: '_blank'}
-        = doc.label
+%table.table.table-striped
+  %thead
+    %tr
+      %th Document
+      %th &nbsp;
+  %tbody
+    - sorted.each do |doc|
+      %tr
+        %td
+          = doc.label
+        %td
+          %a{href: doc.file.url, target: '_blank'}
+            view
+

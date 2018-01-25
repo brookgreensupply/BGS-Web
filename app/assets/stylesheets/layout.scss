@@ -24,14 +24,14 @@ header {
 #main {
   margin-top: 0px;
   padding-bottom: 20px;
-  background: #a7a7a7;
+  // background: #a7a7a7;
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 0px;
   }
   .center {
-    background: white;
-    max-width: 1024px;
-    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.28);
+    // background: white;
+    // box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.28);
+    // @media (min-width: 1601px) { max-width: 1480px; }
   }
 }
 
@@ -165,6 +165,7 @@ p.center_80 {
   flex-direction: column;
   align-items: left;
   align-content: space-between;
+  p, h1, h2, h3, h4 { text-align: left; }
 }
 
 img#partnerships-icon { height: 140px; }
