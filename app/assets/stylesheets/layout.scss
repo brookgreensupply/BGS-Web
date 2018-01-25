@@ -24,8 +24,14 @@ header {
 #main {
   margin-top: 0px;
   padding-bottom: 20px;
+  background: #a7a7a7;
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 0px;
+  }
+  .center {
+    background: white;
+    max-width: 1024px;
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.28);
   }
 }
 
@@ -236,6 +242,12 @@ li.market_update {
 
 .spacer { min-height: 20px; }
 .spacer:after { content: '' }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 .test {
   background: $bgtestcolor !important;
