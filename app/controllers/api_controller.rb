@@ -3,6 +3,9 @@ class ApiController < ApplicationController
   before_filter :restrict_access
 
   def companies
+    regno = params[:registration_number]
+    # FIXME: this can raise an exception, e.g. Creditsafe::AccountError
+    # $creditsafe.find_company(country_code: "GB", registration_number: regno)
     registration_number = '07495895'
     render json: File.read("#{Rails.root}/public/companies.json")
   end
