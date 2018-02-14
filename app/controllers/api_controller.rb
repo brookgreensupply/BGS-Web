@@ -4,15 +4,14 @@ class ApiController < ApplicationController
 
   def companies
     regno = params[:registration_number]
-    # FIXME: this can raise an exception, e.g. Creditsafe::AccountError
-    # $creditsafe.find_company(country_code: "GB", registration_number: regno)
-    registration_number = '07495895'
-    render json: File.read("#{Rails.root}/public/companies.json")
+    company = $creditsafe.find_company(country_code: "GB", registration_number: regno)
+    render json: company
   end
 
   def report
-    company_id = 'GB003/0/07495895'
-    render json: File.read("#{Rails.root}/public/report.json")
+    company_id = params[:company_id]
+    company = $creditsafe.company_report(company_id)
+    render json: company
   end
 
   def mpans
