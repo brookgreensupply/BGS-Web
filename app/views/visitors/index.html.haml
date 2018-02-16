@@ -6,9 +6,9 @@
 
 .row.cover
   .content-text.text-center
-    #sectors_carousel.carousel.slide{data: {interval: 4000, ride: 'carousel'}}
-      .carousel-inner
-        .item.active
+    #sectors_banner
+      .inner
+        .item
           = link_to slug_to_url('large-business') do
             .sector
               %center
@@ -22,19 +22,6 @@
                       Bespoke contracts for larger consumers of electricity and gas.
                   .more
                     Read about our products
-        .item
-          = link_to slug_to_url('small-business') do
-            .sector
-              %center
-                .carousel-fw-img.bakery
-                  %h3 Small &amp; Medium businesses
-                  %p
-                    - snippet = cms_snippet_content('hp-sectors-p-ic')
-                    - if !snippet.blank?
-                      = snippet
-                    - else
-                      We supply our small business customers with 1, 2 and 3-year electricity rates.
-                  .more Read about our SME products
         .item
           = link_to slug_to_url('consultants') do
             .sector

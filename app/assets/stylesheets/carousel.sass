@@ -114,7 +114,7 @@ a.carousel-control.right
 #sectors_carousel
   height: auto
 
-#sectors_carousel .carousel-inner .item .sector
+#sectors_carousel .carousel-inner .item .sector, #sectors_banner .inner .item .sector
   margin-top: 1vw
   max-width: 100%
   width: 100%
@@ -178,4 +178,30 @@ a.carousel-control.right
 
 .carousel-fw-img.apples
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url('fw-images/apples.jpg') center / cover no-repeat !important
+
+#sectors_banner .inner
+  background: red
+  @media (min-width: 700px)
+    display: flex
+    flex: 1
+
+#sectors_banner .inner .item
+  @media (min-width: 700px)
+    width: 50vw
+
+#sectors_banner .inner .item .sector
+  color: white
+  margin-top: 0px !important
+
+#sectors_banner .inner .item .sector center .carousel-fw-img
+  @media (max-width: 700px)
+    padding-top: 36px
+  @media (min-width: 470px)
+    padding: 5vw 0px 2vw 0px
+    min-height: 28vw
+  @media (min-width: 700px)
+    padding: 5vw 0px 2vw 0px
+    min-height: 22vw
+  @media (min-width: 1058px)
+    min-height: 16vw
 
