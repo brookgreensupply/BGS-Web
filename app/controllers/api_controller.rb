@@ -4,7 +4,14 @@ class ApiController < ApplicationController
 
   def companies
     regno = params[:registration_number]
-    company = $creditsafe.find_company(country_code: "GB", registration_number: regno)
+    coname = params[:company_name]
+    company = if regno && !regno.blank?
+      $creditsafe.find_company(country_code: "GB", registration_number: regno)
+    elsif coname && !coname.blank?
+      $creditsafe.find_company(country_code: "GB", company_name: coname)
+    else
+      nil
+    end
     render json: company
   end
 
