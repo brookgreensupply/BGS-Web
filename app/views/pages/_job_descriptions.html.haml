@@ -1,0 +1,17 @@
+- updates = Comfy::Cms::Page.for_category("Job").published
+- sorted = updates.sort_by(&:updated_at).reverse
+.row
+  .col-xs-12
+    %ul.no-mark
+      - sorted.each do |job|
+        %li.job_description
+          %h4= job.label
+          - preview_block = job.blocks.select {|b| b.identifier == 'preview'}.first
+          - if preview_block
+            %div
+              != preview_block.content
+          %div
+            %br
+            %a{href: job.url, class: 'more-info'}
+              Read more
+
