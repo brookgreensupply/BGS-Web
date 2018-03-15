@@ -231,6 +231,24 @@ li.market_update {
   h4 { padding: 10px; }
 }
 
+.careers-box {
+  min-height: 320px;
+  padding: 20px;
+  background: image-url('cta-bg-switch.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  p { padding: 10px; }
+  h4 { padding: 10px; }
+  ul {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}
+
 .sideicon {
   width: 280px;
   min-height: 320px;
