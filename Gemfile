@@ -10,6 +10,7 @@ gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
+gem 'paperclip', '~> 5'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
