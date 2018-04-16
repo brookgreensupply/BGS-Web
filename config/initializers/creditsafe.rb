@@ -2,11 +2,12 @@ require 'creditsafe'
 
 username = ENV['CREDITSAFE_USERNAME']
 password = ENV['CREDITSAFE_PASSWORD']
+environment = ENV['CREDITSAFE_LIVE'].blank? ? :test : :live
 loglevel = :debug
 
 $creditsafe = Creditsafe::Client.new(username: username, \
                                      password: password, \
-                                     environment: :test, \
+                                     environment: environment, \
                                      log_level: loglevel   )
 
 module Creditsafe
