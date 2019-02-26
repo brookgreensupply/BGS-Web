@@ -56,7 +56,7 @@ class ApiController < ApplicationController
   end
 
   def customer
-    number = params[:number]; mprn = params[:mprn]; mpan = params[:mpan]
+    number = params[:account_number]; mprn = params[:mprn]; mpan = params[:mpan]
     accounts_path = "/rest/v1/accounts?number=#{number}" if !number.blank?
     accounts_path = "/rest/v1/accounts?MPRN=#{mprn}" if !mprn.blank?
     accounts_path = "/rest/v1/accounts?MPAN=#{mpan}" if !mpan.blank?
