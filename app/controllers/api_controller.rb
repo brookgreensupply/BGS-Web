@@ -55,6 +55,36 @@ class ApiController < ApplicationController
     end
   end
 
+  def customer
+    number = params[:number]; mprn = params[:mprn]; mpan = params[:mpan]
+    accounts_path = "/rest/v1/accounts?number=#{number}" if !number.blank?
+    accounts_path = "/rest/v1/accounts?MPRN=#{mprn}" if !mprn.blank?
+    accounts_path = "/rest/v1/accounts?MPAN=#{mpan}" if !mpan.blank?
+    if accounts_path
+      begin
+        Rails.logger.warn "#{accounts_path}"
+        accounts_response = junifer_get! accounts_path
+        accounts_hash = JSON.parse accounts_response
+        if accounts_hash['results'].count == 1
+          customer_link = accounts_hash['results'][0]['links']['customer']
+          customer_path = customer_link.match(/(\/rest\/v1.+)$/)[1]
+          customer_response = junifer_get! customer_path
+          customer_hash = JSON.parse customer_response
+          without_links = customer_hash
+          without_links.delete("links")
+          render json: without_links
+        else
+          render json: { "numberOfAccounts" => accounts_hash['results'].count }, status: 404
+        end
+      rescue RestClient::BadRequest => e
+        Rails.logger.warn "api#customer error: #{e.http_body}"
+        render json: e.http_body, status: 400
+      end
+    else
+      render json: nil, status: 400
+    end
+  end
+
   private
 
     def junifer_get!(path)

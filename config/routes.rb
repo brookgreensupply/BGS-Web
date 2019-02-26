@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get '/api/v1/report', to: "api#report"
   get '/api/v1/mpans', to: "api#mpans"
   get '/api/v1/mprns', to: "api#mprns"
+  get '/api/v1/customer', to: "api#customer"
 
   # proxy Junifer API calls
   get '/junifer/:request', to: "junifer#proxy", request: /[\/a-zA-z0-9]+/
