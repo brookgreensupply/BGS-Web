@@ -57,9 +57,9 @@ class ApiController < ApplicationController
 
   def customer
     number = params[:account_number]; mprn = params[:mprn]; mpan = params[:mpan]
-    accounts_path = "/rest/v1/accounts?number=#{number}" if !number.blank?
-    accounts_path = "/rest/v1/accounts?MPRN=#{mprn}" if !mprn.blank?
-    accounts_path = "/rest/v1/accounts?MPAN=#{mpan}" if !mpan.blank?
+    accounts_path = "/rest/v1/uk/accounts?number=#{number}" if !number.blank?
+    accounts_path = "/rest/v1/uk/accounts?MPRN=#{mprn}" if !mprn.blank?
+    accounts_path = "/rest/v1/uk/accounts?MPAN=#{mpan}" if !mpan.blank?
     if accounts_path
       begin
         Rails.logger.warn "#{accounts_path}"
