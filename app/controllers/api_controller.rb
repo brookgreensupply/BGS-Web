@@ -92,15 +92,16 @@ class ApiController < ApplicationController
       begin
         accounts_response = junifer_get! accounts_path
         accounts_hash = JSON.parse accounts_response
-        if accounts_hash['results'].count == 1
-          account_id = accounts_hash['results'][0]['id']
+        actives = accounts_hash['results'].reject{|a| a['cancelledDttm'] || a['closedDttm']}
+        if actives.count == 1
+          account_id = actives[0]['id']
           agreements_path = "/rest/v1/accounts/#{account_id}/agreements"
           agreements_response = junifer_get! agreements_path
           agreements_hash = JSON.parse agreements_response
           delete_links agreements_hash
           render json: agreements_hash['results']
         else
-          render json: { "numberOfAccounts" => accounts_hash['results'].count }, status: 404
+          render json: { "numberOfAccounts" => actives.count }, status: 404
         end
       rescue RestClient::BadRequest => e
         Rails.logger.warn "api#customer error: #{e.http_body}"
