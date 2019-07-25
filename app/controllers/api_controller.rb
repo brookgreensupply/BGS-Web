@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  # before_filter :restrict_access
+  before_filter :restrict_access
 
   def companies
     regno = params[:registration_number]
