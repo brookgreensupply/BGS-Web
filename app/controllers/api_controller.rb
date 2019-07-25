@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter :restrict_access
+  # before_filter :restrict_access
 
   def companies
     regno = params[:registration_number]
@@ -62,7 +62,6 @@ class ApiController < ApplicationController
     accounts_path = "/rest/v1/uk/accounts?MPAN=#{mpan}" if !mpan.blank?
     if accounts_path
       begin
-        Rails.logger.warn "#{accounts_path}"
         accounts_response = junifer_get! accounts_path
         accounts_hash = JSON.parse accounts_response
         if accounts_hash['results'].count == 1
@@ -70,9 +69,36 @@ class ApiController < ApplicationController
           customer_path = customer_link.match(/(\/rest\/v1.+)$/)[1]
           customer_response = junifer_get! customer_path
           customer_hash = JSON.parse customer_response
-          without_links = customer_hash
-          without_links.delete("links")
-          render json: without_links
+          delete_links customer_hash
+          render json: customer_hash
+        else
+          render json: { "numberOfAccounts" => accounts_hash['results'].count }, status: 404
+        end
+      rescue RestClient::BadRequest => e
+        Rails.logger.warn "api#customer error: #{e.http_body}"
+        render json: e.http_body, status: 400
+      end
+    else
+      render json: nil, status: 400
+    end
+  end
+
+  def agreements
+    number = params[:account_number]; mprn = params[:mprn]; mpan = params[:mpan]
+    accounts_path = "/rest/v1/uk/accounts?number=#{number}" if !number.blank?
+    accounts_path = "/rest/v1/uk/accounts?MPRN=#{mprn}" if !mprn.blank?
+    accounts_path = "/rest/v1/uk/accounts?MPAN=#{mpan}" if !mpan.blank?
+    if accounts_path
+      begin
+        accounts_response = junifer_get! accounts_path
+        accounts_hash = JSON.parse accounts_response
+        if accounts_hash['results'].count == 1
+          account_id = accounts_hash['results'][0]['id']
+          agreements_path = "/rest/v1/accounts/#{account_id}/agreements"
+          agreements_response = junifer_get! agreements_path
+          agreements_hash = JSON.parse agreements_response
+          delete_links agreements_hash
+          render json: agreements_hash['results']
         else
           render json: { "numberOfAccounts" => accounts_hash['results'].count }, status: 404
         end
@@ -97,6 +123,15 @@ class ApiController < ApplicationController
                                               verify_ssl: false,
                                               timeout: 10                                      )
       response.body
+    end
+
+    def delete_links(hash)
+      p = proc do |*args|
+        k = args.first; v = args.last
+        v.delete_if(&p) if v.respond_to? :delete_if
+        k == 'links'
+      end
+      hash.delete_if(&p)
     end
 
     def restrict_access
