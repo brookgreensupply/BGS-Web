@@ -103,7 +103,7 @@ class ApiController < ApplicationController
         customer_hash = JSON.parse customer_response
         delete_links customer_hash
         render json: customer_hash
-      rescue RestClient::BadRequest => e
+      rescue RestClient::NotFound => e
         Rails.logger.warn "api#customer error: #{e.http_body}"
         render json: e.http_body, status: 400
       end
