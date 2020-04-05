@@ -55,8 +55,26 @@ class ApiController < ApplicationController
     end
   end
 
+  def meterpoint
+    id = params[:id]
+    if id && !id.blank?
+      begin
+        path = "/rest/v1/meterPoints/#{id}"
+        meterpoint_response = junifer_get! path
+        meterpoint = JSON.parse meterpoint_response
+        delete_links meterpoint
+        render json: meterpoint
+      rescue RestClient::BadRequest => e
+        Rails.logger.warn "api#meterpoint error: #{e.http_body}"
+        render json: e.http_body, status: 400
+      end
+    else
+      render json: nil, status: 400
+    end
+  end
+
   def customer
-    number = params[:account_number]; mprn = params[:mprn]; mpan = params[:mpan]
+    number = params[:account_number]; mprn = params[:mprn]; mpan = params[:mpan]; id = params[:id]
     accounts_path = "/rest/v1/uk/accounts?number=#{number}" if !number.blank?
     accounts_path = "/rest/v1/uk/accounts?MPRN=#{mprn}" if !mprn.blank?
     accounts_path = "/rest/v1/uk/accounts?MPAN=#{mpan}" if !mpan.blank?
@@ -74,6 +92,17 @@ class ApiController < ApplicationController
         else
           render json: { "numberOfAccounts" => accounts_hash['results'].count }, status: 404
         end
+      rescue RestClient::BadRequest => e
+        Rails.logger.warn "api#customer error: #{e.http_body}"
+        render json: e.http_body, status: 400
+      end
+    elsif id
+      begin
+        customer_path = "/rest/v1/customer/#{id}"
+        customer_response = junifer_get! customer_path
+        customer_hash = JSON.parse customer_response
+        delete_links customer_hash
+        render json: customer_hash
       rescue RestClient::BadRequest => e
         Rails.logger.warn "api#customer error: #{e.http_body}"
         render json: e.http_body, status: 400
