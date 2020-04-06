@@ -98,12 +98,12 @@ class ApiController < ApplicationController
       end
     elsif id
       begin
-        customer_path = "/rest/v1/customer/#{id}"
+        customer_path = "/rest/v1/customers/#{id}"
         customer_response = junifer_get! customer_path
         customer_hash = JSON.parse customer_response
         delete_links customer_hash
         render json: customer_hash
-      rescue RestClient::NotFound => e
+      rescue RestClient::BadRequest => e
         Rails.logger.warn "api#customer error: #{e.http_body}"
         render json: e.http_body, status: 400
       end
