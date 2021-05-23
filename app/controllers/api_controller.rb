@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-  before_filter :restrict_access
+  skip_before_action :verify_authenticity_token
+  before_action :restrict_access
 
   def companies
     regno = params[:registration_number]
@@ -166,7 +166,7 @@ class ApiController < ApplicationController
 
     def restrict_access
       authenticate_or_request_with_http_token do |token, options|
-        token == ENV.fetch('API_AUTH_KEY_API')
+        token == ENV.fetch('API_AUTH_KEY_API') || token == ENV.fetch('NEW_API_AUTH_KEY_API')
       end
     end
 end

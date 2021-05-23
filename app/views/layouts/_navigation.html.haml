@@ -1,12 +1,12 @@
 .row.cover.cover-here-fixes-navbar-hscroll
   .col-xs-2
     .navbar-header
-      = link_to root_path, class: 'navbar-brand' do
+      = link_to '/', class: 'navbar-brand' do
         = image_tag asset_path('bgs-logo.png'), id: 'top-logo'
   .col-xs-2.col-xs-offset-8
     #hamburger
       .table-row
-        %a{href: help_path}
+        %a{href: '/help'}
           %span.glyphicon.glyphicon-search.search.table-cell
         %a.navbar-toggle.table-cell{href: '#', data: {'toggle' => 'collapse', 'target' => '.navbar-collapse'}}
           %span.glyphicon.glyphicon-menu-hamburger
@@ -27,5 +27,5 @@
         %li
           = link_to 'Contact', slug_to_url('contact')
         %li.search
-          %a{href: help_path}
+          %a{href: '/help'}
             %span.glyphicon.glyphicon-search
